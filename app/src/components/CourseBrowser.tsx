@@ -78,8 +78,16 @@ export default function CourseBrowser({ courses, selectedCode, onSelect }: Props
               <span className="browser-title">{c.title}</span>
               <span className="browser-faculty">{c.faculty}</span>
               <span className="browser-badges">
-                {c.ue && <span className="badge ue">UE</span>}
-                {c.scholarship && <span className="badge schol">SCHOL</span>}
+                {c.ue && (
+                  <span className="badge ue" title="Contributes credits towards University Entrance">
+                    UE
+                  </span>
+                )}
+                {c.scholarship && (
+                  <span className="badge schol" title="Scholarship-level examination available in this subject">
+                    SCHOL
+                  </span>
+                )}
               </span>
             </button>
           </li>

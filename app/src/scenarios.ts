@@ -7,7 +7,7 @@ export interface Scenario {
 }
 
 export function makeDefaultScenario(): Scenario {
-  return { id: "actual", name: "Her actual picks", picks: { ...CURRENT_PICKS } };
+  return { id: "actual", name: "Primary picks", picks: { ...CURRENT_PICKS } };
 }
 
 export function newScenarioId(): string {

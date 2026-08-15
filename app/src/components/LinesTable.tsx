@@ -1,4 +1,5 @@
 import type { Course, LineDefinition } from "../types";
+import BookmarkIcon from "./BookmarkIcon";
 
 interface Props {
   lines: LineDefinition[];
@@ -34,7 +35,7 @@ export default function LinesTable({
     <div className="lines-table-wrap">
       <p className="hint">
         {hint ??
-          `Choose at least 5 courses total, at most one per column.${
+          `Choose 5 courses, at most one per column.${
             editable ? " Click the star on a chip to pick it for this scenario." : ""
           }`}
       </p>
@@ -95,7 +96,9 @@ export default function LinesTable({
                             <span className="chip-title">Other (see school)</span>
                           )}
                         </button>
-                        {isBookmarked && <span className="chip-bookmark">★</span>}
+                        {isBookmarked && (
+                          <BookmarkIcon filled size={11} className="chip-bookmark" />
+                        )}
                         {editable ? (
                           <button
                             type="button"

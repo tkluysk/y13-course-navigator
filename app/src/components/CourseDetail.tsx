@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Course } from "../types";
 import type { PathwayLinks } from "../pathways";
+import BookmarkIcon from "./BookmarkIcon";
 
 interface Props {
   course: Course | null;
@@ -13,6 +14,22 @@ interface Props {
 }
 
 const CODE_RE = /\b[A-Z]{2,4}\d{3}(?:\/[A-Z]{2,4}\d{3}\*?)?\b/g;
+
+const LEVEL_TITLES: Record<string, string> = {
+  L1: "NCEA Level 1",
+  L2: "NCEA Level 2",
+  L3: "NCEA Level 3",
+  "L3+": "NCEA Level 3, extension course",
+  "L2-3": "Offered at NCEA Level 2 or 3",
+  "Y11-13": "Offered across Years 11–13",
+  "Y12-13": "Offered across Years 12–13",
+  "Y11-L2-3": "Offered across Year 11, Level 2 and Level 3",
+  "Pre-NCEA": "Pre-NCEA (not yet credit-bearing)",
+};
+
+function levelTitle(level: string): string {
+  return LEVEL_TITLES[level] ?? level;
+}
 
 function linkifyCodes(
   text: string,
@@ -105,10 +122,20 @@ export default function CourseDetail({
     <div className="detail">
       <div className="detail-header">
         <div className="detail-code-row">
-          <span className="detail-level">{course.level}</span>
+          <span className="detail-level" title={levelTitle(course.level)}>
+            {course.level}
+          </span>
           <span className="detail-code">{course.code}</span>
-          {course.ue && <span className="badge ue">UE</span>}
-          {course.scholarship && <span className="badge schol">SCHOL</span>}
+          {course.ue && (
+            <span className="badge ue" title="Contributes credits towards University Entrance">
+              UE
+            </span>
+          )}
+          {course.scholarship && (
+            <span className="badge schol" title="Scholarship-level examination available in this subject">
+              SCHOL
+            </span>
+          )}
           <button
             type="button"
             className={"bookmark-btn" + (isBookmarked ? " active" : "")}
@@ -116,7 +143,7 @@ export default function CourseDetail({
             title={isBookmarked ? "Remove bookmark" : "Bookmark this course"}
             aria-pressed={isBookmarked}
           >
-            {isBookmarked ? "★" : "☆"}
+            <BookmarkIcon filled={isBookmarked} size={18} />
           </button>
         </div>
         <h2>{course.title}</h2>
