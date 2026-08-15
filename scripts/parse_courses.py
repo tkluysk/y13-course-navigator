@@ -447,9 +447,16 @@ def main():
                 # the page number glued straight on ("GDD22358" -> "GDD223").
                 # Do this BEFORE the generic digit-tail strip below, and never
                 # strip a bare trailing course code's own 3 digits ("DVC223").
-                text = re.sub(r"([A-Z]{2,4}\d{3})\d{1,2}$", r"\1", text)
+                # Exclude "AS<5 digits>" achievement-standard numbers
+                # (e.g. "AS91100") from this — they only coincidentally look
+                # like "<2-4 letter prefix><3 digits>+extra digits" and were
+                # getting truncated to "AS911". The exclusion has to be a
+                # lookahead on the captured prefix itself (a lookbehind on
+                # what precedes the match is checking the wrong position,
+                # since the match starts at the "A" of "AS...").
+                text = re.sub(r"(?<![A-Za-z])(?!AS\d)([A-Z]{2,4}\d{3})\d{1,2}$", r"\1", text)
                 # trailing "<course code> <page number>" -> drop the number
-                text = re.sub(r"([A-Z]{2,4}\d{3})\s+\d{1,2}$", r"\1", text)
+                text = re.sub(r"(?<![A-Za-z])(?!AS\d)([A-Z]{2,4}\d{3})\s+\d{1,2}$", r"\1", text)
                 if not re.search(r"[A-Z]{2,4}\d{3}$", text):
                     text = re.sub(r"(?<=[a-zA-Z.,)])\s?\d{1,3}$", "", text).strip()
                 return text

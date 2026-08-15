@@ -195,12 +195,35 @@ export function buildCourseGraph(
       }
     }
     if (center.alternative_category && center.alternative_faculty) {
+      const label = center.required_credits
+        ? `${center.required_credits}+ credits (any ${center.alternative_category})`
+        : `any ${center.alternative_category}`;
+
       // Exclude L2 courses already covered by an explicit-prerequisite edge
       // above (e.g. CLE223 for CLS335) so the group doesn't duplicate them.
       const alreadyLinkedSubjects = new Set(
         center.explicit_prerequisites.map((c) => subjectPrefix(c))
       );
-      alreadyLinkedSubjects.add(subjectPrefix(center.code));
+      const centerSubj = subjectPrefix(center.code);
+
+      // The center's own same-subject L2 sibling (e.g. ESS223 for ESS335)
+      // qualifies for the general category too, even though the entry text
+      // never names it specifically — give it its own direct "alternative"
+      // edge (which the priority ordering upgrades over any weaker
+      // pathway-text edge for the same pair) instead of just excluding it
+      // from the group with no informative edge at all.
+      if (!alreadyLinkedSubjects.has(centerSubj)) {
+        const sibling = Array.from(courseByCode.values()).find(
+          (o) => o.level === "L2" && subjectPrefix(o.code) === centerSubj
+        );
+        if (sibling) {
+          const ep: GraphEndpoint = { type: "course", course: sibling };
+          addNode(ep, "upstream");
+          addEdge(ep, centerEndpoint, "alternative", center.required_credits, label);
+        }
+      }
+      alreadyLinkedSubjects.add(centerSubj);
+
       const members = Array.from(courseByCode.values()).filter(
         (o) =>
           o.level === "L2" &&
@@ -208,9 +231,6 @@ export function buildCourseGraph(
           !alreadyLinkedSubjects.has(subjectPrefix(o.code))
       );
       if (members.length > 0) {
-        const label = center.required_credits
-          ? `${center.required_credits}+ credits (any ${center.alternative_category})`
-          : `any ${center.alternative_category}`;
         const group: GraphEndpoint = {
           type: "group",
           id: `alt:${center.alternative_faculty}:L2:${center.code}`,
@@ -248,6 +268,7 @@ export function buildCourseGraph(
 
     for (const other of courseByCode.values()) {
       if (other.level !== "L3" && other.level !== "L3+") continue;
+      const sameSubject = subjectPrefix(other.code) === subjectPrefix(center.code);
       if (other.explicit_prerequisites.includes(center.code)) {
         const ep: GraphEndpoint = { type: "course", course: other };
         addNode(ep, "downstream");
@@ -256,18 +277,25 @@ export function buildCourseGraph(
         const ep: GraphEndpoint = { type: "course", course: other };
         addNode(ep, "downstream");
         addEdge(centerEndpoint, ep, "gap", null, "same subject — not required");
-      } else if (
-        other.alternative_category &&
-        other.alternative_faculty === center.faculty &&
-        subjectPrefix(other.code) !== subjectPrefix(center.code)
-      ) {
-        const key = other.alternative_faculty ?? "";
+      } else if (other.alternative_category && other.alternative_faculty === center.faculty) {
         const label = other.required_credits
           ? `${other.required_credits}+ credits (any ${other.alternative_category})`
           : `any ${other.alternative_category}`;
-        const entry = altGroups.get(key) ?? { members: [], label, credits: other.required_credits };
-        entry.members.push(other);
-        altGroups.set(key, entry);
+        if (sameSubject) {
+          // center IS the same-subject L2 sibling of a generic-category L3
+          // course (e.g. ESS223 for ESS335's "any Level 2 Science") — give
+          // it its own direct edge rather than folding it into the "any
+          // other <faculty>" group, which would otherwise wrongly exclude
+          // it with no edge at all.
+          const ep: GraphEndpoint = { type: "course", course: other };
+          addNode(ep, "downstream");
+          addEdge(centerEndpoint, ep, "alternative", other.required_credits, label);
+        } else {
+          const key = other.alternative_faculty ?? "";
+          const entry = altGroups.get(key) ?? { members: [], label, credits: other.required_credits };
+          entry.members.push(other);
+          altGroups.set(key, entry);
+        }
       }
     }
 

@@ -378,9 +378,24 @@ export default function PathwayGraph({
                         <line x1={0} y1={28} x2={w} y2={28} stroke="var(--border)" strokeWidth={1} />
                         {n.endpoint.members.map((m, mi) => {
                           const memberPicked = !!pickedCodes?.has(m.code);
+                          const memberBookmarked = !!bookmarkedCodes?.has(m.code);
                           const memberPrereq = prereqStatusByCode?.get(m.code);
                           const memberWarning = memberPrereq && memberPrereq.status !== "ok";
                           const memberNotInterested = !!notInterestedCodes?.has(m.code);
+
+                          // Same fill priority as a chip/course-node: pick >
+                          // not-interested > warning tint > plain.
+                          let memberFill = "transparent";
+                          if (memberPicked) {
+                            memberFill = "var(--accent-bg)";
+                          } else if (memberNotInterested) {
+                            memberFill = "var(--bg-alt)";
+                          } else if (memberWarning && memberPrereq?.status === "unmet") {
+                            memberFill = "rgba(192, 57, 43, 0.08)";
+                          } else if (memberWarning && memberPrereq?.status === "unclear") {
+                            memberFill = "rgba(217, 164, 65, 0.1)";
+                          }
+
                           return (
                             <g
                               key={m.code}
@@ -389,7 +404,7 @@ export default function PathwayGraph({
                               style={{ cursor: "pointer" }}
                               className="graph-group-member"
                             >
-                              <rect width={w} height={MEMBER_ROW_H} fill="transparent" />
+                              <rect width={w} height={MEMBER_ROW_H} fill={memberFill} opacity={memberNotInterested ? 0.7 : 1} />
                               <text
                                 x={12}
                                 y={15}
@@ -412,11 +427,14 @@ export default function PathwayGraph({
                               </text>
                               {memberWarning && (
                                 <circle
-                                  cx={w - 20}
+                                  cx={memberPicked ? w - 32 : w - 20}
                                   cy={11}
                                   r={3.5}
                                   fill={memberPrereq?.status === "unmet" ? "#c0392b" : "#d9a441"}
                                 />
+                              )}
+                              {memberBookmarked && (
+                                <circle cx={w - 20} cy={11} r={3} fill="#d9a441" />
                               )}
                               {memberPicked && (
                                 <text x={w - 10} y={15} fontSize={11} fill="var(--accent)" textAnchor="end">
