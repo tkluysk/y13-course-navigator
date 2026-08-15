@@ -198,7 +198,7 @@ export default function CourseDetail({
           <span>
             <strong>
               {prereqStatus.status === "unmet"
-                ? "Entry requirement not met by her current Y12 picks."
+                ? "Entry requirement not met by the current Y12 picks."
                 : "No stated prerequisite in the prospectus text."}
             </strong>{" "}
             {linkifyCodes(prereqStatus.reason, courseByCode, onSelectCode)}

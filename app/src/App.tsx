@@ -118,6 +118,14 @@ function App() {
     () => new Set(Object.values(y12.active.picks).filter((c): c is string => !!c)),
     [y12.active.picks]
   );
+  const y13PickSet = useMemo(
+    () => new Set(Object.values(y13.active.picks).filter((c): c is string => !!c)),
+    [y13.active.picks]
+  );
+  const pickedSet = useMemo(
+    () => new Set([...y12PickSet, ...y13PickSet]),
+    [y12PickSet, y13PickSet]
+  );
   const prereqStatusByCode = useMemo(() => {
     const map = new Map<string, ReturnType<typeof checkPrerequisite>>();
     for (const c of courses) {
@@ -183,6 +191,10 @@ function App() {
           graph={selectedGraph}
           centerCode={selectedCode}
           onSelectCode={setSelectedCode}
+          pickedCodes={pickedSet}
+          bookmarkedCodes={bookmarkSet}
+          notInterestedCodes={notInterestedSet}
+          prereqStatusByCode={prereqStatusByCode}
         />
       )}
 

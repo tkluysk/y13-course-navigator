@@ -42,8 +42,8 @@ export function checkPrerequisite(
     }
     const named = course.explicit_prerequisites.join(", ");
     const reason = hasExplicit
-      ? `Requires ${named}${hasCategory ? ` (or another ${course.alternative_category})` : ""} — not in her current Y12 picks.`
-      : `Requires a Level 2 ${course.alternative_category} course — not in her current Y12 picks.`;
+      ? `Requires ${named}${hasCategory ? ` (or another ${course.alternative_category})` : ""} — not in the current Y12 picks.`
+      : `Requires a Level 2 ${course.alternative_category} course — not in the current Y12 picks.`;
     return { status: "unmet", reason };
   }
 
@@ -53,7 +53,7 @@ export function checkPrerequisite(
       status: "unclear",
       reason: `The prospectus doesn't state a Y12 prerequisite, but ${course.implied_prerequisite}${
         gap ? ` (${gap.title})` : ""
-      } is the usual lead-in and isn't in her current Y12 picks.`,
+      } is the usual lead-in and isn't in the current Y12 picks.`,
     };
   }
 

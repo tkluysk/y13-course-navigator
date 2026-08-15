@@ -13,7 +13,7 @@ export function makeDefaultY13Scenarios(): Scenario[] {
 
 export function makeDefaultY12Scenarios(): Scenario[] {
   return [
-    { id: "y12-actual", name: "Her Y12 picks", picks: { ...CURRENT_PICKS_Y12 }, locked: true },
+    { id: "y12-actual", name: "Actual Y12 picks", picks: { ...CURRENT_PICKS_Y12 }, locked: true },
   ];
 }
 

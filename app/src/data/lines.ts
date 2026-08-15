@@ -53,7 +53,7 @@ export const LINES: LineDefinition[] = [
   },
 ];
 
-// Highlighted on the daughter's planning sheet: one course chosen per line
+// Highlighted on the actual planning sheet: one course chosen per line
 // (Line 5 was left blank on the sheet).
 export const CURRENT_PICKS: Record<number, string | null> = {
   1: "FTX335",
@@ -64,7 +64,7 @@ export const CURRENT_PICKS: Record<number, string | null> = {
   6: "DES335",
 };
 
-// Transcribed from her Y12 (Level 2, 2026) planning sheet.
+// Transcribed from the Y12 (Level 2, 2026) planning sheet.
 export const LINES_Y12: LineDefinition[] = [
   {
     line: 1,

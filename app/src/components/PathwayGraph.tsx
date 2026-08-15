@@ -1,11 +1,16 @@
 import { useMemo, useState } from "react";
 import type { EdgeKind, GraphEndpoint, PathwayGraph as PathwayGraphData } from "../pathways";
 import { endpointKey } from "../pathways";
+import type { PrerequisiteCheck } from "../prerequisiteCheck";
 
 interface Props {
   graph: PathwayGraphData;
   centerCode: string;
   onSelectCode: (code: string) => void;
+  pickedCodes?: Set<string>;
+  bookmarkedCodes?: Set<string>;
+  notInterestedCodes?: Set<string>;
+  prereqStatusByCode?: Map<string, PrerequisiteCheck>;
 }
 
 const NODE_W = 180;
@@ -72,7 +77,15 @@ const EDGE_LABEL_COLOR: Record<EdgeKind, string> = {
   pathway: "var(--text)",
 };
 
-export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props) {
+export default function PathwayGraph({
+  graph,
+  centerCode,
+  onSelectCode,
+  pickedCodes,
+  bookmarkedCodes,
+  notInterestedCodes,
+  prereqStatusByCode,
+}: Props) {
   const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
 
   const { upstream, center, downstream } = useMemo(() => {
@@ -214,6 +227,13 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
             const w = nodeWidth(n.endpoint, expandedGroup);
             const h = nodeHeight(n.endpoint, expandedGroup);
 
+            const courseCode = n.endpoint.type === "course" ? n.endpoint.course.code : null;
+            const isPicked = !isCenter && !!courseCode && !!pickedCodes?.has(courseCode);
+            const isBookmarked = !!courseCode && !!bookmarkedCodes?.has(courseCode);
+            const isNotInterested = !!courseCode && !!notInterestedCodes?.has(courseCode);
+            const prereq = courseCode ? prereqStatusByCode?.get(courseCode) : undefined;
+            const hasWarning = !isCenter && !!prereq && prereq.status !== "ok";
+
             const handleHeaderClick = () => {
               if (isCenter || isText) return;
               if (n.endpoint.type === "group") {
@@ -230,6 +250,9 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
                     n.endpoint.course.entry_text && `Entry: ${n.endpoint.course.entry_text}`,
                     n.endpoint.course.donation_amount &&
                       `Donation: ${n.endpoint.course.donation_amount}${n.endpoint.course.donation_text ? ` — ${n.endpoint.course.donation_text}` : ""}`,
+                    isPicked && "Picked in the active scenario",
+                    isNotInterested && "Marked as not interested",
+                    hasWarning && prereq && prereq.reason,
                   ]
                     .filter(Boolean)
                     .join("\n")
@@ -237,34 +260,92 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
                   ? `${n.endpoint.label}: ${n.endpoint.members.map((m) => m.code).join(", ")}`
                   : n.endpoint.text;
 
+            let nodeFill = isCenter ? "var(--accent-bg)" : isText ? "var(--bg-alt)" : "var(--bg)";
+            let nodeStroke = isCenter ? "var(--accent)" : "var(--border)";
+            if (!isCenter && n.endpoint.type === "course") {
+              if (isPicked) {
+                nodeFill = "var(--accent-bg)";
+                nodeStroke = "var(--accent-border)";
+              } else if (isNotInterested) {
+                nodeFill = "var(--bg-alt)";
+              } else if (hasWarning && prereq?.status === "unmet") {
+                nodeFill = "rgba(192, 57, 43, 0.08)";
+                nodeStroke = "rgba(192, 57, 43, 0.4)";
+              } else if (hasWarning && prereq?.status === "unclear") {
+                nodeFill = "rgba(217, 164, 65, 0.1)";
+                nodeStroke = "rgba(217, 164, 65, 0.45)";
+              }
+            }
+
             return (
               <g
                 key={key}
                 transform={`translate(${pos.x}, ${pos.y})`}
-                className={"graph-node" + (isCenter ? " graph-node-center" : "") + (isText ? " graph-node-text" : "")}
+                className={
+                  "graph-node" +
+                  (isCenter ? " graph-node-center" : "") +
+                  (isText ? " graph-node-text" : "") +
+                  (isNotInterested ? " graph-node-not-interested" : "")
+                }
               >
                 <title>{tooltip}</title>
                 <rect
                   width={w}
                   height={h}
                   rx={10}
-                  fill={isCenter ? "var(--accent-bg)" : isText ? "var(--bg-alt)" : "var(--bg)"}
-                  stroke={isCenter ? "var(--accent)" : "var(--border)"}
-                  strokeWidth={isCenter ? 2 : 1}
+                  fill={nodeFill}
+                  stroke={nodeStroke}
+                  strokeWidth={isCenter || isPicked ? 2 : 1}
                   strokeDasharray={isGroup && !isExpanded ? "3 3" : undefined}
+                  opacity={isNotInterested ? 0.6 : 1}
                 />
                 {n.endpoint.type === "course" ? (
                   <g onClick={handleHeaderClick} style={{ cursor: "pointer" }}>
                     <rect width={w} height={h} rx={10} fill="transparent" />
-                    <text x={12} y={22} fontSize={11} fontFamily="var(--mono)" fontWeight={700} fill="var(--accent)">
+                    <text
+                      x={12}
+                      y={22}
+                      fontSize={11}
+                      fontFamily="var(--mono)"
+                      fontWeight={700}
+                      fill="var(--accent)"
+                      textDecoration={isNotInterested ? "line-through" : undefined}
+                    >
                       {n.endpoint.course.code}
                     </text>
-                    <text x={12} y={38} fontSize={10.5} fill="var(--text-h)">
+                    <text
+                      x={12}
+                      y={38}
+                      fontSize={10.5}
+                      fill="var(--text-h)"
+                      textDecoration={isNotInterested ? "line-through" : undefined}
+                    >
                       {truncate(n.endpoint.course.title, 25)}
                     </text>
                     <text x={12} y={50} fontSize={9} fill="var(--text)" fontFamily="var(--mono)">
                       {n.endpoint.course.level}
                     </text>
+                    {hasWarning && (
+                      <g transform="translate(6, 6)">
+                        <path
+                          d="M6 0 11 9.5H1z"
+                          fill={prereq?.status === "unmet" ? "#c0392b" : "#d9a441"}
+                        />
+                        <rect x="5.4" y="4.2" width="1.2" height="3" fill="var(--bg)" />
+                        <rect x="5.4" y="7.6" width="1.2" height="1.2" fill="var(--bg)" />
+                      </g>
+                    )}
+                    {isPicked && (
+                      <text x={w - 10} y={16} fontSize={13} fill="var(--accent)" textAnchor="end">
+                        ★
+                      </text>
+                    )}
+                    {isBookmarked && (
+                      <path
+                        d={`M ${w - 20} 0 h 10 a1 1 0 0 1 1 1 v 13 l -6 -3.6 -6 3.6 v -13 a1 1 0 0 1 1 -1 z`}
+                        fill="#d9a441"
+                      />
+                    )}
                   </g>
                 ) : n.endpoint.type === "group" ? (
                   <>
@@ -285,23 +366,56 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
                     {isExpanded && (
                       <>
                         <line x1={0} y1={28} x2={w} y2={28} stroke="var(--border)" strokeWidth={1} />
-                        {n.endpoint.members.map((m, mi) => (
-                          <g
-                            key={m.code}
-                            transform={`translate(0, ${28 + mi * MEMBER_ROW_H})`}
-                            onClick={() => onSelectCode(m.code)}
-                            style={{ cursor: "pointer" }}
-                            className="graph-group-member"
-                          >
-                            <rect width={w} height={MEMBER_ROW_H} fill="transparent" />
-                            <text x={12} y={15} fontSize={9.5} fontFamily="var(--mono)" fontWeight={700} fill="var(--accent)">
-                              {m.code}
-                            </text>
-                            <text x={68} y={15} fontSize={9.5} fill="var(--text-h)">
-                              {truncate(m.title, 18)}
-                            </text>
-                          </g>
-                        ))}
+                        {n.endpoint.members.map((m, mi) => {
+                          const memberPicked = !!pickedCodes?.has(m.code);
+                          const memberPrereq = prereqStatusByCode?.get(m.code);
+                          const memberWarning = memberPrereq && memberPrereq.status !== "ok";
+                          const memberNotInterested = !!notInterestedCodes?.has(m.code);
+                          return (
+                            <g
+                              key={m.code}
+                              transform={`translate(0, ${28 + mi * MEMBER_ROW_H})`}
+                              onClick={() => onSelectCode(m.code)}
+                              style={{ cursor: "pointer" }}
+                              className="graph-group-member"
+                            >
+                              <rect width={w} height={MEMBER_ROW_H} fill="transparent" />
+                              <text
+                                x={12}
+                                y={15}
+                                fontSize={9.5}
+                                fontFamily="var(--mono)"
+                                fontWeight={700}
+                                fill="var(--accent)"
+                                textDecoration={memberNotInterested ? "line-through" : undefined}
+                              >
+                                {m.code}
+                              </text>
+                              <text
+                                x={68}
+                                y={15}
+                                fontSize={9.5}
+                                fill={memberNotInterested ? "var(--text)" : "var(--text-h)"}
+                                textDecoration={memberNotInterested ? "line-through" : undefined}
+                              >
+                                {truncate(m.title, memberPicked || memberWarning ? 14 : 18)}
+                              </text>
+                              {memberWarning && (
+                                <circle
+                                  cx={w - 20}
+                                  cy={11}
+                                  r={3.5}
+                                  fill={memberPrereq?.status === "unmet" ? "#c0392b" : "#d9a441"}
+                                />
+                              )}
+                              {memberPicked && (
+                                <text x={w - 10} y={15} fontSize={11} fill="var(--accent)" textAnchor="end">
+                                  ★
+                                </text>
+                              )}
+                            </g>
+                          );
+                        })}
                       </>
                     )}
                   </>
