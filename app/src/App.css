@@ -218,6 +218,32 @@
   right: 26px;
 }
 
+.chip-not-interested-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--border);
+  padding: 6px 2px;
+  line-height: 1;
+  align-self: center;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.course-chip:hover .chip-not-interested-btn,
+.chip-not-interested-btn.active {
+  opacity: 1;
+}
+
+.chip-not-interested-btn:hover {
+  color: #c0392b;
+}
+
+.chip-not-interested-btn.active {
+  color: #c0392b;
+}
+
 .chip-star-btn {
   border: none;
   background: none;
@@ -668,7 +694,12 @@
 }
 
 .pathway-graph-wrap {
+  position: relative;
+}
+
+.pathway-graph-scroll {
   overflow-x: auto;
+  padding-bottom: 4px;
 }
 
 .pathway-graph {
@@ -688,11 +719,12 @@
 }
 
 .graph-group-popover {
-  margin-top: 10px;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--bg);
-  max-width: 420px;
+  box-shadow: var(--shadow);
+  width: 280px;
+  z-index: 5;
 }
 
 .graph-group-popover-head {
@@ -839,18 +871,20 @@
   border-left: 1px solid var(--border);
   background: none;
   cursor: pointer;
-  color: var(--border);
+  color: var(--text);
+  opacity: 0.55;
   padding: 0 9px;
   display: flex;
   align-items: center;
 }
 
 .scenario-tab-lock:hover {
-  color: var(--text);
+  opacity: 0.85;
 }
 
 .scenario-tab-lock.locked {
   color: var(--text-h);
+  opacity: 1;
 }
 
 .scenario-tab-lock.locked:hover {

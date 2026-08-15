@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { Course } from "../types";
 import type { PathwayLinks } from "../pathways";
 import BookmarkIcon from "./BookmarkIcon";
+import NotInterestedIcon from "./NotInterestedIcon";
 
 interface Props {
   course: Course | null;
@@ -160,7 +161,7 @@ export default function CourseDetail({
             }
             aria-pressed={isNotInterested}
           >
-            ✕
+            <NotInterestedIcon size={17} />
           </button>
         </div>
         <h2>{course.title}</h2>

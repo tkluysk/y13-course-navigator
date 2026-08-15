@@ -12,7 +12,7 @@ OUT_JSON = ROOT / "app" / "src" / "data" / "courses.json"
 FACULTY_RE = re.compile(r"^([A-ZĀĒĪŌŪ][A-ZĀĒĪŌŪ &]+) \| ([A-ZĀĒĪŌŪ \-]+)$")
 LEVEL_PREFIX = (
     r"Y11\s*/\s*Y12\s*/\s*Y13|Y12\s*/\s*Y13|Y11\s*/\s*L2\s*/\s*L3|"
-    r"Pre-NCEA|L2\s*/\s*L3|L[123]\+?"
+    r"Pre-NCEA|L2\s*/\s*L3|L[123]\+?|Y11"
 )
 HEADER_RE = re.compile(
     rf"^(?:{LEVEL_PREFIX})\s*\|\s*([A-Z0-9/*]+)\s*(.*)$"
@@ -63,17 +63,23 @@ CREDIT_COUNT_RE = re.compile(
 # maps to one) rather than a specific course code. Try several orderings
 # and keep the first plausible noun-phrase match; validity against a real
 # faculty/subject is checked by the caller (which has the course list).
+# The prospectus abbreviates "Level 2" as "L2" about as often as it spells
+# it out (e.g. ENC335/ENP335 say "a L2 English course"), so every pattern
+# below matches either form.
+LEVEL2 = r"(?:level\s*2|L2)"
+
 CATEGORY_PATTERNS = [
-    re.compile(r"another\s+(?:level\s*2\s+)?([A-Za-z][A-Za-z ]*?)(?:\s+subject|\s+or\b|,|\.|$)", re.I),
-    # the word(s) immediately after "Level 2" up to the next stop word —
+    re.compile(rf"another\s+(?:{LEVEL2}\s+)?([A-Za-z][A-Za-z ]*?)(?:\s+subject|\s+or\b|,|\.|$)", re.I),
+    # the word(s) immediately after "Level 2"/"L2" up to the next stop word —
     # covers "Level 2 English course", "Level 2 Art 12 credits",
-    # "Level 2 Science credits", "Level 2 Sport Science" etc uniformly.
+    # "Level 2 Science credits", "Level 2 Sport Science", "L2 English course"
+    # etc uniformly.
     re.compile(
-        r"level\s*2\s+(?!or\b)([A-Za-z]+(?:\s+(?!(?:credits?|course|subject|or|and)\b)[A-Za-z]+)?)\s*"
+        rf"{LEVEL2}\s+(?!or\b)([A-Za-z]+(?:\s+(?!(?:credits?|course|subject|or|and)\b)[A-Za-z]+)?)\s*"
         r"(?=\d|credits?\b|course\b|subject\b|or\b|and\b|$|,|\.)",
         re.I,
     ),
-    re.compile(r"credits?\s+(?:at|in|from)\s+level\s*2\s+([A-Za-z][A-Za-z]*)", re.I),
+    re.compile(rf"credits?\s+(?:at|in|from)\s+{LEVEL2}\s+([A-Za-z][A-Za-z]*)", re.I),
     re.compile(r"\d+\s+credits?\s+(?:at|in|from)\s+([A-Za-z][A-Za-z]*)\s*(?:or\b|,|\.|$)", re.I),
 ]
 STOPWORD_CATEGORIES = {"or", "in", "at", "from", "external", "and", "any"}
@@ -305,7 +311,14 @@ def main():
                 pathway_start = j
             if components_start is None and re.match(r"^Course components?$", s):
                 components_start = j
-            if metrics_start is None and re.match(r"^[\d]+\s+[\d]+\s+\$", s):
+            # Usually "<external> <internal> $..." but a course with only
+            # one credit type (e.g. MUS223, internal-only) prints just
+            # "<credits> $..."; MAT223 uses "TBC" in place of one of the two
+            # numbers ("12 TBC $10"); EPB223 gives credit ranges ("4-8 12-16
+            # $ TBC"). Match any of these so the ENTRY block still gets
+            # picked up regardless.
+            CREDIT_TOKEN = r"(?:\d+(?:-\d+)?|TBC)"
+            if metrics_start is None and re.match(rf"^{CREDIT_TOKEN}\s+(?:{CREDIT_TOKEN}\s+)?\$", s):
                 metrics_start = j
                 break
 
@@ -378,6 +391,14 @@ def main():
             if nums:
                 external_credits = int(nums.group(1))
                 internal_credits = int(nums.group(2))
+            # else: single-credit-type course (e.g. MUS223): "<credits> $...".
+            # The two-column layout means both "EXTERNAL" and "INTERNAL"
+            # labels can appear nearby regardless of which one the number
+            # actually belongs to, so which credit type it is can't be
+            # determined reliably from text alone — leave both null rather
+            # than risk mislabelling. Not load-bearing: the pathway graph
+            # and entry-requirement logic don't use these two fields, only
+            # metrics_raw/entry_text, both still extracted correctly.
             donation_amount_m = re.search(r"\$\s*([\d,]+|TBC)", first)
             donation_amount = donation_amount_m.group(0).replace(" ", "") if donation_amount_m else None
 
@@ -385,6 +406,23 @@ def main():
             # window (not capped for display), stopping at the next ALL-CAPS
             # section/course header or a glued page-number tail.
             full_text = " ".join(l.strip() for l in candidate if l.strip())
+
+            # PDF-layout quirk: SOC223's raw text has an unrelated sidebar
+            # note about Tourism Māori ("For Year 12 students... speak to
+            # Megan Southwell.") sitting between its real ENTRY text
+            # ("Literacy corequisite") and the next section heading — almost
+            # certainly a page callout box that pdftotext linearised into
+            # the wrong position. Strip it out rather than let it pollute
+            # entry_text; not a general pattern, just this one known case.
+            full_text = re.sub(
+                r"For Year 12 students,.*?speak to Megan Southwell\.\s*",
+                "",
+                full_text,
+            )
+            # the removed aside was itself followed by a bare "Level 2"/
+            # "Level 3" section-heading line that pdftotext had run on
+            # directly after it — drop that orphaned trailing fragment too.
+            full_text = re.sub(r"\s+Level\s*[23]?$", "", full_text)
 
             def _clean_tail(text: str) -> str:
                 text = re.split(
@@ -402,9 +440,29 @@ def main():
                     text = re.sub(r"(?<=[a-zA-Z.,)])\s?\d{1,3}$", "", text).strip()
                 return text
 
+            # Detect a "bare page number" ENTRY block at the line level,
+            # before flattening to full_text: some courses' raw text has a
+            # line that is literally just "ENTRY" followed by a line that
+            # is literally just the page number (e.g. ENR223: "ENTRY" /
+            # "24", ENS223: "ENTRY" / "25") — i.e. no entry text was stated
+            # at all, just the page footer digit landing right after the
+            # label. This must be checked on the original lines: once
+            # joined into full_text, "12 Level 2 Science credits..." (a
+            # perfectly normal entry starting with a number) would be
+            # indistinguishable from "24" followed by an unrelated
+            # paragraph if matched by content shape alone.
+            entry_is_bare_page_number = False
+            for j, l in enumerate(candidate):
+                if l.strip() == "ENTRY":
+                    nxt = candidate[j + 1].strip() if j + 1 < len(candidate) else ""
+                    if re.match(r"^\d{1,3}$", nxt):
+                        entry_is_bare_page_number = True
+                    break
+
             entry_idx = full_text.find("ENTRY")
             if entry_idx != -1:
-                entry_text = _clean_tail(full_text[entry_idx + len("ENTRY") :])
+                entry_tail = full_text[entry_idx + len("ENTRY") :].lstrip()
+                entry_text = "" if entry_is_bare_page_number else _clean_tail(entry_tail)
 
             donation_idx = full_text.find("DONATION")
             if donation_idx != -1:

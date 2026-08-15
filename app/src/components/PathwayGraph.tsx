@@ -17,6 +17,7 @@ const ROW_GAP = 16;
 const PAD = 24;
 const CHARS_PER_LINE = 34;
 const LINE_HEIGHT = 13;
+const POPOVER_W = 280;
 
 function truncate(s: string, n: number) {
   return s.length > n ? s.slice(0, n - 1) + "…" : s;
@@ -118,9 +119,12 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
     (n) => n.endpoint.type === "group" && n.endpoint.id === expandedGroup
   );
   const expandedGroupData = expandedNode?.endpoint.type === "group" ? expandedNode.endpoint : null;
+  const expandedGroupPos = expandedNode ? positions.get(endpointKey(expandedNode.endpoint)) : null;
+  const expandedGroupHeight = expandedNode ? nodeHeight(expandedNode.endpoint) : 0;
 
   return (
     <div className="pathway-graph-wrap">
+      <div className="pathway-graph-scroll">
       <svg
         className="pathway-graph"
         viewBox={`0 0 ${width} ${height}`}
@@ -292,8 +296,18 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
           );
         })}
       </svg>
-      {expandedGroupData && (
-        <div className="graph-group-popover">
+      </div>
+      {expandedGroupData && expandedGroupPos && (
+        <div
+          className="graph-group-popover"
+          style={{
+            position: "absolute",
+            ...(expandedGroupPos.x + POPOVER_W > width
+              ? { right: Math.max(PAD, width - expandedGroupPos.x - nodeWidth(expandedNode!.endpoint)) }
+              : { left: expandedGroupPos.x }),
+            top: expandedGroupPos.y + expandedGroupHeight + 8,
+          }}
+        >
           <div className="graph-group-popover-head">
             <strong>{expandedGroupData.label}</strong>
             <button type="button" onClick={() => setExpandedGroup(null)}>

@@ -1,5 +1,6 @@
 import type { Course, LineDefinition } from "../types";
 import BookmarkIcon from "./BookmarkIcon";
+import NotInterestedIcon from "./NotInterestedIcon";
 
 interface Props {
   lines: LineDefinition[];
@@ -12,6 +13,7 @@ interface Props {
   onTogglePick?: (line: number, code: string) => void;
   bookmarks?: Set<string>;
   notInterested?: Set<string>;
+  onToggleNotInterested?: (code: string) => void;
   hint?: string;
 }
 
@@ -31,6 +33,7 @@ export default function LinesTable({
   onTogglePick,
   bookmarks,
   notInterested,
+  onToggleNotInterested,
   hint,
 }: Props) {
   const maxRows = Math.max(...lines.map((l) => l.codes.length));
@@ -108,6 +111,21 @@ export default function LinesTable({
                         </button>
                         {isBookmarked && (
                           <BookmarkIcon filled size={11} className="chip-bookmark" />
+                        )}
+                        {course && (
+                          <button
+                            type="button"
+                            className={"chip-not-interested-btn" + (isNotInterested ? " active" : "")}
+                            onClick={() => onToggleNotInterested?.(code)}
+                            title={
+                              isNotInterested
+                                ? "Mark as interested again"
+                                : "Mark as not interested"
+                            }
+                            aria-pressed={isNotInterested}
+                          >
+                            <NotInterestedIcon size={12} />
+                          </button>
                         )}
                         {editable ? (
                           <button

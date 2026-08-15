@@ -196,6 +196,7 @@ function App() {
                 onTogglePick={y13.togglePick}
                 bookmarks={bookmarkSet}
                 notInterested={notInterestedSet}
+                onToggleNotInterested={toggleNotInterested}
               />
             </>
           )}
@@ -222,6 +223,7 @@ function App() {
                 onTogglePick={y12.togglePick}
                 bookmarks={bookmarkSet}
                 notInterested={notInterestedSet}
+                onToggleNotInterested={toggleNotInterested}
               />
             </>
           )}
