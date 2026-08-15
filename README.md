@@ -24,6 +24,41 @@ Live at: https://tkluysk.github.io/y13-course-navigator/
 - **Browse all courses** — full-text search across every course in the
   prospectus, with faculty/level filters.
 
+## Source & errata
+
+Source document: [Senior Course Choices 2027 v5](https://www.whs.school.nz/wp-content/uploads/Senior-Course-Choices-2027-v5.pdf)
+(Wellington High School), mirrored in `docs/`.
+
+A few inconsistencies turned up in the PDF itself while building the
+parser, worth flagging back to whoever maintains the prospectus:
+
+1. **MEG335's entry requirement cites a non-existent code.** It reads "At
+   least 12 credits at Level 2 in **MEG222**" — but the actual Level 2
+   Mechanical Engineering course in the same prospectus is **MEG223**.
+   `MEG222` doesn't appear anywhere else in the document; looks like a typo.
+2. **The Social Sciences faculty header uses a non-standard separator.**
+   "SOCIAL SCIENCES | TIKANGA-Ā-IWI" is the only faculty heading whose Māori
+   name contains hyphens; every other faculty heading uses single words or
+   spaces only. Not an error exactly, just inconsistent formatting versus
+   the other 7 faculty headings.
+3. **Combined/dual codes lack a consistent notation.** `ODE223/ODI223*`
+   (Outdoor Education, with the international-student variant) is the only
+   course using a slash-combined code with a footnote asterisk; every other
+   course in the prospectus uses a single clean code.
+4. **Sonic Arts (SON223/SON334) is printed twice**, near-verbatim (only
+   trivial wording differences — "also provides" vs "provides"), once
+   under Arts and once under Technology, rather than being cross-referenced
+   from one canonical listing.
+5. **Inconsistent entry-requirement phrasing for "same subject" credits** —
+   sometimes naming the exact code (e.g. "CHI223 and Head of Department
+   approval"), sometimes a general category ("12 Level 2 Science credits"),
+   and sometimes neither despite an obvious Level 2 sibling existing.
+   **FIN330** never mentions FIN223 or any credit category at all, just
+   "Literacy and Numeracy CAAs" — flagged in the app as an unstated
+   prerequisite gap. May be intentional, but worth confirming with the
+   Maths faculty since every comparable course states its entry
+   requirement explicitly.
+
 ## Project layout
 
 - `docs/` — the source prospectus PDF.
