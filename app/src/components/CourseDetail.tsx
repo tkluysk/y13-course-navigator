@@ -1,15 +1,22 @@
 import type { ReactNode } from "react";
 import type { Course } from "../types";
+import type { PathwayLinks } from "../pathways";
 
 interface Props {
   course: Course | null;
   courseByCode: Map<string, Course>;
   unresolvedCode?: string | null;
+  links?: PathwayLinks | null;
+  onSelectCode?: (code: string) => void;
 }
 
 const CODE_RE = /\b[A-Z]{2,4}\d{3}(?:\/[A-Z]{2,4}\d{3}\*?)?\b/g;
 
-function linkifyCodes(text: string, courseByCode: Map<string, Course>) {
+function linkifyCodes(
+  text: string,
+  courseByCode: Map<string, Course>,
+  onSelectCode?: (code: string) => void
+) {
   const parts: ReactNode[] = [];
   let lastIndex = 0;
   let match: RegExpExecArray | null;
@@ -20,9 +27,14 @@ function linkifyCodes(text: string, courseByCode: Map<string, Course>) {
     if (known) {
       parts.push(text.slice(lastIndex, match.index));
       parts.push(
-        <span className="code-ref" key={match.index}>
+        <button
+          type="button"
+          className="code-ref"
+          key={match.index}
+          onClick={() => onSelectCode?.(code)}
+        >
           {match[0]}
-        </span>
+        </button>
       );
       lastIndex = match.index + match[0].length;
     }
@@ -31,15 +43,48 @@ function linkifyCodes(text: string, courseByCode: Map<string, Course>) {
   return parts;
 }
 
-export default function CourseDetail({ course, courseByCode, unresolvedCode }: Props) {
+function CourseChipList({
+  courses,
+  onSelectCode,
+}: {
+  courses: Course[];
+  onSelectCode?: (code: string) => void;
+}) {
+  return (
+    <ul className="link-list">
+      {courses.map((c) => (
+        <li key={c.code}>
+          <button
+            type="button"
+            className="link-chip"
+            onClick={() => onSelectCode?.(c.code)}
+          >
+            <span className="link-chip-code">{c.code}</span>
+            <span className="link-chip-title">{c.title}</span>
+            <span className="link-chip-level">{c.level}</span>
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default function CourseDetail({
+  course,
+  courseByCode,
+  unresolvedCode,
+  links,
+  onSelectCode,
+}: Props) {
   if (!course) {
     return (
       <div className="detail empty-state">
         {unresolvedCode ? (
           <p>
             <strong>{unresolvedCode}</strong> is a timetable-line placeholder
-            (e.g. STAR/Gateway) not described in the course prospectus —
-            check with the Pathways team for details.
+            (e.g. STAR, Gateway, or a Learning Services umbrella code) not
+            individually described in the course prospectus — check with
+            the relevant faculty or Pathways team for details.
           </p>
         ) : (
           <p>Select a course to see its full summary.</p>
@@ -67,6 +112,13 @@ export default function CourseDetail({ course, courseByCode, unresolvedCode }: P
         )}
       </div>
 
+      {links && links.upstream.length > 0 && (
+        <section>
+          <h3>Leads in from (prior-year courses)</h3>
+          <CourseChipList courses={links.upstream} onSelectCode={onSelectCode} />
+        </section>
+      )}
+
       {course.description && (
         <section>
           <p className="detail-description">{course.description}</p>
@@ -76,7 +128,14 @@ export default function CourseDetail({ course, courseByCode, unresolvedCode }: P
       {course.pathway && (
         <section>
           <h3>Pathway</h3>
-          <p>{linkifyCodes(course.pathway, courseByCode)}</p>
+          <p>{linkifyCodes(course.pathway, courseByCode, onSelectCode)}</p>
+        </section>
+      )}
+
+      {links && links.downstream.length > 0 && (
+        <section>
+          <h3>Leads on to</h3>
+          <CourseChipList courses={links.downstream} onSelectCode={onSelectCode} />
         </section>
       )}
 

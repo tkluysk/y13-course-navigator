@@ -164,12 +164,23 @@ def main():
                 components[-1] = re.sub(r"(\.)(\d{1,3})$", r"\1", components[-1])
 
         # Metrics: first numeric line has external/internal credits + donation cue.
+        # The footer block is short (credits/donation/entry labels); cap its
+        # length and stop early if we hit what looks like unrelated prose
+        # (e.g. a following section's intro paragraph bleeding in from a
+        # neighbouring column) so metrics_raw doesn't run away.
         external_credits = None
         internal_credits = None
         metrics_raw = ""
         if metrics_start is not None:
-            metrics_lines = rest[metrics_start:end_of_text] if False else rest[metrics_start:]
-            # limit metrics block to a reasonable window (until next course found via header anyway)
+            candidate = rest[metrics_start:]
+            metrics_lines = []
+            for j, l in enumerate(candidate):
+                s = l.strip()
+                if j > 0 and j >= 20:
+                    break
+                if j > 0 and re.match(r"^(L[123]\+?|Y1\d|Pre-NCEA)\s*[/|]", s):
+                    break
+                metrics_lines.append(l)
             metrics_raw = " ".join(l.strip() for l in metrics_lines if l.strip())
             first = rest[metrics_start].strip()
             nums = re.match(r"^(\d+)\s+(\d+)\s+\$", first)

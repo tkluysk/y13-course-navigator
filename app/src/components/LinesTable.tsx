@@ -71,13 +71,13 @@ export default function LinesTable({
                           (isPick ? " current-pick" : "")
                         }
                         onClick={() => onSelect(code)}
-                        title={course?.title ?? "STAR / placeholder slot — not in prospectus"}
+                        title={course?.title ?? "Placeholder slot — not in prospectus"}
                       >
                         <span className="chip-code">{code}</span>
                         {course ? (
                           <span className="chip-title">{course.title}</span>
                         ) : (
-                          <span className="chip-title">STAR / other (see school)</span>
+                          <span className="chip-title">Other (see school)</span>
                         )}
                         {isPick && <span className="pick-star">★</span>}
                       </button>
