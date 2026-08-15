@@ -718,59 +718,8 @@
   stroke: var(--border);
 }
 
-.graph-group-popover {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--bg);
-  box-shadow: var(--shadow);
-  width: 280px;
-  z-index: 5;
-}
-
-.graph-group-popover-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--border);
-  font-size: 12.5px;
-}
-
-.graph-group-popover-head button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: var(--text);
-  font-size: 15px;
-  line-height: 1;
-  padding: 2px 4px;
-}
-
-.graph-group-popover ul {
-  list-style: none;
-  margin: 0;
-  padding: 6px;
-  max-height: 220px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.graph-group-popover li button {
-  width: 100%;
-  text-align: left;
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 6px 8px;
-  border-radius: 6px;
-  font-size: 12.5px;
-  color: var(--text-h);
-}
-
-.graph-group-popover li button:hover {
-  background: var(--bg-alt);
+.graph-group-member:hover rect {
+  fill: var(--bg-alt);
 }
 
 .graph-legend {
