@@ -1,16 +1,16 @@
 import { useMemo, useState } from "react";
 import coursesData from "./data/courses.json";
-import {
-  LINES,
-  CURRENT_PICKS,
-  LINES_Y12,
-  CURRENT_PICKS_Y12,
-} from "./data/lines";
+import { LINES, LINES_Y12, CURRENT_PICKS_Y12 } from "./data/lines";
 import type { Course } from "./types";
-import { buildPathwayIndex } from "./pathways";
+import { buildPathwayIndex, buildCourseGraph } from "./pathways";
+import { useLocalStorage } from "./useLocalStorage";
+import { makeDefaultScenario, newScenarioId, type Scenario } from "./scenarios";
 import LinesTable from "./components/LinesTable";
 import CourseBrowser from "./components/CourseBrowser";
 import CourseDetail from "./components/CourseDetail";
+import ScenarioBar from "./components/ScenarioBar";
+import BookmarksBar from "./components/BookmarksBar";
+import PathwayGraphPanel from "./components/PathwayGraphPanel";
 import "./App.css";
 
 const courses = coursesData as Course[];
@@ -18,8 +18,17 @@ const courses = coursesData as Course[];
 type View = "lines13" | "lines12" | "browse";
 
 function App() {
+  const [scenarios, setScenarios] = useLocalStorage<Scenario[]>("y13nav.scenarios", [
+    makeDefaultScenario(),
+  ]);
+  const [activeScenarioId, setActiveScenarioId] = useLocalStorage<string>(
+    "y13nav.activeScenario",
+    scenarios[0]?.id ?? "actual"
+  );
+  const [bookmarks, setBookmarks] = useLocalStorage<string[]>("y13nav.bookmarks", []);
+
   const [selectedCode, setSelectedCode] = useState<string | null>(
-    CURRENT_PICKS[1] ?? null
+    scenarios[0]?.picks[1] ?? null
   );
   const [view, setView] = useState<View>("lines13");
 
@@ -33,6 +42,70 @@ function App() {
 
   const selectedCourse = selectedCode ? courseByCode.get(selectedCode) ?? null : null;
   const selectedLinks = selectedCode ? pathwayIndex.get(selectedCode) ?? null : null;
+  const selectedGraph = useMemo(
+    () => (selectedCode ? buildCourseGraph(selectedCode, courseByCode, pathwayIndex) : null),
+    [selectedCode, courseByCode, pathwayIndex]
+  );
+
+  const activeScenario =
+    scenarios.find((s) => s.id === activeScenarioId) ?? scenarios[0];
+
+  const bookmarkSet = useMemo(() => new Set(bookmarks), [bookmarks]);
+
+  const toggleBookmark = (code: string) => {
+    setBookmarks((prev) =>
+      prev.includes(code) ? prev.filter((c) => c !== code) : [...prev, code]
+    );
+  };
+
+  const togglePick = (line: number, code: string) => {
+    setScenarios((prev) =>
+      prev.map((s) =>
+        s.id !== activeScenario.id
+          ? s
+          : {
+              ...s,
+              picks: {
+                ...s.picks,
+                [line]: s.picks[line] === code ? null : code,
+              },
+            }
+      )
+    );
+  };
+
+  const createScenario = (name: string) => {
+    const s: Scenario = { id: newScenarioId(), name, picks: {} };
+    setScenarios((prev) => [...prev, s]);
+    setActiveScenarioId(s.id);
+  };
+
+  const duplicateScenario = (id: string) => {
+    const source = scenarios.find((s) => s.id === id);
+    if (!source) return;
+    const s: Scenario = {
+      id: newScenarioId(),
+      name: `${source.name} copy`,
+      picks: { ...source.picks },
+    };
+    setScenarios((prev) => [...prev, s]);
+    setActiveScenarioId(s.id);
+  };
+
+  const renameScenario = (id: string, name: string) => {
+    setScenarios((prev) => prev.map((s) => (s.id === id ? { ...s, name } : s)));
+  };
+
+  const deleteScenario = (id: string) => {
+    setScenarios((prev) => {
+      const next = prev.filter((s) => s.id !== id);
+      return next.length > 0 ? next : [makeDefaultScenario()];
+    });
+    if (activeScenarioId === id) {
+      const remaining = scenarios.filter((s) => s.id !== id);
+      setActiveScenarioId(remaining[0]?.id ?? "actual");
+    }
+  };
 
   return (
     <div className="app-shell">
@@ -65,16 +138,45 @@ function App() {
         </nav>
       </header>
 
+      <BookmarksBar
+        bookmarks={bookmarks}
+        courseByCode={courseByCode}
+        onSelect={setSelectedCode}
+        onRemove={toggleBookmark}
+      />
+
+      {view !== "browse" && (
+        <PathwayGraphPanel
+          graph={selectedGraph}
+          centerCode={selectedCode}
+          onSelectCode={setSelectedCode}
+        />
+      )}
+
       <main className="app-main">
         <div className="panel-left">
           {view === "lines13" && (
-            <LinesTable
-              lines={LINES}
-              courseByCode={courseByCode}
-              selectedCode={selectedCode}
-              onSelect={setSelectedCode}
-              currentPicks={CURRENT_PICKS}
-            />
+            <>
+              <ScenarioBar
+                scenarios={scenarios}
+                activeId={activeScenario.id}
+                onSwitch={setActiveScenarioId}
+                onCreate={createScenario}
+                onRename={renameScenario}
+                onDelete={deleteScenario}
+                onDuplicate={duplicateScenario}
+              />
+              <LinesTable
+                lines={LINES}
+                courseByCode={courseByCode}
+                selectedCode={selectedCode}
+                onSelect={setSelectedCode}
+                currentPicks={activeScenario.picks}
+                editable
+                onTogglePick={togglePick}
+                bookmarks={bookmarkSet}
+              />
+            </>
           )}
           {view === "lines12" && (
             <LinesTable
@@ -83,6 +185,8 @@ function App() {
               selectedCode={selectedCode}
               onSelect={setSelectedCode}
               currentPicks={CURRENT_PICKS_Y12}
+              bookmarks={bookmarkSet}
+              hint="Her Y12 (2026) picks, for reference — read-only."
             />
           )}
           {view === "browse" && (
@@ -100,6 +204,8 @@ function App() {
             unresolvedCode={!selectedCourse ? selectedCode : null}
             links={selectedLinks}
             onSelectCode={setSelectedCode}
+            isBookmarked={selectedCode ? bookmarkSet.has(selectedCode) : false}
+            onToggleBookmark={toggleBookmark}
           />
         </div>
       </main>

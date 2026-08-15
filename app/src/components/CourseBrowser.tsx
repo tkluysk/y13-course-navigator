@@ -27,7 +27,9 @@ export default function CourseBrowser({ courses, selectedCode, onSelect }: Props
     const q = query.trim().toLowerCase();
     return courses.filter((c) => {
       if (facultyFilter !== "all" && c.faculty !== facultyFilter) return false;
-      if (levelFilter !== "all" && c.level !== levelFilter) return false;
+      // A search query narrows results enough on its own — don't also let
+      // the level filter silently hide matches like DTE355 (level "L3+").
+      if (!q && levelFilter !== "all" && c.level !== levelFilter) return false;
       if (!q) return true;
       return (
         c.code.toLowerCase().includes(q) ||

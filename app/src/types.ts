@@ -11,7 +11,13 @@ export interface Course {
   external_credits: number | null;
   internal_credits: number | null;
   metrics_raw: string;
+  entry_text: string;
+  donation_text: string;
+  donation_amount: string | null;
   also_listed_under: string[];
+  required_credits: number | null;
+  explicit_prerequisites: string[];
+  implied_prerequisite: string | null;
 }
 
 export interface LineDefinition {

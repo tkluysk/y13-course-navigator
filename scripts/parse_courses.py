@@ -46,6 +46,77 @@ def extract_level(header_prefix: str) -> str:
     return header_prefix
 
 
+CODE_IN_TEXT_RE = re.compile(r"\b([A-Z]{2,4}\d{3})\b")
+CREDIT_COUNT_RE = re.compile(
+    r"(?:minimum\s+)?(\d+)(?:-\d+)?\s*(?:\+)?\s*credits?", re.I
+)
+LEVEL2_CATEGORY_RE = re.compile(r"level\s*2|\bL2\b", re.I)
+
+
+def subject_prefix(code: str) -> str:
+    """Alphabetic prefix of a course code, e.g. 'CHE335' -> 'CHE'."""
+    m = re.match(r"^([A-Z]+)", code)
+    return m.group(1) if m else code
+
+
+def annotate_entry_requirements(courses: list) -> None:
+    """Parse each L3(+) course's entry_text into structured prerequisite
+    info: explicit Y12 codes named, a minimum credit count if stated, and
+    whether a same-subject Y12 course exists in the prospectus that ISN'T
+    named in the entry text (e.g. FIN330 vs FIN223) — a "prerequisite gap"
+    worth flagging, since a family reading only the pathway/entry text could
+    otherwise miss that a lower-level equivalent exists.
+    """
+    by_code = {c["code"]: c for c in courses}
+    # Map every bare sub-code (e.g. "ODE223", "ODI223") found inside a
+    # combined stored code (e.g. "ODE223/ODI223*") back to that stored code,
+    # so text mentions of the bare form still resolve to the right course.
+    subcode_to_stored: dict[str, str] = {}
+    for c in courses:
+        for sub in CODE_IN_TEXT_RE.findall(c["code"]):
+            subcode_to_stored[sub] = c["code"]
+
+    l2_by_subject: dict[str, str] = {}
+    for c in courses:
+        if c["level"] == "L2":
+            l2_by_subject.setdefault(subject_prefix(c["code"]), c["code"])
+
+    for c in courses:
+        if c["level"] not in ("L3", "L3+"):
+            c["required_credits"] = None
+            c["explicit_prerequisites"] = []
+            c["implied_prerequisite"] = None
+            continue
+
+        entry = c["entry_text"]
+        explicit_codes = sorted(
+            {
+                subcode_to_stored[code]
+                for code in CODE_IN_TEXT_RE.findall(entry)
+                if code in subcode_to_stored and subcode_to_stored[code] != c["code"]
+            }
+        )
+
+        credit_match = CREDIT_COUNT_RE.search(entry)
+        required_credits = int(credit_match.group(1)) if credit_match else None
+
+        # Does a same-subject Y12 course exist that ISN'T named, and the
+        # entry text also doesn't reference the subject by a general
+        # "Level 2 <category>" credits phrase (a legitimate looser
+        # pathway, e.g. BIO335 accepting "Level 2 Science credits")?
+        implied_prerequisite = None
+        subj = subject_prefix(c["code"])
+        l2_sibling = l2_by_subject.get(subj)
+        if l2_sibling and l2_sibling not in explicit_codes:
+            mentions_category = bool(LEVEL2_CATEGORY_RE.search(entry))
+            if not mentions_category:
+                implied_prerequisite = l2_sibling
+
+        c["required_credits"] = required_credits
+        c["explicit_prerequisites"] = explicit_codes
+        c["implied_prerequisite"] = implied_prerequisite
+
+
 def main():
     lines = RAW_TXT.read_text(encoding="utf-8").splitlines()
 
@@ -171,22 +242,67 @@ def main():
         external_credits = None
         internal_credits = None
         metrics_raw = ""
+        entry_text = ""
+        donation_text = ""
+        donation_amount = None
         if metrics_start is not None:
             candidate = rest[metrics_start:]
             metrics_lines = []
+            cutoff_j = None
             for j, l in enumerate(candidate):
                 s = l.strip()
-                if j > 0 and j >= 20:
-                    break
                 if j > 0 and re.match(r"^(L[123]\+?|Y1\d|Pre-NCEA)\s*[/|]", s):
+                    cutoff_j = j
                     break
+                if j > 0 and j >= 20 and cutoff_j is None:
+                    cutoff_j = j
                 metrics_lines.append(l)
-            metrics_raw = " ".join(l.strip() for l in metrics_lines if l.strip())
+                if j >= 30:
+                    break
+            metrics_raw = " ".join(
+                l.strip() for l in metrics_lines[: cutoff_j or len(metrics_lines)] if l.strip()
+            )
             first = rest[metrics_start].strip()
             nums = re.match(r"^(\d+)\s+(\d+)\s+\$", first)
             if nums:
                 external_credits = int(nums.group(1))
                 internal_credits = int(nums.group(2))
+            donation_amount_m = re.search(r"\$\s*([\d,]+|TBC)", first)
+            donation_amount = donation_amount_m.group(0).replace(" ", "") if donation_amount_m else None
+
+            # Separately, extract ENTRY/DONATION text with a more generous
+            # window (not capped for display), stopping at the next ALL-CAPS
+            # section/course header or a glued page-number tail.
+            full_text = " ".join(l.strip() for l in candidate if l.strip())
+
+            def _clean_tail(text: str) -> str:
+                text = re.split(
+                    r"\s+(?=[A-Z][A-Z ]{6,}\|)", text, maxsplit=1
+                )[0].strip()
+                # strip a trailing page number, glued or space-separated, e.g.
+                # "...approval42", "...(internal) 40", or a course code with
+                # the page number glued straight on ("GDD22358" -> "GDD223").
+                # Do this BEFORE the generic digit-tail strip below, and never
+                # strip a bare trailing course code's own 3 digits ("DVC223").
+                text = re.sub(r"([A-Z]{2,4}\d{3})\d{1,2}$", r"\1", text)
+                # trailing "<course code> <page number>" -> drop the number
+                text = re.sub(r"([A-Z]{2,4}\d{3})\s+\d{1,2}$", r"\1", text)
+                if not re.search(r"[A-Z]{2,4}\d{3}$", text):
+                    text = re.sub(r"(?<=[a-zA-Z.,)])\s?\d{1,3}$", "", text).strip()
+                return text
+
+            entry_idx = full_text.find("ENTRY")
+            if entry_idx != -1:
+                entry_text = _clean_tail(full_text[entry_idx + len("ENTRY") :])
+
+            donation_idx = full_text.find("DONATION")
+            if donation_idx != -1:
+                donation_end = entry_idx if entry_idx > donation_idx else len(full_text)
+                donation_text = _clean_tail(
+                    full_text[donation_idx + len("DONATION") : donation_end]
+                )
+            else:
+                donation_text = ""
 
         ue = "UE" in flags
         schol = "SCHOL" in flags
@@ -205,6 +321,9 @@ def main():
                 "external_credits": external_credits,
                 "internal_credits": internal_credits,
                 "metrics_raw": metrics_raw.strip(),
+                "entry_text": entry_text.strip(),
+                "donation_text": donation_text.strip(),
+                "donation_amount": donation_amount,
             }
         )
 
@@ -225,6 +344,8 @@ def main():
         c["also_listed_under"] = []
         deduped[c["code"]] = c
     courses = list(deduped.values())
+
+    annotate_entry_requirements(courses)
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(courses, ensure_ascii=False, indent=2), encoding="utf-8")

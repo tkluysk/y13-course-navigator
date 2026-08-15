@@ -16,7 +16,13 @@
     "external_credits": null,
     "internal_credits": null,
     "metrics_raw": "",
-    "also_listed_under": []
+    "entry_text": "",
+    "donation_text": "",
+    "donation_amount": null,
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "NUM000",
@@ -33,7 +39,13 @@
     "external_credits": null,
     "internal_credits": null,
     "metrics_raw": "",
-    "also_listed_under": []
+    "entry_text": "",
+    "donation_text": "",
+    "donation_amount": null,
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PER000",
@@ -54,7 +66,13 @@
     "external_credits": 0,
     "internal_credits": 10,
     "metrics_raw": "0 10 $45 � � EXTERNAL CREDITS INTERNAL CREDITS By arrangement only for Year 12 and 13 DONATION To cover visiting instructors ENTRY Open",
-    "also_listed_under": []
+    "entry_text": "Open Y11 |TOI002 TOI MĀORI Te Ao Tawhito – Mana Tūpuna Students will develop their understanding and knowledge of the history and whakapapa practice of Toi Māori in Aotearoa. Students will base their work and research on their own whakapapa, wharenui, iwi and hapū art traditions. Tauira will develop their skills using drawing, painting and carving. Non-Māori students will study local iwi and hapū Toi traditions. Pathway: This course prepares you for Senior Level Toi Māori and other Art courses. Course components • Intro to Toi Māori o Toi Tūturu (customary art) o Toi Rereke (contemporary art) o Toi Whakawhiti (trans-customary art) • Research iwi and hapū art traditions • Develop skills in identifying and understanding Toi Māori • Create poupou for Taraika (carved panel for school Wharenui) • Study ngā Ringa Toi. 5 $40 � � INTERNAL CREDITS DONATION Plus Art pack ($65). ENTRY Open 17 Level 2 Level 2 Visual Arts students have the option of choosing up to two visual arts courses.",
+    "donation_text": "To cover visiting instructors",
+    "donation_amount": "$45",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "DES223",
@@ -73,7 +91,13 @@
     "external_credits": 12,
     "internal_credits": 8,
     "metrics_raw": "12 8 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS DONATION Plus a self- supplied Art pack ($45) ENTRY Recommended previous experience in Year 11 Art",
-    "also_listed_under": []
+    "entry_text": "Recommended previous experience in Year 11 Art",
+    "donation_text": "Plus a self- supplied Art pack ($45)",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "DRA223",
@@ -92,7 +116,13 @@
     "external_credits": 0,
     "internal_credits": 14,
     "metrics_raw": "0 14 $65 � � EXTERNAL CREDITS INTERNAL CREDITS Literacy credits offered DONATION For theatre visits ENTRY Open",
-    "also_listed_under": []
+    "entry_text": "Open",
+    "donation_text": "For theatre visits",
+    "donation_amount": "$65",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "MUS223",
@@ -112,7 +142,13 @@
     "external_credits": null,
     "internal_credits": null,
     "metrics_raw": "",
-    "also_listed_under": []
+    "entry_text": "",
+    "donation_text": "",
+    "donation_amount": null,
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "MST223",
@@ -133,7 +169,13 @@
     "external_credits": 8,
     "internal_credits": 12,
     "metrics_raw": "8 12 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY Some knowledge of music theory or a strong desire to upskill in this area. 18",
-    "also_listed_under": []
+    "entry_text": "Some knowledge of music theory or a strong desire to upskill in this area.",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "APT223",
@@ -152,7 +194,13 @@
     "external_credits": 12,
     "internal_credits": 8,
     "metrics_raw": "12 8 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS DONATION Plus Art pack ($65). ENTRY Recommended previous experience in Year 11 Art",
-    "also_listed_under": []
+    "entry_text": "Recommended previous experience in Year 11 Art",
+    "donation_text": "Plus Art pack ($65).",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PHO223",
@@ -171,7 +219,13 @@
     "external_credits": 12,
     "internal_credits": 8,
     "metrics_raw": "12 8 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS DONATION Plus Art pack ($35) ENTRY Recommended previous experience in Year 11 Art",
-    "also_listed_under": []
+    "entry_text": "Recommended previous experience in Year 11 Art",
+    "donation_text": "Plus Art pack ($35)",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "APR223",
@@ -191,7 +245,13 @@
     "external_credits": 12,
     "internal_credits": 8,
     "metrics_raw": "12 8 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Plus a self- supplied Art pack ($60) ENTRY Recommended previous experience in Year 11 Art 19",
-    "also_listed_under": []
+    "entry_text": "Recommended previous experience in Year 11 Art",
+    "donation_text": "Plus a self- supplied Art pack ($60)",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ASC223",
@@ -210,7 +270,13 @@
     "external_credits": 12,
     "internal_credits": 8,
     "metrics_raw": "12 8 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS DONATION Plus a self- supplied Art pack ($50) ENTRY Recommended previous experience in Year 11 Art",
-    "also_listed_under": []
+    "entry_text": "Recommended previous experience in Year 11 Art",
+    "donation_text": "Plus a self- supplied Art pack ($50)",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "SON223",
@@ -231,9 +297,15 @@
     "external_credits": 0,
     "internal_credits": 17,
     "metrics_raw": "0 17 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Open",
+    "entry_text": "Open",
+    "donation_text": "",
+    "donation_amount": "$0",
     "also_listed_under": [
       "TECHNOLOGY"
-    ]
+    ],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "TOI003",
@@ -256,7 +328,13 @@
     "external_credits": 0,
     "internal_credits": 20,
     "metrics_raw": "0 20 $40 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION Plus Art pack ($65) ENTRY Open 20 Level 3 Level 3 Visual Arts students can choose up to two visual arts courses.",
-    "also_listed_under": []
+    "entry_text": "Open 20 Level 3 Level 3 Visual Arts students can choose up to two visual arts courses.",
+    "donation_text": "Plus Art pack ($65)",
+    "donation_amount": "$40",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "DES335",
@@ -276,7 +354,13 @@
     "external_credits": 14,
     "internal_credits": 8,
     "metrics_raw": "14 8 $40 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Plus Art pack ($45) ENTRY 12 credits at Level 2 Design or interview on enrolment.",
-    "also_listed_under": []
+    "entry_text": "12 credits at Level 2 Design or interview on enrolment.",
+    "donation_text": "Plus Art pack ($45)",
+    "donation_amount": "$40",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "DRA335",
@@ -295,7 +379,13 @@
     "external_credits": 0,
     "internal_credits": 14,
     "metrics_raw": "0 14 $65 � � EXTERNAL CREDITS INTERNAL CREDITS Literacy credits offered DONATION For theatre visits ENTRY Open",
-    "also_listed_under": []
+    "entry_text": "Open",
+    "donation_text": "For theatre visits",
+    "donation_amount": "$65",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": "DRA223"
   },
   {
     "code": "MUS335",
@@ -315,7 +405,13 @@
     "external_credits": 0,
     "internal_credits": 32,
     "metrics_raw": "0 32 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Most students will sit around 20 of the credits on offer. Literacy credits offered DONATION Free itinerant instrument or vocal lessons ENTRY Level 2 or interview and audition as required.",
-    "also_listed_under": []
+    "entry_text": "Level 2 or interview and audition as required.",
+    "donation_text": "Free itinerant instrument or vocal lessons",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "APT335",
@@ -334,7 +430,13 @@
     "external_credits": 14,
     "internal_credits": 8,
     "metrics_raw": "14 8 $40 � � EXTERNAL CREDITS Maximum INTERNAL CREDITS Maximum DONATION Plus Art pack ($65) ENTRY 12 credits at Level 2 Painting or interview on enrolment. 21",
-    "also_listed_under": []
+    "entry_text": "12 credits at Level 2 Painting or interview on enrolment.",
+    "donation_text": "Plus Art pack ($65)",
+    "donation_amount": "$40",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PHO335",
@@ -353,7 +455,13 @@
     "external_credits": 14,
     "internal_credits": 8,
     "metrics_raw": "14 8 $40 � � EXTERNAL CREDITS Maximum INTERNAL CREDITS Maximum DONATION Plus Art pack ($35) ENTRY Level 2 Art 12 credits or proven ability, by interview",
-    "also_listed_under": []
+    "entry_text": "Level 2 Art 12 credits or proven ability, by interview",
+    "donation_text": "Plus Art pack ($35)",
+    "donation_amount": "$40",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "APR335",
@@ -372,7 +480,13 @@
     "external_credits": 14,
     "internal_credits": 8,
     "metrics_raw": "14 8 $40 � � EXTERNAL CREDITS Maximum INTERNAL CREDITS Maximum DONATION Plus Art pack ($60) ENTRY Level 2 Art 12 credits or proven ability, interview upon enrolment",
-    "also_listed_under": []
+    "entry_text": "Level 2 Art 12 credits or proven ability, interview upon enrolment",
+    "donation_text": "Plus Art pack ($60)",
+    "donation_amount": "$40",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ASC335",
@@ -392,7 +506,13 @@
     "external_credits": 14,
     "internal_credits": 8,
     "metrics_raw": "14 8 $40 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits offered DONATION Plus Art pack ($50) ENTRY Level 2 Art 12 credits or proven ability, interview upon enrolment",
-    "also_listed_under": []
+    "entry_text": "Level 2 Art 12 credits or proven ability, interview upon enrolment",
+    "donation_text": "Plus Art pack ($50)",
+    "donation_amount": "$40",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "SON334",
@@ -414,9 +534,15 @@
     "external_credits": 0,
     "internal_credits": 21,
     "metrics_raw": "0 21 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Entry in consultation with HoF & Sonic Arts teacher 22",
+    "entry_text": "Entry in consultation with HoF & Sonic Arts teacher",
+    "donation_text": "",
+    "donation_amount": "$0",
     "also_listed_under": [
       "TECHNOLOGY"
-    ]
+    ],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": "SON223"
   },
   {
     "code": "ENG223",
@@ -435,7 +561,13 @@
     "external_credits": 8,
     "internal_credits": 13,
     "metrics_raw": "8 13 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS UE Literacy credits DONATION Trips and outings as appropriate ENTRY",
-    "also_listed_under": []
+    "entry_text": "",
+    "donation_text": "Trips and outings as appropriate",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "EPB223",
@@ -453,7 +585,13 @@
     "external_credits": null,
     "internal_credits": null,
     "metrics_raw": "",
-    "also_listed_under": []
+    "entry_text": "",
+    "donation_text": "",
+    "donation_amount": null,
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENR223",
@@ -473,7 +611,13 @@
     "external_credits": 8,
     "internal_credits": 20,
     "metrics_raw": "8 20 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS UE Literacy credits DONATION Trips and outings as appropriate ENTRY 24",
-    "also_listed_under": []
+    "entry_text": "24",
+    "donation_text": "Trips and outings as appropriate",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENW223",
@@ -492,7 +636,13 @@
     "external_credits": 8,
     "internal_credits": 14,
     "metrics_raw": "8 14 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS UE Literacy credits DONATION Trips and outings as appropriate ENTRY",
-    "also_listed_under": []
+    "entry_text": "",
+    "donation_text": "Trips and outings as appropriate",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PWD223",
@@ -511,7 +661,13 @@
     "external_credits": 8,
     "internal_credits": 14,
     "metrics_raw": "8 14 $ TBC � � EXTERNAL CREDITS Course endorsement offered. INTERNAL CREDITS UE Literacy credits. DONATION Trips and outings as appropriate. ENTRY",
-    "also_listed_under": []
+    "entry_text": "",
+    "donation_text": "Trips and outings as appropriate.",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENS223",
@@ -531,7 +687,13 @@
     "external_credits": 8,
     "internal_credits": 14,
     "metrics_raw": "8 14 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS UE Literacy credits DONATION Trips and outings as appropriate ENTRY 25 Level 3 At Level 3 students can take PWD335 in conjunction with other English courses. Students cannot take a combination of ENG335, ENP335, ENC335 or ENW335. Course entry without the entry requirements will only",
-    "also_listed_under": []
+    "entry_text": "25 Level 3 At Level 3 students can take PWD335 in conjunction with other English courses. Students cannot take a combination of ENG335, ENP335, ENC335 or ENW335. Course entry without the entry requirements will only occur under special circumstances and must be approved by Caitlin Reilly, Michael Kingston or Emma Wood. A laptop is required in all classes.",
+    "donation_text": "Trips and outings as appropriate",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENG335",
@@ -550,7 +712,13 @@
     "external_credits": 8,
     "internal_credits": 11,
     "metrics_raw": "8 11 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Trips and outings as appropriate ENTRY UE literacy 12 credits from a Level 2 English course including AS91101, AS91106",
-    "also_listed_under": []
+    "entry_text": "UE literacy 12 credits from a Level 2 English course including AS91101, AS91106 and AS911",
+    "donation_text": "Trips and outings as appropriate",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENC335",
@@ -569,7 +737,13 @@
     "external_credits": 8,
     "internal_credits": 11,
     "metrics_raw": "8 11 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Trips and outings as appropriate ENTRY UE literacy 12 credits from a L2 English course including AS91101, AS91106 and AS91100.",
-    "also_listed_under": []
+    "entry_text": "UE literacy 12 credits from a L2 English course including AS91101, AS91106 and AS91100.",
+    "donation_text": "Trips and outings as appropriate",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENP335",
@@ -589,7 +763,13 @@
     "external_credits": 8,
     "internal_credits": 11,
     "metrics_raw": "8 11 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Trips and outings as appropriate ENTRY UE literacy 14 credits from a L2 English course 26",
-    "also_listed_under": []
+    "entry_text": "UE literacy 14 credits from a L2 English course",
+    "donation_text": "Trips and outings as appropriate",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": 14,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENW335",
@@ -608,7 +788,13 @@
     "external_credits": 8,
     "internal_credits": 11,
     "metrics_raw": "8 11 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Trips and outings as appropriate ENTRY UE literacy 12 credits from a Level 2 English course including AS91101, AS91106 and AS91100",
-    "also_listed_under": []
+    "entry_text": "UE literacy 12 credits from a Level 2 English course including AS91101, AS91106 and AS911",
+    "donation_text": "Trips and outings as appropriate",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PWD335",
@@ -627,7 +813,13 @@
     "external_credits": 4,
     "internal_credits": 16,
     "metrics_raw": "4 16 $ TBC � � EXTERNAL CREDITS Assessments to be negotiated INTERNAL CREDITS Literacy credits. Assessments to be negotiated DONATION Trips and outings as appropriate. Bring a laptop to class ENTRY 14 credits from a Level 2 English",
-    "also_listed_under": []
+    "entry_text": "14 credits from a Level 2 English course (including UE Literacy) and an interest in art",
+    "donation_text": "Trips and outings as appropriate. Bring a laptop to class",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": 14,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "HED223",
@@ -646,7 +838,13 @@
     "external_credits": 4,
     "internal_credits": 10,
     "metrics_raw": "4 10 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Nil ENTRY 4 credits in Level 1 Health Education",
-    "also_listed_under": []
+    "entry_text": "4 credits in Level 1 Health Education",
+    "donation_text": "Nil",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ODE223/ODI223*",
@@ -666,7 +864,13 @@
     "external_credits": 0,
     "internal_credits": 19,
     "metrics_raw": "0 19 $660 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION $180 course fee, $480 Whanganui River trip ENTRY Priority given to students who have completed ODE112. Subject to availability and",
-    "also_listed_under": []
+    "entry_text": "Priority given to students who have completed ODE112. Subject to availability and suitability for the course other students may be considered.",
+    "donation_text": "$180 course fee, $480 Whanganui River trip",
+    "donation_amount": "$660",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "SPS223",
@@ -686,7 +890,13 @@
     "external_credits": 0,
     "internal_credits": 20,
     "metrics_raw": "0 20 $60 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Course fees and activities ENTRY Passing SOLO anatomy assessment is advantageous, or by HOF approval 29",
-    "also_listed_under": []
+    "entry_text": "Passing SOLO anatomy assessment is advantageous, or by HOF approval",
+    "donation_text": "Course fees and activities",
+    "donation_amount": "$60",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PED223",
@@ -706,7 +916,13 @@
     "external_credits": 0,
     "internal_credits": 27,
     "metrics_raw": "0 27 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Unit standards DONATION ENTRY Open Level 3",
-    "also_listed_under": []
+    "entry_text": "Open Level",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "HED335",
@@ -726,7 +942,13 @@
     "external_credits": 5,
     "internal_credits": 14,
     "metrics_raw": "5 14 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Trip to Tory Urban Retreat. Yoga sessions ENTRY 10 credits in level 2 Health Education",
-    "also_listed_under": []
+    "entry_text": "10 credits in level 2 Health Education",
+    "donation_text": "Trip to Tory Urban Retreat. Yoga sessions",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": 10,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "SPS335",
@@ -746,7 +968,13 @@
     "external_credits": 0,
     "internal_credits": 19,
     "metrics_raw": "0 19 $60 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Course fees and activities ENTRY 10 credits in Level 2 Sport Science 30",
-    "also_listed_under": []
+    "entry_text": "10 credits in Level 2 Sport Science",
+    "donation_text": "Course fees and activities",
+    "donation_amount": "$60",
+    "also_listed_under": [],
+    "required_credits": 10,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ODE335",
@@ -766,7 +994,15 @@
     "external_credits": 0,
     "internal_credits": 20,
     "metrics_raw": "0 20 $600 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION $150 course fee and $450 Whanganui river trip ENTRY Priority given to students who have successfully completed ODE223. Subject to",
-    "also_listed_under": []
+    "entry_text": "Priority given to students who have successfully completed ODE223. Subject to availability and suitability for the course other students may be considered.",
+    "donation_text": "$150 course fee and $450 Whanganui river trip",
+    "donation_amount": "$600",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [
+      "ODE223/ODI223*"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "PED334",
@@ -786,7 +1022,13 @@
     "external_credits": 0,
     "internal_credits": 28,
     "metrics_raw": "0 28 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Unit standards DONATION Nil ENTRY Open 31",
-    "also_listed_under": []
+    "entry_text": "Open",
+    "donation_text": "Nil",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": "PED223"
   },
   {
     "code": "TAH000",
@@ -808,7 +1050,13 @@
     "external_credits": 0,
     "internal_credits": 11,
     "metrics_raw": "0 11 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Open Level 2",
-    "also_listed_under": []
+    "entry_text": "Open Level",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "CHI223",
@@ -828,7 +1076,13 @@
     "external_credits": 10,
     "internal_credits": 14,
     "metrics_raw": "10 14 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION ENTRY CHI112 and Head of Department approval",
-    "also_listed_under": []
+    "entry_text": "CHI112 and Head of Department approval",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "JPN223",
@@ -848,7 +1102,13 @@
     "external_credits": 10,
     "internal_credits": 14,
     "metrics_raw": "10 14 $10 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For hardcopy workbooks (optional) ENTRY JPN112 and Head of Department approval",
-    "also_listed_under": []
+    "entry_text": "JPN112 and Head of Department approval",
+    "donation_text": "For hardcopy workbooks (optional)",
+    "donation_amount": "$10",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "SPA223",
@@ -868,7 +1128,13 @@
     "external_credits": 10,
     "internal_credits": 14,
     "metrics_raw": "10 14 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION ENTRY SPA112 and Head of Department approval 33",
-    "also_listed_under": []
+    "entry_text": "SPA112 and Head of Department approval",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "MAO223",
@@ -887,7 +1153,13 @@
     "external_credits": 12,
     "internal_credits": 12,
     "metrics_raw": "12 12 $0 � � EXTERNAL CREDITS Maximum INTERNAL CREDITS Literacy credits DONATION ENTRY MAO112 and Head of Department approval Level 3",
-    "also_listed_under": []
+    "entry_text": "MAO112 and Head of Department approval Level",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "CHI335",
@@ -907,7 +1179,15 @@
     "external_credits": 10,
     "internal_credits": 14,
     "metrics_raw": "10 14 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION ENTRY CHI223 and Head of Department approval",
-    "also_listed_under": []
+    "entry_text": "CHI223 and Head of Department approval",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [
+      "CHI223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "JPN335",
@@ -927,7 +1207,15 @@
     "external_credits": 10,
     "internal_credits": 14,
     "metrics_raw": "10 14 $10 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For hardcopy workbooks (optional) ENTRY JPN223 and Head of Department approval",
-    "also_listed_under": []
+    "entry_text": "JPN223 and Head of Department approval",
+    "donation_text": "For hardcopy workbooks (optional)",
+    "donation_amount": "$10",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [
+      "JPN223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "MAI035",
@@ -946,7 +1234,13 @@
     "external_credits": 12,
     "internal_credits": 16,
     "metrics_raw": "12 16 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION ENTRY MAO223 and Head of Department approval 34",
-    "also_listed_under": []
+    "entry_text": "MAO223 and Head of Department approval",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "SPA335",
@@ -966,7 +1260,15 @@
     "external_credits": 10,
     "internal_credits": 14,
     "metrics_raw": "10 14 $0 � � EXTERNAL CREDITS Maximum INTERNAL CREDITS Maximum DONATION ENTRY SPA223 and Head of Department approval English Language – proficiency-based courses",
-    "also_listed_under": []
+    "entry_text": "SPA223 and Head of Department approval English Language – proficiency-based courses",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [
+      "SPA223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "ENL000",
@@ -986,7 +1288,13 @@
     "external_credits": null,
     "internal_credits": null,
     "metrics_raw": "",
-    "also_listed_under": []
+    "entry_text": "",
+    "donation_text": "",
+    "donation_amount": null,
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENL010",
@@ -1006,7 +1314,13 @@
     "external_credits": null,
     "internal_credits": null,
     "metrics_raw": "",
-    "also_listed_under": []
+    "entry_text": "",
+    "donation_text": "",
+    "donation_amount": null,
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENL011",
@@ -1027,7 +1341,13 @@
     "external_credits": 10,
     "internal_credits": 10,
     "metrics_raw": "10 10 $0 � � EXTERNAL CREDITS Literacy Corequisite INTERNAL CREDITS Level 2 ENL credits DONATION ENTRY Completion of ENL011 or by arrangement with the Head of Department",
-    "also_listed_under": []
+    "entry_text": "Completion of ENL011 or by arrangement with the Head of Department",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENL032",
@@ -1047,7 +1367,13 @@
     "external_credits": 0,
     "internal_credits": 20,
     "metrics_raw": "0 20 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Completion of ENL021 or by prior arrangement with the Head of Department",
-    "also_listed_under": []
+    "entry_text": "Completion of ENL021 or by prior arrangement with the Head of Department",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ENL043",
@@ -1065,7 +1391,15 @@
     "external_credits": 0,
     "internal_credits": 22,
     "metrics_raw": "0 22 $0 � � EXTERNAL CREDITS INTERNAL CREDITS UE literacy credits 11 Level 3 EAP literacy corequisite credits if needed DONATION ENTRY Completion of ENL032 or by prior arrangement with the Head of Department 36",
-    "also_listed_under": []
+    "entry_text": "Completion of ENL032 or by prior arrangement with the Head of Department",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [
+      "ENL032"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "HKIP",
@@ -1082,7 +1416,13 @@
     "external_credits": 0,
     "internal_credits": 0,
     "metrics_raw": "0 0 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY Invitation only. Please discuss with He Kākano teachers",
-    "also_listed_under": []
+    "entry_text": "Invitation only. Please discuss with He Kākano teachers Y11 | LSF000 LEARNING SKILLS FOR LIFE This course is a compulsory subject for all ORS funded He Kākano students unless the He Kākano Specialist Teachers have granted an exemption or ORS funded students are participating in a full NCEA programme. Course components • Support to develop life skills enabling students to increase their independence • Support to participate in activities that may include the Duke of Edinburgh’s Award. 0 0 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY All ORS funded students Y11 | LHK000 & NHK000 SENIOR LITERACY & NUMERACY Compulsory for all He Kākano students unless the He Kākano Specialist Teachers have granted an exemption or ORS funded students are participating in a full NCEA programme. Course components • Development of literacy skills using Structured Literacy approaches. This may include supplemental online programmes. • Development of numeracy skills using Numicon. This may include supplemental online programmes. 0 0 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY All ORS funded students On the course choices planning sheets, the above courses come under the umbrella code HKO000 Y11 | LSS100 STUDY SUPPORT An‘ invite only’ option for students who need additional support to achieve NCEA. There are no NCEA credits on offer. Course components ● Course developed around student needs as required ● Support to develop organisation and time management skills relevant to school ● Unpacking and understanding assessment tasks from other subjects ● Structured time for students to work on assessments, homework, and classwork from other subjects in school, with support ● Opportunity to develop social, communication and life skills in a small setting. 0 0 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATI ON ENTRY Invitation only — discuss with HoF Learning Services On the course choices planning sheets, the above courses come under the umbrella code HKO100",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "FIN223",
@@ -1102,7 +1442,13 @@
     "external_credits": 0,
     "internal_credits": 10,
     "metrics_raw": "0 10 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Literacy and Numeracy CAAs 38",
-    "also_listed_under": []
+    "entry_text": "Literacy and Numeracy CAAs",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "MAT223",
@@ -1122,7 +1468,13 @@
     "external_credits": null,
     "internal_credits": null,
     "metrics_raw": "",
-    "also_listed_under": []
+    "entry_text": "",
+    "donation_text": "",
+    "donation_amount": null,
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "MTL223",
@@ -1142,7 +1494,13 @@
     "external_credits": 4,
     "internal_credits": 11,
     "metrics_raw": "4 11 $27 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION Donation for 3 workbooks. You will also need a laptop. ENTRY At least 3 topics from MAT112 or MTL112 including AS91944 (1.1 – stats enquiry NCEA internal) Level 3",
-    "also_listed_under": []
+    "entry_text": "At least 3 topics from MAT112 or MTL112 including AS91944 (1.1 – stats enquiry NCEA internal) Level",
+    "donation_text": "Donation for 3 workbooks. You will also need a laptop.",
+    "donation_amount": "$27",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "MAC335",
@@ -1162,7 +1520,15 @@
     "external_credits": 17,
     "internal_credits": 4,
     "metrics_raw": "17 4 $25 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Numeracy credits DONATION For workbooks. You also need a laptop or equivalent (a phone is not sufficient). ENTRY Credits from 4 standards in MAT223",
-    "also_listed_under": []
+    "entry_text": "Credits from 4 standards in MAT223 including AS91262 (2.7) and merit in AS91261(2.6). AS91587 (3.15) would be advantageous",
+    "donation_text": "For workbooks. You also need a laptop or equivalent (a phone is not sufficient).",
+    "donation_amount": "$25",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [
+      "MAT223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "FIN330",
@@ -1183,7 +1549,13 @@
     "external_credits": 0,
     "internal_credits": 16,
     "metrics_raw": "0 16 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Literacy and Numeracy CAAs 39",
-    "also_listed_under": []
+    "entry_text": "Literacy and Numeracy CAAs",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": "FIN223"
   },
   {
     "code": "MAT335",
@@ -1203,7 +1575,16 @@
     "external_credits": 8,
     "internal_credits": 12,
     "metrics_raw": "8 12 $40 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Numeracy & some Literacy credits DONATION For workbooks. You also need a laptop or equivalent. ENTRY Credits from 4 standards from MAT223 or MTL223",
-    "also_listed_under": []
+    "entry_text": "Credits from 4 standards from MAT223 or MTL223 including AS 91267(2.12) (external) and AS91264 (2.9) (internal)",
+    "donation_text": "For workbooks. You also need a laptop or equivalent.",
+    "donation_amount": "$40",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [
+      "MAT223",
+      "MTL223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "MAS335",
@@ -1223,7 +1604,16 @@
     "external_credits": 8,
     "internal_credits": 12,
     "metrics_raw": "8 12 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Numeracy & Literacy credits DONATION For workbooks. You also need a laptop or equivalent (a phone is not sufficient). ENTRY Credits from 4 standards from",
-    "also_listed_under": []
+    "entry_text": "Credits from 4 standards from MAT223 or MTL223 including AS 91267 (2.12) (external) and AS91264 (2.9) (internal)",
+    "donation_text": "For workbooks. You also need a laptop or equivalent (a phone is not sufficient).",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [
+      "MAT223",
+      "MTL223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "BIO223",
@@ -1243,7 +1633,13 @@
     "external_credits": 8,
     "internal_credits": 8,
     "metrics_raw": "8 8 $40 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION for workbook and field trips ENTRY Demonstrated understanding of Fundamentals of Biology through assessment or with HOF approval",
-    "also_listed_under": []
+    "entry_text": "Demonstrated understanding of Fundamentals of Biology through assessment or with HOF approval",
+    "donation_text": "for workbook and field trips",
+    "donation_amount": "$40",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "CHE223",
@@ -1264,7 +1660,13 @@
     "external_credits": 13,
     "internal_credits": 10,
     "metrics_raw": "13 10 $25 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For workbook ENTRY Demonstrated understanding of Fundamentals of Chemistry through assessment or with HOF approval",
-    "also_listed_under": []
+    "entry_text": "Demonstrated understanding of Fundamentals of Chemistry through assessment or with HOF approval Y11 | HCL112 HORTICULTURE This course is for you if you are interested in plants, the environment and working outdoors. This course enables you to develop a working knowledge and basic practical skills in plant propagation and management. Pathway: This course leads to HCL223 and then either: 1. Polytechnic courses and apprenticeship opportunities in the wide-ranging environmental and horticulture sectors OR 2. HCL335 and university courses Course components ● Plant life processes ● Basic plant propagation skills ● Soil management ● Landscape design to meet user needs. 6 $0 � � INTERNAL CREDITS DONATION ENTRY Open",
+    "donation_text": "For workbook",
+    "donation_amount": "$25",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ESS223",
@@ -1284,7 +1686,13 @@
     "external_credits": 8,
     "internal_credits": 12,
     "metrics_raw": "8 12 $60 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Workbook and field trip ENTRY 4 Level 1 Science credits, Literacy corequisite or, with HOF approval",
-    "also_listed_under": []
+    "entry_text": "4 Level 1 Science credits, Literacy corequisite or, with HOF approval",
+    "donation_text": "Workbook and field trip",
+    "donation_amount": "$60",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "HCL223",
@@ -1303,7 +1711,13 @@
     "external_credits": 0,
     "internal_credits": 17,
     "metrics_raw": "0 17 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION Nil ENTRY Literacy corequisite and numeracy, or with HOF approval",
-    "also_listed_under": []
+    "entry_text": "Literacy corequisite and numeracy, or with HOF approval",
+    "donation_text": "Nil",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PHY223",
@@ -1324,7 +1738,13 @@
     "external_credits": 16,
     "internal_credits": 7,
     "metrics_raw": "16 7 $35 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For a write-in handbook ENTRY Demonstrated understanding of Fundamentals of Physics through assessment or with HOF approval Level 3",
-    "also_listed_under": []
+    "entry_text": "Demonstrated understanding of Fundamentals of Physics through assessment or with HOF approval Level",
+    "donation_text": "For a write-in handbook",
+    "donation_amount": "$35",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "BIO335",
@@ -1344,7 +1764,13 @@
     "external_credits": 9,
     "internal_credits": 9,
     "metrics_raw": "9 9 $30 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Workbook ENTRY 12 Level 2 Science credits or with HOF approval 42",
-    "also_listed_under": []
+    "entry_text": "12 Level 2 Science credits or with HOF approval",
+    "donation_text": "Workbook",
+    "donation_amount": "$30",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "CHE335",
@@ -1365,7 +1791,13 @@
     "external_credits": 15,
     "internal_credits": 9,
     "metrics_raw": "15 9 $30 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For workbook ENTRY 12 Level 2 Chemistry credits or with HOF approval",
-    "also_listed_under": []
+    "entry_text": "12 Level 2 Chemistry credits or with HOF approval",
+    "donation_text": "For workbook",
+    "donation_amount": "$30",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ESS335",
@@ -1385,7 +1817,13 @@
     "external_credits": 8,
     "internal_credits": 12,
     "metrics_raw": "8 12 $60 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Workbook and field trip ENTRY 12 credits from any Level 2 Science and Literacy CAA and numeracy, or with HOF approval",
-    "also_listed_under": []
+    "entry_text": "12 credits from any Level 2 Science and Literacy CAA and numeracy, or with HOF approval",
+    "donation_text": "Workbook and field trip",
+    "donation_amount": "$60",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "HCL335",
@@ -1405,7 +1843,13 @@
     "external_credits": 9,
     "internal_credits": 10,
     "metrics_raw": "9 10 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Nil ENTRY 12 credits from any Level 2 Science and Literacy CAA and numeracy, or with HOF approval",
-    "also_listed_under": []
+    "entry_text": "12 credits from any Level 2 Science and Literacy CAA and numeracy, or with HOF approval",
+    "donation_text": "Nil",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PHY335",
@@ -1426,7 +1870,13 @@
     "external_credits": 16,
     "internal_credits": 7,
     "metrics_raw": "16 7 $35 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For a write-in handbook ENTRY 12 Level 2 Physics credits or with Head of Faculty approval 43 SOCIAL SCIENCES | TIKANGA-Ā-IWI Head of Faculty — Kate Potter YEAR 11 LEVEL 2 LEVEL 3",
-    "also_listed_under": []
+    "entry_text": "12 Level 2 Physics credits or with Head of Faculty approval",
+    "donation_text": "For a write-in handbook",
+    "donation_amount": "$35",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ECO223",
@@ -1446,7 +1896,13 @@
     "external_credits": 8,
     "internal_credits": 10,
     "metrics_raw": "8 10 $20 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy (for UE) DONATION Write-on workbook ENTRY Literacy corequisite or permission from HoF.",
-    "also_listed_under": []
+    "entry_text": "Literacy corequisite or permission from HoF. Y11 | HIS112 HISTORY This course teaches students the skills of an historian including source analysis, engaging with historical perspectives and understanding the relative significance of events in the past. HIS112 explores topics and events that shaped the world from the 17th century to today, both in Aotearoa New Zealand and globally. Pathway: HIS223 and other Level 2 Social Sciences. Course components ● Exploring the diverse histories of people in Te Whanganui a Tara ● Colonisation in America and The Pacific ● From Black Civil Rights to Black Lives Matter: a history of Black America’s resistance against injustice and oppression. ● Perspectives on war: WWI from the perspective of those left behind. 5 $ TBC � � INTERNAL CREDITS DONATION There may be a cost for day excursions in the Wellington region. ENTRY Open",
+    "donation_text": "Write-on workbook",
+    "donation_amount": "$20",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "CLE223",
@@ -1466,7 +1922,13 @@
     "external_credits": 16,
     "internal_credits": 14,
     "metrics_raw": "16 14 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY Literacy corequisite",
-    "also_listed_under": []
+    "entry_text": "Literacy corequisite",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "GEO223",
@@ -1487,7 +1949,13 @@
     "external_credits": 4,
     "internal_credits": 14,
     "metrics_raw": "4 14 $30 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy and numeracy for UE DONATION Level 2 skills book ENTRY Open",
-    "also_listed_under": []
+    "entry_text": "Open",
+    "donation_text": "Level 2 skills book",
+    "donation_amount": "$30",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "HIS223",
@@ -1506,7 +1974,13 @@
     "external_credits": 5,
     "internal_credits": 14,
     "metrics_raw": "5 14 $ 0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY Literacy corequisite",
-    "also_listed_under": []
+    "entry_text": "Literacy corequisite",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "FLM223",
@@ -1525,7 +1999,13 @@
     "external_credits": 4,
     "internal_credits": 16,
     "metrics_raw": "4 16 $ 0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY Open 46",
-    "also_listed_under": []
+    "entry_text": "Open",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "JRN223",
@@ -1545,7 +2025,13 @@
     "external_credits": 4,
     "internal_credits": 16,
     "metrics_raw": "4 16 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY Literacy corequisite",
-    "also_listed_under": []
+    "entry_text": "Literacy corequisite",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PSY223",
@@ -1564,7 +2050,13 @@
     "external_credits": 0,
     "internal_credits": 18,
     "metrics_raw": "0 18 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY Literacy corequisite",
-    "also_listed_under": []
+    "entry_text": "Literacy corequisite",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "SOC223",
@@ -1583,7 +2075,13 @@
     "external_credits": 4,
     "internal_credits": 14,
     "metrics_raw": "4 14 $ 0 � � EXTERNAL CREDITS INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY Literacy corequisite For Year 12 students, Level 3 credits in Tourism Māori are on offer for students with a specific interest in this area. See p.48 for details and speak to Megan Southwell. Level 3",
-    "also_listed_under": []
+    "entry_text": "Literacy corequisite For Year 12 students, Level 3 credits in Tourism Māori are on offer for students with a specific interest in this area. See p.48 for details and speak to Megan Southwell. Level",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "CLS335",
@@ -1603,7 +2101,15 @@
     "external_credits": 8,
     "internal_credits": 12,
     "metrics_raw": "8 12 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION ENTRY 12 Credits in CLE223 or another Social Science or permission from HoF 47",
-    "also_listed_under": []
+    "entry_text": "12 Credits in CLE223 or another Social Science or permission from HoF",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [
+      "CLE223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "ECO335",
@@ -1623,7 +2129,13 @@
     "external_credits": 10,
     "internal_credits": 10,
     "metrics_raw": "10 10 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits for UE DONATION ENTRY 10 credits from Level 2 external exams or permission from the HoF.",
-    "also_listed_under": []
+    "entry_text": "10 credits from Level 2 external exams or permission from the HoF.",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": 10,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "GEO335",
@@ -1644,7 +2156,15 @@
     "external_credits": 4,
     "internal_credits": 14,
     "metrics_raw": "4 14 $30 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy and numeracy credits (for UE) DONATION For Level 3 skills book ENTRY 12 Credits from GEO223 or another Level 2 Social Science, English or permission from HoF",
-    "also_listed_under": []
+    "entry_text": "12 Credits from GEO223 or another Level 2 Social Science, English or permission from HoF",
+    "donation_text": "For Level 3 skills book",
+    "donation_amount": "$30",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [
+      "GEO223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "HIS335",
@@ -1663,7 +2183,15 @@
     "external_credits": 4,
     "internal_credits": 15,
     "metrics_raw": "4 15 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY 12 Credits from HIS223 or another Level 2 Social Science, English or permission from HoF",
-    "also_listed_under": []
+    "entry_text": "12 Credits from HIS223 or another Level 2 Social Science, English or permission from HoF",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [
+      "HIS223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "FLM335",
@@ -1682,7 +2210,15 @@
     "external_credits": 4,
     "internal_credits": 16,
     "metrics_raw": "4 16 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY 12 Credits from FLM223 or another Level 2 Social Science subject or permission from HoF 48",
-    "also_listed_under": []
+    "entry_text": "12 Credits from FLM223 or another Level 2 Social Science subject or permission from HoF",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [
+      "FLM223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "JRN335",
@@ -1702,7 +2238,16 @@
     "external_credits": 4,
     "internal_credits": 16,
     "metrics_raw": "4 16 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION Nil ENTRY 12 Credits from JRN223, ENG223 or another Level 2 Social Science or permission from HoF.",
-    "also_listed_under": []
+    "entry_text": "12 Credits from JRN223, ENG223 or another Level 2 Social Science or permission from HoF.",
+    "donation_text": "Nil",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [
+      "ENG223",
+      "JRN223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "PSY335",
@@ -1722,7 +2267,15 @@
     "external_credits": 0,
     "internal_credits": 19,
     "metrics_raw": "0 19 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) ENTRY Literacy corequisite. 12 credits from PSY223 or another Level 2 Social Science or permission from HoF",
-    "also_listed_under": []
+    "entry_text": "Literacy corequisite. 12 credits from PSY223 or another Level 2 Social Science or permission from HoF",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [
+      "PSY223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "SOC335",
@@ -1741,7 +2294,15 @@
     "external_credits": 4,
     "internal_credits": 16,
     "metrics_raw": "4 16 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION There may be a cost for day excursions in the Wellington region ENTRY 12 Credits from SOC223 or another Level 2 Social",
-    "also_listed_under": []
+    "entry_text": "12 Credits from SOC223 or another Level 2 Social Science subject or permission from HoF.",
+    "donation_text": "There may be a cost for day excursions in the Wellington region",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [
+      "SOC223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "TMA234",
@@ -1761,7 +2322,13 @@
     "external_credits": 0,
     "internal_credits": 24,
     "metrics_raw": "0 24 $ TBC � � EXTERNAL CREDITS INTERNAL CREDITS Unit Standards DONATION A possible fieldtrip to Rotorua ENTRY A genuine interest in learning in a Māori context. 49",
-    "also_listed_under": []
+    "entry_text": "A genuine interest in learning in a Māori context.",
+    "donation_text": "A possible fieldtrip to Rotorua",
+    "donation_amount": "$TBC",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ANI223",
@@ -1778,7 +2345,13 @@
     "external_credits": 3,
     "internal_credits": 13,
     "metrics_raw": "3 13 $10 � � EXTERNAL CREDITS Maximum Course endorsement offered INTERNAL CREDITS DONATION Adobe ENTRY ANI112 or approval from Technology staff",
-    "also_listed_under": []
+    "entry_text": "ANI112 or approval from Technology staff",
+    "donation_text": "Adobe",
+    "donation_amount": "$10",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "BAR020",
@@ -1797,7 +2370,13 @@
     "external_credits": 0,
     "internal_credits": 18,
     "metrics_raw": "0 18 $0 � � EXTERNAL CREDITS INTERNAL CREDITS 10 at Level 2 and 8 at Level 3 unit standard credits DONATION ENTRY Open",
-    "also_listed_under": []
+    "entry_text": "Open",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "CSC223",
@@ -1814,7 +2393,13 @@
     "external_credits": 3,
     "internal_credits": 12,
     "metrics_raw": "3 12 $0 � � EXTERNAL CREDITS Maximum Course endorsement offered INTERNAL CREDITS DONATION ENTRY CSC112 or by consultation 53",
-    "also_listed_under": []
+    "entry_text": "CSC112 or by consultation",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "DTW223",
@@ -1835,7 +2420,13 @@
     "external_credits": 4,
     "internal_credits": 16,
     "metrics_raw": "4 16 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION ENTRY Open to all",
-    "also_listed_under": []
+    "entry_text": "Open to all",
+    "donation_text": "",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "DVC223",
@@ -1852,7 +2443,13 @@
     "external_credits": 3,
     "internal_credits": 15,
     "metrics_raw": "3 15 $35 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (9) DONATION ENTRY 18 credits from DVC112",
-    "also_listed_under": []
+    "entry_text": "18 credits from DVC112",
+    "donation_text": "",
+    "donation_amount": "$35",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ELT223",
@@ -1869,7 +2466,13 @@
     "external_credits": 0,
     "internal_credits": 17,
     "metrics_raw": "0 17 $40 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Completion of ELT112 or 12 credits from SCI112 and 8 credits from Level 1 Mathematics",
-    "also_listed_under": []
+    "entry_text": "Completion of ELT112 or 12 credits from SCI112 and 8 credits from Level 1 Mathematics",
+    "donation_text": "",
+    "donation_amount": "$40",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "FTX223",
@@ -1890,7 +2493,13 @@
     "external_credits": 3,
     "internal_credits": 13,
     "metrics_raw": "3 13 $45 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For practical components towards projects ENTRY Level 1 Fashion OR Interview with TIC Fashion. Recommended previous sewing",
-    "also_listed_under": []
+    "entry_text": "Level 1 Fashion OR Interview with TIC Fashion. Recommended previous sewing experience.",
+    "donation_text": "For practical components towards projects",
+    "donation_amount": "$45",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "FTE223",
@@ -1910,7 +2519,13 @@
     "external_credits": 4,
     "internal_credits": 16,
     "metrics_raw": "4 16 $50 � � EXTERNAL CREDITS Literacy credits (4) INTERNAL CREDITS Literacy credits (4) DONATION ENTRY Level 1 literacy and numeracy credits",
-    "also_listed_under": []
+    "entry_text": "Level 1 literacy and numeracy credits",
+    "donation_text": "",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "FCM220",
@@ -1927,7 +2542,13 @@
     "external_credits": 0,
     "internal_credits": 17,
     "metrics_raw": "0 17 $50 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Commitment to Health & Safety.",
-    "also_listed_under": []
+    "entry_text": "Commitment to Health & Safety.",
+    "donation_text": "",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "GDD223",
@@ -1944,7 +2565,13 @@
     "external_credits": 3,
     "internal_credits": 13,
     "metrics_raw": "3 13 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Completion of GDD112 or independent work in Godot",
-    "also_listed_under": []
+    "entry_text": "Completion of GDD112 or independent work in Godot",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "HOS223",
@@ -1962,7 +2589,13 @@
     "external_credits": 0,
     "internal_credits": 16,
     "metrics_raw": "0 16 $60 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Open 55",
-    "also_listed_under": []
+    "entry_text": "Open",
+    "donation_text": "",
+    "donation_amount": "$60",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "MEG223",
@@ -1979,7 +2612,13 @@
     "external_credits": 0,
     "internal_credits": 18,
     "metrics_raw": "0 18 $50 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Successful completion of course MEG 112 and brief interview with HoF/TiC",
-    "also_listed_under": []
+    "entry_text": "Successful completion of course MEG 112 and brief interview with HoF/TiC",
+    "donation_text": "",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "NET230",
@@ -1996,7 +2635,13 @@
     "external_credits": 0,
     "internal_credits": 11,
     "metrics_raw": "0 11 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Numeracy (2), DONATION ENTRY 6 credits from CSC223 OR currently enrolled in CSC223",
-    "also_listed_under": []
+    "entry_text": "6 credits from CSC223 OR currently enrolled in CSC223",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "ANI335",
@@ -2013,7 +2658,15 @@
     "external_credits": 3,
     "internal_credits": 13,
     "metrics_raw": "3 13 $10 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION Adobe ENTRY 9 credits from ANI223 56",
-    "also_listed_under": []
+    "entry_text": "9 credits from ANI223",
+    "donation_text": "Adobe",
+    "donation_amount": "$10",
+    "also_listed_under": [],
+    "required_credits": 9,
+    "explicit_prerequisites": [
+      "ANI223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "CSC335",
@@ -2030,7 +2683,15 @@
     "external_credits": 3,
     "internal_credits": 12,
     "metrics_raw": "3 12 $15 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY 9 credits from CSC223 or Level 2 Maths",
-    "also_listed_under": []
+    "entry_text": "9 credits from CSC223 or Level 2 Maths",
+    "donation_text": "",
+    "donation_amount": "$15",
+    "also_listed_under": [],
+    "required_credits": 9,
+    "explicit_prerequisites": [
+      "CSC223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "DTE355",
@@ -2045,7 +2706,15 @@
     "external_credits": 0,
     "internal_credits": 0,
     "metrics_raw": "0 0 $0 � � EXTERNAL CREDITS No NCEA credits offered. Students should be confident about getting UE from other subjects INTERNAL CREDITS DONATION ENTRY Successful completion of or co- enrolment in CSC335. UE literacy. Merit at NCEA Level 2.",
-    "also_listed_under": []
+    "entry_text": "Successful completion of or co- enrolment in CSC335. UE literacy. Merit at NCEA Level 2.",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [
+      "CSC335"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "DVC335",
@@ -2062,7 +2731,15 @@
     "external_credits": 4,
     "internal_credits": 12,
     "metrics_raw": "4 12 $50 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY 15 credits from DVC223",
-    "also_listed_under": []
+    "entry_text": "15 credits from DVC223",
+    "donation_text": "",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": 15,
+    "explicit_prerequisites": [
+      "DVC223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "ELT335",
@@ -2081,7 +2758,13 @@
     "external_credits": 0,
     "internal_credits": 16,
     "metrics_raw": "0 16 $40 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Open. Good common sense, safety consciousness, and an interest in practical workshop activity required. 57",
-    "also_listed_under": []
+    "entry_text": "Open. Good common sense, safety consciousness, and an interest in practical workshop activity required.",
+    "donation_text": "",
+    "donation_amount": "$40",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": "ELT223"
   },
   {
     "code": "FTX335",
@@ -2101,7 +2784,15 @@
     "external_credits": 4,
     "internal_credits": 16,
     "metrics_raw": "4 16 $60 � � EXTERNAL CREDITS Course endorsement offered. Literacy credits INTERNAL CREDITS Maximum DONATION ENTRY Minimum 13 credits at FTX223 or by interview with TiC Fashion and Textiles",
-    "also_listed_under": []
+    "entry_text": "Minimum 13 credits at FTX223 or by interview with TiC Fashion and Textiles",
+    "donation_text": "",
+    "donation_amount": "$60",
+    "also_listed_under": [],
+    "required_credits": 13,
+    "explicit_prerequisites": [
+      "FTX223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "FTE335",
@@ -2123,7 +2814,13 @@
     "external_credits": 4,
     "internal_credits": 16,
     "metrics_raw": "4 16 $60 � � EXTERNAL CREDITS Course endorsement offered. Literacy credits INTERNAL CREDITS Maximum DONATION ENTRY Level 1 literacy and numeracy credits",
-    "also_listed_under": []
+    "entry_text": "Level 1 literacy and numeracy credits",
+    "donation_text": "",
+    "donation_amount": "$60",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": "FTE223"
   },
   {
     "code": "GDD335",
@@ -2141,7 +2838,15 @@
     "external_credits": 3,
     "internal_credits": 13,
     "metrics_raw": "3 13 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY 9 credits from GDD223 58",
-    "also_listed_under": []
+    "entry_text": "9 credits from GDD223",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": 9,
+    "explicit_prerequisites": [
+      "GDD223"
+    ],
+    "implied_prerequisite": null
   },
   {
     "code": "HOS334",
@@ -2160,7 +2865,13 @@
     "external_credits": 0,
     "internal_credits": 18,
     "metrics_raw": "0 18 $60 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Unit Standard 167 is essential",
-    "also_listed_under": []
+    "entry_text": "Unit Standard 167 is essential",
+    "donation_text": "",
+    "donation_amount": "$60",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": "HOS223"
   },
   {
     "code": "MEG335",
@@ -2177,7 +2888,13 @@
     "external_credits": 0,
     "internal_credits": 18,
     "metrics_raw": "0 18 $50 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY At least 12 credits at Level 2 in MEG222",
-    "also_listed_under": []
+    "entry_text": "At least 12 credits at Level 2 in MEG222",
+    "donation_text": "",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": 12,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PWK334",
@@ -2194,7 +2911,13 @@
     "external_credits": 0,
     "internal_credits": 16,
     "metrics_raw": "0 16 $50 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Open. Good common sense, safety consciousness, and an interest in practical workshop activity required.",
-    "also_listed_under": []
+    "entry_text": "Open. Good common sense, safety consciousness, and an interest in practical workshop activity required.",
+    "donation_text": "",
+    "donation_amount": "$50",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   },
   {
     "code": "PATHWAYS",
@@ -2222,6 +2945,12 @@
     "external_credits": 0,
     "internal_credits": 20,
     "metrics_raw": "0 20 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY Open 60 TRADES ACADEMIES",
-    "also_listed_under": []
+    "entry_text": "Open 60 TRADES ACADEMIES L2 / L3 | NZMA EARLY CHILDHOOD TRADE ACADEMY This programme (1 day a week) offers an introduction to a pathway in Early Childhood Education and is a platform for entry into the NZMA Level 4/5 courses. This course takes place in Porirua. 0 30 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Level 3 DONATION ENTRY Open L2 / L3 | NZMA HEALTH CARE AND NURSING This programme (1 day a week) offers an introduction to a pathway in healthcare and nursing and is a platform for entry into the NZMA Level 4/5 courses. This course takes place in Porirua. Note: There is a cost to students for this course. The school may be able to offer a contribution but this is decided on a case-by-case basis. 0 22 $1200* � � EXTERNAL CREDITS INTERNAL CREDITS Level 3 *TBC. Fee payable (in part or full) ENTRY Year 13 L2 / L3 | NZIS POLICE AND UNIFORMED SERVICES This one-day-a-week programme provides an opportunity to explore career pathways in the NZ Police, the NZDF, and other uniformed government services such as customs, firefighting, and security services. Note: There is a cost to students for this course. The school may be able to offer a contribution but this is decided on a case-by-case basis. 0 23 $1200* � � EXTERNAL CREDITS INTERNAL CREDITS Levell 3 *TBC. Fee payable (in part or full) ENTRY Year 13 L2 / L3 | PAPA TAIAO Keen to get out of the classroom and be in a team that does something to help nature and people? Papa Taiao Earthcare courses that introduce you to key environmental and social issues locally and in Aotearoa. You will work with Wellington-based experts to complete courses that are focused on learning in the natural environment. Each course includes outdoor activities and overnight noho/camps. Pathway: This can lead to careers in conservation or sustainability-based industries. You can achieve a NZQA Certificate in Land Based Sustainability Course components There are three courses to choose from: 1. Tides and tracks runs for the whole year 2. Traps and trails runs for terms 1 and 2. 3. Te Ara Kai runs for terms 1 and 2 only. Students who choose half-year courses MUST choose 6 subjects as this programme finishes at the end of Term 2. Students must have at least 5 subjects at all times. 0 24 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Level 3 DONATION ENTRY Year 13 61 WELLINGTON TRADES ACADEMY Want to stay at school but try something different? Wellington Trades Academy lets you enjoy both worlds. Enjoy the benefits of staying at secondary school but learn new, relevant skills for your career. Examples of Wellington Trades Academy courses Course Level Campus Bakery / Café Service 2 WelTec Petone Barbering 3 Whitireia Porirua or WelTec Petone Construction Mixed Trades 2 Whitireia Porirua or WelTec Petone Digital Media: Animation and Game Design 2 or 3 WelTec Petone Engineering and Automotive 2 Whitireia Porirua Film Making 2 or 3 Whitireia Porirua Health Pathways 2 or 3 Whitireia Porirua Health Pathways: Anatomy and Physiology 3 or 4 Whitireia Porirua Salon Environment 2 Whitireia Porirua L2 / L3| WELLINGTON TRADES ACADEMY WHS partners with a Vocational Pathway programme that allows you to achieve NCEA Level 2 and Level 3. You’ll be coached by industry professionals keen to share their expertise. Courses are either one or two days per week. Pathway: This course can lead to employment, apprenticeships or higher-level studies. Course components ● Either three days at school and two days’ practical learning programme to learn new skills or four days at school and one day of practical learning. ● Earn credits towards your NCEA Level 2 or Level 3 and a National Certificate in your Trades Academy area ● Relevant safety gear, materials and field trips are provided ● NOTE: If you choose this option, you will also do 3 or 4 subjects when at school 0 40-45 $0 � � EXTERNAL CREDITS INTERNAL CREDITS plus school credits DONATION Plus subsidised transport ENTRY Open. Speak to BAC 62 Y11 / L2 / L3 BEYOND WELLINGTON HIGH If you are 16 years old, and ready to progress from school directly on to a career-focused pathway, Wellington High can help you make that transition. We have assisted many young people to join trades and employment courses at the following Wellington education centres: Capital Training | www.capitaltraining.co.nz/ A lower North Island-based, NZQA accredited, private training establishment (PTE) offering a wide spectrum of courses and qualifications to prepare you for the modern workplace. They provide a range of youth guarantee (fees free) courses in retail, business administration, computing, hospitality and construction. They have training centres in Lambton Quay, Upper Hutt, Lower Hutt, Paraparaumu, Waipukurau and Ōtaki, as well as providing in-work training nationwide. Elite - School of Beauty and Spa| www.elitebeautyschool.co.nz/ Make Up Artistry (Level 3), Beauty (Level 4) and Professional Face, Body and Spa Therapies (L5) The Learning Connexion | www.tlc.ac.nz/ A school of Creativity and Art offering a Certificate, Diploma or Advanced Diploma in Creativity (Levels 3-6). Specialist areas include: 3D, Design, Drawing, Painting, Photography, Computer Graphics. NZ Defence Force | www.nzdf.mil.nz/ Three unique services, each with its own strengths: Navy, Army, and Air Force. With many exciting roles available, there really is something for everyone. NZIS – New Zealand Institute of Sports | www.nzis.co.nz NZIS offers a range of courses from Foundation Skills (Level 2) to one year Diploma courses (Levels 4 / 5). Sports, recreation, exercise, personal training, uniformed services preparation (Level 3 / 4). NZMA – New Zealand Management Academies Ltd | www.nzma.ac.nz Part of the New Education Group, a provider of quality education services. NZQA has ranked NZMA a category 1 provider: their highest ranking. All campuses are fully equipped with purpose-built, top-of-the-line facilities. From bars, cafes and commercial kitchens, to retail shops, live contact centre suites and construction workshops – our realistic workplace training environments will get you work-ready quicker. Courses in a wide-range of vocations are available. NZST School of Tourism | nzschooloftourism.co.nz A national NZQA approved organisation with a strong school in Wellington offering a wide range of programmes and qualifications that get students work ready. Courses range from Level 2 and Level 3 Certificate course to Level 4-6 Diplomas and a Level 7 degree course in International Tourism and Hotel Management. Specialist areas of study include: Tourism and Hospitality, Travel and Airline industry travel agents, tour guides, travel operations, flight attendants – Hotels/resorts/cruise ships, Hotel and hospitality Management, Tourism and travel management, Aviation and Tourism management. Skills Institute (High St, Lower Hutt) | https://skillsinstitute.co.nz Innovative leaders in the education industry offering dynamic courses. Using practical, hands-on methods you’ll work towards nationally recognised qualifications that are approved by the New Zealand Qualifications Authority. Courses on offer include: Level 3 NZ Certificates in Hairdressing/Salon Support, Barbering Skills: Level 4 NZ certificates in Hairdressing Stylist, Beauty Therapy (also Level 5), Nail Technician. WelTec | weltec.ac.nz or Whitireia | www.whitireia.ac.nz/ Both offer a wide range of Trades related programmes across most Trades as well as IT courses, Business, Cooking and Hospitality, Creative Technology, Salon, Hairdressing and make up, Health courses, Social and Community, Creative Arts. Their campuses are in Wellington, Petone and Porirua. Whitecliffe – School of Fashion and Sustainability | www.whitecliffe.ac.nz/fashion NZ Fashion Tech is New Zealand’s leading educator in the fashion and sewn products industries. It is an award-winning fashion and garment technology college, registered and accredited with the NZ Qualifications Authority (NZQA). NZ Fashion Tech is considered to be one of the best practical technical trainers to the industry in the country. Courses include: L3 Certificate in Fashion Technology, Level 4 Certificate in Pattern Design and a Level 5 Diploma in Fashion Technology. Whitecliffe Technology / School of Information Technology | www.whitecliffe.ac.nz/technology IT Training specialists with L5&6 qualifications in IT, Web development, Tech support, Networking and Software Development Te Wānanga o Aotearoa | http://www.twoa.ac.nz Te Wānanga o Aotearoa provides holistic education opportunities of the highest quality for Māori, peoples of Aotearoa and the world. Te Wānanga o Aotearoa is one of New Zealand's largest tertiary education providers offering a wide range of certificate to degree level qualifications to New Zealanders of all ages and walks of life. YOOBEE — School of Design | https://www.yoobee.ac.nz Yoobee programmes embrace new and emerging technologies, with pathways from certificates and diplomas through to degrees with some of our partner schools. From Digital Media and Design, Web Design and UX and 3D Animation, to Filmmaking, Game Art and Development and 3D Graphics, programmes keep you plugged in to industry advances, and on top of your game. Delivering full time, part time and online programmes, Yoobee opens doors to the best digital and design studios in the world. 63 PLANNING PAGE ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ v5. 12.8.2026",
+    "donation_text": "",
+    "donation_amount": "$0",
+    "also_listed_under": [],
+    "required_credits": null,
+    "explicit_prerequisites": [],
+    "implied_prerequisite": null
   }
 ]

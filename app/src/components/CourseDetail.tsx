@@ -8,6 +8,8 @@ interface Props {
   unresolvedCode?: string | null;
   links?: PathwayLinks | null;
   onSelectCode?: (code: string) => void;
+  isBookmarked?: boolean;
+  onToggleBookmark?: (code: string) => void;
 }
 
 const CODE_RE = /\b[A-Z]{2,4}\d{3}(?:\/[A-Z]{2,4}\d{3}\*?)?\b/g;
@@ -75,6 +77,8 @@ export default function CourseDetail({
   unresolvedCode,
   links,
   onSelectCode,
+  isBookmarked,
+  onToggleBookmark,
 }: Props) {
   if (!course) {
     return (
@@ -93,6 +97,10 @@ export default function CourseDetail({
     );
   }
 
+  const impliedGap = course.implied_prerequisite
+    ? courseByCode.get(course.implied_prerequisite)
+    : null;
+
   return (
     <div className="detail">
       <div className="detail-header">
@@ -101,6 +109,15 @@ export default function CourseDetail({
           <span className="detail-code">{course.code}</span>
           {course.ue && <span className="badge ue">UE</span>}
           {course.scholarship && <span className="badge schol">SCHOL</span>}
+          <button
+            type="button"
+            className={"bookmark-btn" + (isBookmarked ? " active" : "")}
+            onClick={() => onToggleBookmark?.(course.code)}
+            title={isBookmarked ? "Remove bookmark" : "Bookmark this course"}
+            aria-pressed={isBookmarked}
+          >
+            {isBookmarked ? "★" : "☆"}
+          </button>
         </div>
         <h2>{course.title}</h2>
         {course.faculty && (
@@ -111,6 +128,24 @@ export default function CourseDetail({
           </p>
         )}
       </div>
+
+      {impliedGap && (
+        <section className="gap-warning">
+          <strong>No stated prerequisite in the prospectus text.</strong> A
+          Level 2 course in the same subject exists (
+          <button
+            type="button"
+            className="code-ref"
+            onClick={() => onSelectCode?.(impliedGap.code)}
+          >
+            {impliedGap.code}
+          </button>
+          {" "}
+          {impliedGap.title}) but the entry requirement for {course.code}{" "}
+          doesn't name it or a general Level 2 credit category — check with
+          the department whether it's expected.
+        </section>
+      )}
 
       {links && links.upstream.length > 0 && (
         <section>
@@ -169,10 +204,26 @@ export default function CourseDetail({
         </section>
       )}
 
-      {course.metrics_raw && (
+      {(course.entry_text || course.donation_text || course.donation_amount) && (
         <section>
-          <h3>Donation &amp; entry requirements</h3>
-          <p className="metrics-raw">{course.metrics_raw}</p>
+          <h3>Donation &amp; entry</h3>
+          <dl className="info-list">
+            {course.donation_amount && (
+              <div>
+                <dt>Donation</dt>
+                <dd>
+                  {course.donation_amount}
+                  {course.donation_text && ` — ${course.donation_text}`}
+                </dd>
+              </div>
+            )}
+            {course.entry_text && (
+              <div>
+                <dt>Entry requirement</dt>
+                <dd>{linkifyCodes(course.entry_text, courseByCode, onSelectCode)}</dd>
+              </div>
+            )}
+          </dl>
         </section>
       )}
     </div>

@@ -150,15 +150,11 @@
 
 .course-chip {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: flex-start;
   width: 100%;
-  text-align: left;
-  padding: 6px 8px;
   border-radius: 7px;
   border: 1px solid var(--border);
   background: var(--bg);
-  cursor: pointer;
   position: relative;
   min-height: 48px;
 }
@@ -174,6 +170,19 @@
 
 .course-chip.current-pick {
   background: var(--accent-bg);
+}
+
+.chip-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  padding: 6px 4px 6px 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .chip-code {
@@ -195,6 +204,38 @@
   right: 6px;
   color: var(--accent);
   font-size: 11px;
+}
+
+.chip-bookmark {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  color: #d9a441;
+  font-size: 11px;
+}
+
+.course-chip:has(.chip-star-btn) .chip-bookmark {
+  top: 4px;
+  right: 26px;
+}
+
+.chip-star-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--border);
+  font-size: 14px;
+  padding: 6px 8px 6px 2px;
+  line-height: 1;
+  align-self: center;
+}
+
+.chip-star-btn.active {
+  color: var(--accent);
+}
+
+.chip-star-btn:hover {
+  color: var(--accent);
 }
 
 /* faculty accent stripes */
@@ -352,6 +393,58 @@
   margin-bottom: 6px;
 }
 
+.bookmark-btn {
+  margin-left: auto;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 19px;
+  line-height: 1;
+  color: var(--text);
+  padding: 2px 4px;
+}
+
+.bookmark-btn.active {
+  color: #d9a441;
+}
+
+.gap-warning {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-h);
+  background: rgba(217, 164, 65, 0.12);
+  border: 1px solid rgba(217, 164, 65, 0.4);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.info-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-list > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-list dt {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--text);
+}
+
+.info-list dd {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--text-h);
+  line-height: 1.5;
+}
+
 .detail-level {
   font-family: var(--mono);
   font-size: 11px;
@@ -493,12 +586,224 @@
   text-align: center;
 }
 
-.metrics-raw {
-  font-size: 12.5px;
-  color: var(--text);
-  line-height: 1.6;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 10px 12px;
+/* --- Pathway graph --- */
+
+.pathway-graph-panel {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px 18px;
 }
+
+.pathway-graph-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.pathway-graph-panel-head h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text);
+}
+
+.pathway-graph-panel-empty {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.pathway-graph-wrap {
+  overflow-x: auto;
+}
+
+.pathway-graph {
+  display: block;
+}
+
+.graph-node text {
+  user-select: none;
+}
+
+.graph-node:not(.graph-node-center):hover rect {
+  stroke: var(--accent);
+}
+
+.graph-legend {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 8px 0 0;
+  padding: 0;
+  font-size: 11px;
+  color: var(--text);
+}
+
+.graph-legend li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 2px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.legend-swatch.pathway {
+  background: var(--text);
+}
+
+.legend-swatch.prereq {
+  background: var(--accent);
+}
+
+.legend-swatch.gap {
+  background: #d9a441;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #d9a441 0 4px,
+    transparent 4px 7px
+  );
+}
+
+/* --- Scenario bar --- */
+
+.scenario-bar {
+  margin-bottom: 14px;
+}
+
+.scenario-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.scenario-tab {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.scenario-tab.active {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.scenario-tab-label {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.scenario-rename-input {
+  border: none;
+  background: var(--bg);
+  padding: 6px 10px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-h);
+  width: 120px;
+}
+
+.scenario-tab-close {
+  border: none;
+  border-left: 1px solid var(--border);
+  background: none;
+  cursor: pointer;
+  color: var(--text);
+  padding: 0 8px;
+  font-size: 14px;
+}
+
+.scenario-tab-close:hover {
+  color: #c0392b;
+}
+
+.scenario-add {
+  border: 1px dashed var(--border);
+  border-radius: 7px;
+  background: none;
+  cursor: pointer;
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 12.5px;
+}
+
+.scenario-add:hover {
+  border-color: var(--accent-border);
+  color: var(--text-h);
+}
+
+/* --- Bookmarks panel --- */
+
+.bookmarks-panel {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.bookmarks-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.bookmarks-panel-head h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text);
+}
+
+.bookmarks-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bookmark-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  padding: 4px 6px 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.bookmark-chip:hover {
+  border-color: var(--accent-border);
+}
+
+.bookmark-chip-code {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.bookmark-chip-remove {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1;
+  padding: 2px 4px;
+}
+
+.bookmark-chip-remove:hover {
+  color: #c0392b;
+}
+

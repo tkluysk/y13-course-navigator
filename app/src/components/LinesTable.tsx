@@ -6,6 +6,10 @@ interface Props {
   selectedCode: string | null;
   onSelect: (code: string) => void;
   currentPicks: Record<number, string | null>;
+  editable?: boolean;
+  onTogglePick?: (line: number, code: string) => void;
+  bookmarks?: Set<string>;
+  hint?: string;
 }
 
 function facultyClass(faculty: string | null): string {
@@ -19,14 +23,20 @@ export default function LinesTable({
   selectedCode,
   onSelect,
   currentPicks,
+  editable = false,
+  onTogglePick,
+  bookmarks,
+  hint,
 }: Props) {
   const maxRows = Math.max(...lines.map((l) => l.codes.length));
 
   return (
     <div className="lines-table-wrap">
       <p className="hint">
-        Choose 5 courses total, at most one per line. Highlighted chips are
-        the current picks from the planning sheet.
+        {hint ??
+          `Choose at least 5 courses total, at most one per column.${
+            editable ? " Click the star on a chip to pick it for this scenario." : ""
+          }`}
       </p>
       <div className="lines-table-scroll">
         <table className="lines-table">
@@ -61,26 +71,45 @@ export default function LinesTable({
                   const course = courseByCode.get(code);
                   const isSelected = selectedCode === code;
                   const isPick = currentPicks[l.line] === code;
+                  const isBookmarked = bookmarks?.has(code);
                   return (
                     <td key={l.line}>
-                      <button
+                      <div
                         className={
                           "course-chip " +
                           facultyClass(course?.faculty ?? null) +
                           (isSelected ? " selected" : "") +
                           (isPick ? " current-pick" : "")
                         }
-                        onClick={() => onSelect(code)}
                         title={course?.title ?? "Placeholder slot — not in prospectus"}
                       >
-                        <span className="chip-code">{code}</span>
-                        {course ? (
-                          <span className="chip-title">{course.title}</span>
+                        <button
+                          type="button"
+                          className="chip-main"
+                          onClick={() => onSelect(code)}
+                        >
+                          <span className="chip-code">{code}</span>
+                          {course ? (
+                            <span className="chip-title">{course.title}</span>
+                          ) : (
+                            <span className="chip-title">Other (see school)</span>
+                          )}
+                        </button>
+                        {isBookmarked && <span className="chip-bookmark">★</span>}
+                        {editable ? (
+                          <button
+                            type="button"
+                            className={"chip-star-btn" + (isPick ? " active" : "")}
+                            onClick={() => onTogglePick?.(l.line, code)}
+                            title={isPick ? "Unpick for this scenario" : "Pick for this scenario"}
+                            aria-pressed={isPick}
+                          >
+                            {isPick ? "★" : "☆"}
+                          </button>
                         ) : (
-                          <span className="chip-title">Other (see school)</span>
+                          isPick && <span className="pick-star">★</span>
                         )}
-                        {isPick && <span className="pick-star">★</span>}
-                      </button>
+                      </div>
                     </td>
                   );
                 })}
