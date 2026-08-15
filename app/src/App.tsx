@@ -3,6 +3,7 @@ import coursesData from "./data/courses.json";
 import { LINES, LINES_Y12 } from "./data/lines";
 import type { Course } from "./types";
 import { buildPathwayIndex, buildCourseGraph } from "./pathways";
+import { checkPrerequisite } from "./prerequisiteCheck";
 import { useLocalStorage } from "./useLocalStorage";
 import {
   makeDefaultY13Scenarios,
@@ -113,6 +114,20 @@ function App() {
   const bookmarkSet = useMemo(() => new Set(bookmarks), [bookmarks]);
   const notInterestedSet = useMemo(() => new Set(notInterested), [notInterested]);
 
+  const y12PickSet = useMemo(
+    () => new Set(Object.values(y12.active.picks).filter((c): c is string => !!c)),
+    [y12.active.picks]
+  );
+  const prereqStatusByCode = useMemo(() => {
+    const map = new Map<string, ReturnType<typeof checkPrerequisite>>();
+    for (const c of courses) {
+      if (c.level === "L3" || c.level === "L3+") {
+        map.set(c.code, checkPrerequisite(c, y12PickSet, courseByCode));
+      }
+    }
+    return map;
+  }, [y12PickSet, courseByCode]);
+
   const toggleBookmark = (code: string) => {
     setBookmarks((prev) =>
       prev.includes(code) ? prev.filter((c) => c !== code) : [...prev, code]
@@ -197,6 +212,7 @@ function App() {
                 bookmarks={bookmarkSet}
                 notInterested={notInterestedSet}
                 onToggleNotInterested={toggleNotInterested}
+                prereqStatusByCode={prereqStatusByCode}
               />
             </>
           )}
@@ -246,6 +262,7 @@ function App() {
             onToggleBookmark={toggleBookmark}
             isNotInterested={selectedCode ? notInterestedSet.has(selectedCode) : false}
             onToggleNotInterested={toggleNotInterested}
+            prereqStatus={selectedCode ? prereqStatusByCode.get(selectedCode) ?? null : null}
           />
         </div>
       </main>

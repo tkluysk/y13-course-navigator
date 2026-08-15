@@ -1,6 +1,8 @@
 import type { Course, LineDefinition } from "../types";
+import type { PrerequisiteCheck } from "../prerequisiteCheck";
 import BookmarkIcon from "./BookmarkIcon";
 import NotInterestedIcon from "./NotInterestedIcon";
+import WarningIcon from "./WarningIcon";
 
 interface Props {
   lines: LineDefinition[];
@@ -14,6 +16,7 @@ interface Props {
   bookmarks?: Set<string>;
   notInterested?: Set<string>;
   onToggleNotInterested?: (code: string) => void;
+  prereqStatusByCode?: Map<string, PrerequisiteCheck>;
   hint?: string;
 }
 
@@ -34,6 +37,7 @@ export default function LinesTable({
   bookmarks,
   notInterested,
   onToggleNotInterested,
+  prereqStatusByCode,
   hint,
 }: Props) {
   const maxRows = Math.max(...lines.map((l) => l.codes.length));
@@ -85,6 +89,7 @@ export default function LinesTable({
                   const isPick = currentPicks[l.line] === code;
                   const isBookmarked = bookmarks?.has(code);
                   const isNotInterested = notInterested?.has(code);
+                  const prereq = prereqStatusByCode?.get(code);
                   return (
                     <td key={l.line}>
                       <div
@@ -109,6 +114,14 @@ export default function LinesTable({
                             <span className="chip-title">Other (see school)</span>
                           )}
                         </button>
+                        {prereq && prereq.status !== "ok" && (
+                          <span
+                            className={"chip-warning chip-warning-" + prereq.status}
+                            title={prereq.reason}
+                          >
+                            <WarningIcon size={12} />
+                          </span>
+                        )}
                         {isBookmarked && (
                           <BookmarkIcon filled size={11} className="chip-bookmark" />
                         )}

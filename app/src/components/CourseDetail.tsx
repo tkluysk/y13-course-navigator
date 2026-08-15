@@ -1,8 +1,11 @@
 import type { ReactNode } from "react";
 import type { Course } from "../types";
 import type { PathwayLinks } from "../pathways";
+import type { PrerequisiteCheck } from "../prerequisiteCheck";
+import { GLOSSARY } from "../glossary";
 import BookmarkIcon from "./BookmarkIcon";
 import NotInterestedIcon from "./NotInterestedIcon";
+import WarningIcon from "./WarningIcon";
 
 interface Props {
   course: Course | null;
@@ -14,9 +17,12 @@ interface Props {
   onToggleBookmark?: (code: string) => void;
   isNotInterested?: boolean;
   onToggleNotInterested?: (code: string) => void;
+  prereqStatus?: PrerequisiteCheck | null;
 }
 
-const CODE_RE = /\b[A-Z]{2,4}\d{3}(?:\/[A-Z]{2,4}\d{3}\*?)?\b/g;
+const CODE_RE = /\b[A-Z]{2,4}\d{3}(?:\/[A-Z]{2,4}\d{3}\*?)?\b/;
+const GLOSSARY_RE = new RegExp(`\\b(${Object.keys(GLOSSARY).join("|")})\\b`);
+const COMBINED_RE = new RegExp(`${CODE_RE.source}|${GLOSSARY_RE.source}`, "g");
 
 const LEVEL_TITLES: Record<string, string> = {
   L1: "NCEA Level 1",
@@ -34,6 +40,10 @@ function levelTitle(level: string): string {
   return LEVEL_TITLES[level] ?? level;
 }
 
+/** Single pass over free text that turns known course codes into
+ * clickable links and known acronyms (CAA, NCEA, UE, HoF, TiC, ...) into
+ * tooltipped <abbr> elements — combined into one regex so neither pass
+ * can double-wrap something the other already touched. */
 function linkifyCodes(
   text: string,
   courseByCode: Map<string, Course>,
@@ -42,12 +52,18 @@ function linkifyCodes(
   const parts: ReactNode[] = [];
   let lastIndex = 0;
   let match: RegExpExecArray | null;
-  const re = new RegExp(CODE_RE);
+  const re = new RegExp(COMBINED_RE);
   while ((match = re.exec(text)) !== null) {
-    const code = match[0].replace(/\*$/, "");
-    const known = courseByCode.has(code);
-    if (known) {
-      parts.push(text.slice(lastIndex, match.index));
+    const token = match[0];
+    const code = token.replace(/\*$/, "");
+    parts.push(text.slice(lastIndex, match.index));
+    if (GLOSSARY[token]) {
+      parts.push(
+        <abbr className="glossary-term" title={GLOSSARY[token]} key={match.index}>
+          {token}
+        </abbr>
+      );
+    } else if (courseByCode.has(code)) {
       parts.push(
         <button
           type="button"
@@ -55,11 +71,13 @@ function linkifyCodes(
           key={match.index}
           onClick={() => onSelectCode?.(code)}
         >
-          {match[0]}
+          {token}
         </button>
       );
-      lastIndex = match.index + match[0].length;
+    } else {
+      parts.push(token);
     }
+    lastIndex = match.index + token.length;
   }
   parts.push(text.slice(lastIndex));
   return parts;
@@ -101,6 +119,7 @@ export default function CourseDetail({
   onToggleBookmark,
   isNotInterested,
   onToggleNotInterested,
+  prereqStatus,
 }: Props) {
   if (!course) {
     return (
@@ -118,10 +137,6 @@ export default function CourseDetail({
       </div>
     );
   }
-
-  const impliedGap = course.implied_prerequisite
-    ? courseByCode.get(course.implied_prerequisite)
-    : null;
 
   return (
     <div className="detail">
@@ -177,21 +192,17 @@ export default function CourseDetail({
         )}
       </div>
 
-      {impliedGap && (
-        <section className="gap-warning">
-          <strong>No stated prerequisite in the prospectus text.</strong> A
-          Level 2 course in the same subject exists (
-          <button
-            type="button"
-            className="code-ref"
-            onClick={() => onSelectCode?.(impliedGap.code)}
-          >
-            {impliedGap.code}
-          </button>
-          {" "}
-          {impliedGap.title}) but the entry requirement for {course.code}{" "}
-          doesn't name it or a general Level 2 credit category — check with
-          the department whether it's expected.
+      {prereqStatus && prereqStatus.status !== "ok" && (
+        <section className={"gap-warning gap-warning-" + prereqStatus.status}>
+          <WarningIcon size={14} className="gap-warning-icon" />
+          <span>
+            <strong>
+              {prereqStatus.status === "unmet"
+                ? "Entry requirement not met by her current Y12 picks."
+                : "No stated prerequisite in the prospectus text."}
+            </strong>{" "}
+            {linkifyCodes(prereqStatus.reason, courseByCode, onSelectCode)}
+          </span>
         </section>
       )}
 
@@ -204,7 +215,9 @@ export default function CourseDetail({
 
       {course.description && (
         <section>
-          <p className="detail-description">{course.description}</p>
+          <p className="detail-description">
+            {linkifyCodes(course.description, courseByCode, onSelectCode)}
+          </p>
         </section>
       )}
 
