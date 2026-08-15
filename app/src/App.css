@@ -293,11 +293,12 @@
 }
 
 .course-chip.not-interested {
-  opacity: 0.4;
+  background: var(--bg-alt);
+  opacity: 0.55;
 }
 
 .course-chip.not-interested:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .course-chip.not-interested .chip-code,
@@ -306,7 +307,37 @@
   text-decoration-color: var(--text);
 }
 
-/* faculty accent stripes */
+/* State backgrounds take priority over the faculty stripe below, so a
+   warning or not-interested tag reads clearly even though every chip
+   also carries a faculty accent. A plain chip (no state) stays flat
+   white/var(--bg) so available, unencumbered courses stand out as
+   "clean" against ones flagged for attention. */
+.course-chip.has-warning.warning-unclear:not(.current-pick) {
+  background: rgba(217, 164, 65, 0.1);
+}
+
+.course-chip.has-warning.warning-unmet:not(.current-pick) {
+  background: rgba(192, 57, 43, 0.08);
+}
+
+.course-chip.has-warning.warning-unclear:not(.current-pick):hover {
+  background: rgba(217, 164, 65, 0.16);
+}
+
+.course-chip.has-warning.warning-unmet:not(.current-pick):hover {
+  background: rgba(192, 57, 43, 0.13);
+}
+
+.course-chip.has-warning.warning-unclear:not(.current-pick) {
+  border-color: rgba(217, 164, 65, 0.45);
+}
+
+.course-chip.has-warning.warning-unmet:not(.current-pick) {
+  border-color: rgba(192, 57, 43, 0.4);
+}
+
+/* faculty accent stripes — thinner and lower-contrast than the state
+   backgrounds above, so they read as metadata, not the headline signal */
 .course-chip::before {
   content: "";
   position: absolute;
@@ -315,6 +346,11 @@
   bottom: 0;
   width: 3px;
   border-radius: 7px 0 0 7px;
+  opacity: 0.75;
+}
+.course-chip.has-warning::before,
+.course-chip.not-interested::before {
+  opacity: 0.35;
 }
 .fac-arts::before { background: #e0739c; }
 .fac-english::before { background: #4f8fdb; }

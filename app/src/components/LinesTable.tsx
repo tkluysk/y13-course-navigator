@@ -98,7 +98,8 @@ export default function LinesTable({
                           facultyClass(course?.faculty ?? null) +
                           (isSelected ? " selected" : "") +
                           (isPick ? " current-pick" : "") +
-                          (isNotInterested ? " not-interested" : "")
+                          (isNotInterested ? " not-interested" : "") +
+                          (prereq && prereq.status !== "ok" ? " has-warning warning-" + prereq.status : "")
                         }
                         title={course?.title ?? "Placeholder slot — not in prospectus"}
                       >
