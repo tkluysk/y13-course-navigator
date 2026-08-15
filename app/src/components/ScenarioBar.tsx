@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Scenario } from "../scenarios";
 import LockIcon from "./LockIcon";
+import UndoIcon from "./UndoIcon";
 
 interface Props {
   scenarios: Scenario[];
@@ -11,6 +12,8 @@ interface Props {
   onDelete: (id: string) => void;
   onDuplicate: (id: string) => void;
   onToggleLock: (id: string) => void;
+  onUndo?: () => void;
+  canUndo?: boolean;
 }
 
 export default function ScenarioBar({
@@ -22,6 +25,8 @@ export default function ScenarioBar({
   onDelete,
   onDuplicate,
   onToggleLock,
+  onUndo,
+  canUndo,
 }: Props) {
   const [renamingId, setRenamingId] = useState<string | null>(null);
   const [draftName, setDraftName] = useState("");
@@ -116,6 +121,17 @@ export default function ScenarioBar({
         >
           Duplicate
         </button>
+        {onUndo && (
+          <button
+            type="button"
+            className="scenario-undo"
+            onClick={onUndo}
+            disabled={!canUndo}
+            title={canUndo ? "Undo last edit (Ctrl/Cmd+Z)" : "Nothing to undo"}
+          >
+            <UndoIcon size={13} /> Undo
+          </button>
+        )}
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import coursesData from "./data/courses.json";
 import { LINES, LINES_Y12 } from "./data/lines";
 import type { Course } from "./types";
 import { buildPathwayIndex, buildCourseGraph } from "./pathways";
 import { checkPrerequisite } from "./prerequisiteCheck";
 import { useLocalStorage } from "./useLocalStorage";
+import { useUndoableState } from "./useUndoableState";
 import {
   makeDefaultY13Scenarios,
   makeDefaultY12Scenarios,
@@ -24,7 +25,14 @@ const courses = coursesData as Course[];
 type View = "lines13" | "lines12" | "browse";
 
 function useScenarioSet(storageKey: string, makeDefaults: () => Scenario[]) {
-  const [scenarios, setScenarios] = useLocalStorage<Scenario[]>(storageKey, makeDefaults());
+  const [storedScenarios, setStoredScenarios] = useLocalStorage<Scenario[]>(
+    storageKey,
+    makeDefaults()
+  );
+  const { value: scenarios, set: setScenarios, undo, canUndo } = useUndoableState(
+    storedScenarios,
+    setStoredScenarios
+  );
   const [activeId, setActiveId] = useLocalStorage<string>(
     `${storageKey}.active`,
     scenarios[0]?.id ?? ""
@@ -91,7 +99,19 @@ function useScenarioSet(storageKey: string, makeDefaults: () => Scenario[]) {
     }
   };
 
-  return { scenarios, active, setActiveId, togglePick, create, duplicate, rename, toggleLock, remove };
+  return {
+    scenarios,
+    active,
+    setActiveId,
+    togglePick,
+    create,
+    duplicate,
+    rename,
+    toggleLock,
+    remove,
+    undo,
+    canUndo,
+  };
 }
 
 function App() {
@@ -159,6 +179,23 @@ function App() {
     );
   };
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!(e.metaKey || e.ctrlKey) || e.key.toLowerCase() !== "z") return;
+      const target = e.target as HTMLElement | null;
+      if (target && ["INPUT", "TEXTAREA"].includes(target.tagName)) return;
+      if (view === "lines13") {
+        e.preventDefault();
+        y13.undo();
+      } else if (view === "lines12") {
+        e.preventDefault();
+        y12.undo();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [view, y13, y12]);
+
   return (
     <div className="app-shell">
       <header className="app-header">
@@ -222,6 +259,8 @@ function App() {
                 onDelete={y13.remove}
                 onDuplicate={y13.duplicate}
                 onToggleLock={y13.toggleLock}
+                onUndo={y13.undo}
+                canUndo={y13.canUndo}
               />
               <LinesTable
                 lines={LINES}
@@ -250,6 +289,8 @@ function App() {
                 onDelete={y12.remove}
                 onDuplicate={y12.duplicate}
                 onToggleLock={y12.toggleLock}
+                onUndo={y12.undo}
+                canUndo={y12.canUndo}
               />
               <LinesTable
                 lines={LINES_Y12}
