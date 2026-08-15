@@ -336,6 +336,22 @@
   border-color: rgba(192, 57, 43, 0.4);
 }
 
+/* A course already picked on a different line — not a judgment about the
+   course itself (unlike warning/not-interested), just "not independently
+   pickable from this slot". Distinct hatched grey so it doesn't read as
+   either a plain available chip or a flagged one. */
+.course-chip.picked-elsewhere {
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--bg-alt) 0 6px,
+    var(--bg) 6px 12px
+  );
+}
+
+.course-chip.picked-elsewhere .chip-title {
+  color: var(--text);
+}
+
 /* faculty accent stripes — thinner and lower-contrast than the state
    backgrounds above, so they read as metadata, not the headline signal */
 .course-chip::before {
@@ -349,7 +365,8 @@
   opacity: 0.75;
 }
 .course-chip.has-warning::before,
-.course-chip.not-interested::before {
+.course-chip.not-interested::before,
+.course-chip.picked-elsewhere::before {
   opacity: 0.35;
 }
 .fac-arts::before { background: #e0739c; }

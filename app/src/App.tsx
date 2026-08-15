@@ -33,11 +33,22 @@ function useScenarioSet(storageKey: string, makeDefaults: () => Scenario[]) {
 
   const togglePick = (line: number, code: string) => {
     setScenarios((prev) =>
-      prev.map((s) =>
-        s.id !== active.id || s.locked
-          ? s
-          : { ...s, picks: { ...s.picks, [line]: s.picks[line] === code ? null : code } }
-      )
+      prev.map((s) => {
+        if (s.id !== active.id || s.locked) return s;
+        const nextPicks = { ...s.picks };
+        if (nextPicks[line] === code) {
+          // unpick from this line
+          nextPicks[line] = null;
+        } else {
+          // a course can only be picked on one line at a time — clear it
+          // from wherever else it's currently picked, then set it here
+          for (const [otherLine, pickedCode] of Object.entries(nextPicks)) {
+            if (pickedCode === code) nextPicks[Number(otherLine)] = null;
+          }
+          nextPicks[line] = code;
+        }
+        return { ...s, picks: nextPicks };
+      })
     );
   };
 

@@ -2512,7 +2512,7 @@
     "donation_text": "Workbook",
     "donation_amount": "$30",
     "also_listed_under": [],
-    "required_credits": null,
+    "required_credits": 12,
     "explicit_prerequisites": [],
     "implied_prerequisite": null,
     "alternative_category": "Science",
@@ -2541,7 +2541,7 @@
     "donation_text": "For workbook",
     "donation_amount": "$30",
     "also_listed_under": [],
-    "required_credits": null,
+    "required_credits": 12,
     "explicit_prerequisites": [
       "CHE223"
     ],
@@ -2628,7 +2628,7 @@
     "donation_text": "For a write-in handbook",
     "donation_amount": "$35",
     "also_listed_under": [],
-    "required_credits": null,
+    "required_credits": 12,
     "explicit_prerequisites": [
       "PHY223"
     ],

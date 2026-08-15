@@ -47,8 +47,13 @@ def extract_level(header_prefix: str) -> str:
 
 
 CODE_IN_TEXT_RE = re.compile(r"\b([A-Z]{2,4}\d{3})\b")
+# Usually "<N> credits" / "<N>+ credits" / "<N>-<M> credits" sit right next
+# to each other, but a few courses interpose the subject/category between
+# the number and the word "credits" (e.g. "12 Level 2 Science credits") —
+# match that ordering too, not just the immediately-adjacent form.
 CREDIT_COUNT_RE = re.compile(
-    r"(?:minimum\s+)?(\d+)(?:-\d+)?\s*(?:\+)?\s*credits?", re.I
+    r"(?:minimum\s+|at least\s+)?(\d+)(?:-\d+)?\s*(?:\+)?\s*(?:level\s*2\s+[A-Za-z]+\s+)?credits?",
+    re.I,
 )
 # The prospectus phrases a "credits from a related Level 2 subject" entry
 # requirement in several different ways across courses, e.g.:

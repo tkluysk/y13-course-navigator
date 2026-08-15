@@ -41,6 +41,13 @@ export default function LinesTable({
   hint,
 }: Props) {
   const maxRows = Math.max(...lines.map((l) => l.codes.length));
+  // A course can only be picked once across the whole grid. If it's already
+  // picked in a different column, every other appearance of that same code
+  // (it can repeat across lines) is not really pickable from here — mark it
+  // so it doesn't look like a normal available white chip.
+  const pickedElsewhere = new Set(
+    Object.values(currentPicks).filter((c): c is string => !!c)
+  );
 
   return (
     <div className="lines-table-wrap">
@@ -87,6 +94,7 @@ export default function LinesTable({
                   const course = courseByCode.get(code);
                   const isSelected = selectedCode === code;
                   const isPick = currentPicks[l.line] === code;
+                  const isPickedElsewhere = !isPick && pickedElsewhere.has(code);
                   const isBookmarked = bookmarks?.has(code);
                   const isNotInterested = notInterested?.has(code);
                   const prereq = prereqStatusByCode?.get(code);
@@ -99,9 +107,14 @@ export default function LinesTable({
                           (isSelected ? " selected" : "") +
                           (isPick ? " current-pick" : "") +
                           (isNotInterested ? " not-interested" : "") +
+                          (isPickedElsewhere ? " picked-elsewhere" : "") +
                           (prereq && prereq.status !== "ok" ? " has-warning warning-" + prereq.status : "")
                         }
-                        title={course?.title ?? "Placeholder slot — not in prospectus"}
+                        title={
+                          isPickedElsewhere
+                            ? `${course?.title ?? code} — already picked on another line`
+                            : course?.title ?? "Placeholder slot — not in prospectus"
+                        }
                       >
                         <button
                           type="button"
@@ -150,9 +163,11 @@ export default function LinesTable({
                             title={
                               locked
                                 ? "Scenario is locked"
-                                : isPick
-                                  ? "Unpick for this scenario"
-                                  : "Pick for this scenario"
+                                : isPickedElsewhere
+                                  ? "Picked on another line — click to move it here"
+                                  : isPick
+                                    ? "Unpick for this scenario"
+                                    : "Pick for this scenario"
                             }
                             aria-pressed={isPick}
                           >
