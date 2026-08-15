@@ -58,6 +58,25 @@ parser, worth flagging back to whoever maintains the prospectus:
    prerequisite gap. May be intentional, but worth confirming with the
    Maths faculty since every comparable course states its entry
    requirement explicitly.
+6. **SOC223 (Sociology, Level 2) has an unrelated sidebar note embedded in
+   its entry-requirement text.** The raw text between its "ENTRY" line and
+   the next section heading includes a Tourism Māori callout ("For Year 12
+   students, Level 3 credits in Tourism Māori are on offer... speak to
+   Megan Southwell") that has nothing to do with Sociology's own entry
+   requirement — almost certainly a page sidebar/callout box that the PDF's
+   text layer linearised into the wrong position. The app strips this
+   specific note out; SOC223's real entry requirement is just "Literacy
+   corequisite".
+7. **Sonic Arts (SON223) also disagrees with itself between its two
+   listings** — beyond the near-verbatim duplication noted in point 4, one
+   listing's entry requirement reads "Open" while the other reads
+   "Dependent upon approval of HoF or TiC". The app keeps the first
+   ("Open"); worth confirming which is current.
+8. **A handful of courses give credit counts in non-numeric-pair formats**
+   the rest of the document doesn't use: EPB223 gives ranges ("4-8" external
+   / "12-16" internal credits) rather than fixed numbers, and MAT223 uses
+   "TBC" in place of a credit count ("12 TBC $10"). Not wrong, just
+   inconsistent with the numeric-pair format every other course uses.
 
 ## Project layout
 
