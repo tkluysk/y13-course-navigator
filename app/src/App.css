@@ -237,6 +237,29 @@
   color: var(--accent);
 }
 
+.chip-star-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.chip-star-btn:disabled:hover {
+  color: var(--border);
+}
+
+.course-chip.not-interested {
+  opacity: 0.4;
+}
+
+.course-chip.not-interested:hover {
+  opacity: 0.7;
+}
+
+.course-chip.not-interested .chip-code,
+.course-chip.not-interested .chip-title {
+  text-decoration: line-through;
+  text-decoration-color: var(--text);
+}
+
 /* faculty accent stripes */
 .course-chip::before {
   content: "";
@@ -409,6 +432,35 @@
 
 .bookmark-btn.active {
   color: #d9a441;
+}
+
+.not-interested-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  padding: 2px 4px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.not-interested-btn:hover {
+  color: #c0392b;
+  opacity: 1;
+}
+
+.not-interested-btn.active {
+  color: #c0392b;
+  opacity: 1;
+}
+
+.not-interested-note {
+  font-size: 12px;
+  color: #c0392b;
+  margin-top: 4px;
+  font-weight: 500;
 }
 
 .gap-warning {
@@ -631,6 +683,10 @@
   stroke: var(--accent);
 }
 
+.graph-node-text:hover rect {
+  stroke: var(--border);
+}
+
 .graph-group-popover {
   margin-top: 10px;
   border: 1px solid var(--border);
@@ -762,6 +818,9 @@
 }
 
 .scenario-tab-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   border: none;
   background: none;
   cursor: pointer;
@@ -769,6 +828,34 @@
   font-size: 12.5px;
   font-weight: 500;
   color: var(--text-h);
+}
+
+.scenario-tab.locked {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.scenario-tab-lock {
+  border: none;
+  border-left: 1px solid var(--border);
+  background: none;
+  cursor: pointer;
+  color: var(--border);
+  padding: 0 9px;
+  display: flex;
+  align-items: center;
+}
+
+.scenario-tab-lock:hover {
+  color: var(--text);
+}
+
+.scenario-tab-lock.locked {
+  color: var(--text-h);
+}
+
+.scenario-tab-lock.locked:hover {
+  color: var(--text-h);
+  opacity: 0.75;
 }
 
 .scenario-rename-input {

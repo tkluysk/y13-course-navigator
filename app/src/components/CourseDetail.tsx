@@ -11,6 +11,8 @@ interface Props {
   onSelectCode?: (code: string) => void;
   isBookmarked?: boolean;
   onToggleBookmark?: (code: string) => void;
+  isNotInterested?: boolean;
+  onToggleNotInterested?: (code: string) => void;
 }
 
 const CODE_RE = /\b[A-Z]{2,4}\d{3}(?:\/[A-Z]{2,4}\d{3}\*?)?\b/g;
@@ -96,6 +98,8 @@ export default function CourseDetail({
   onSelectCode,
   isBookmarked,
   onToggleBookmark,
+  isNotInterested,
+  onToggleNotInterested,
 }: Props) {
   if (!course) {
     return (
@@ -145,6 +149,19 @@ export default function CourseDetail({
           >
             <BookmarkIcon filled={isBookmarked} size={18} />
           </button>
+          <button
+            type="button"
+            className={"not-interested-btn" + (isNotInterested ? " active" : "")}
+            onClick={() => onToggleNotInterested?.(course.code)}
+            title={
+              isNotInterested
+                ? "Mark as interested again"
+                : "Mark as not interested — greys it out everywhere"
+            }
+            aria-pressed={isNotInterested}
+          >
+            ✕
+          </button>
         </div>
         <h2>{course.title}</h2>
         {course.faculty && (
@@ -153,6 +170,9 @@ export default function CourseDetail({
             {course.also_listed_under.length > 0 &&
               ` (also listed under ${course.also_listed_under.join(", ")})`}
           </p>
+        )}
+        {isNotInterested && (
+          <p className="not-interested-note">Marked as not interested</p>
         )}
       </div>
 

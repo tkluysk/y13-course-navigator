@@ -8,8 +8,10 @@ interface Props {
   onSelect: (code: string) => void;
   currentPicks: Record<number, string | null>;
   editable?: boolean;
+  locked?: boolean;
   onTogglePick?: (line: number, code: string) => void;
   bookmarks?: Set<string>;
+  notInterested?: Set<string>;
   hint?: string;
 }
 
@@ -25,8 +27,10 @@ export default function LinesTable({
   onSelect,
   currentPicks,
   editable = false,
+  locked = false,
   onTogglePick,
   bookmarks,
+  notInterested,
   hint,
 }: Props) {
   const maxRows = Math.max(...lines.map((l) => l.codes.length));
@@ -35,8 +39,12 @@ export default function LinesTable({
     <div className="lines-table-wrap">
       <p className="hint">
         {hint ??
-          `Choose 5 courses, at most one per column.${
-            editable ? " Click the star on a chip to pick it for this scenario." : ""
+          `Choose minimum 5 courses, at most 1 per column.${
+            locked
+              ? " This scenario is locked — unlock it to change picks."
+              : editable
+                ? " Click the star on a chip to pick it for this scenario."
+                : ""
           }`}
       </p>
       <div className="lines-table-scroll">
@@ -73,6 +81,7 @@ export default function LinesTable({
                   const isSelected = selectedCode === code;
                   const isPick = currentPicks[l.line] === code;
                   const isBookmarked = bookmarks?.has(code);
+                  const isNotInterested = notInterested?.has(code);
                   return (
                     <td key={l.line}>
                       <div
@@ -80,7 +89,8 @@ export default function LinesTable({
                           "course-chip " +
                           facultyClass(course?.faculty ?? null) +
                           (isSelected ? " selected" : "") +
-                          (isPick ? " current-pick" : "")
+                          (isPick ? " current-pick" : "") +
+                          (isNotInterested ? " not-interested" : "")
                         }
                         title={course?.title ?? "Placeholder slot — not in prospectus"}
                       >
@@ -103,8 +113,15 @@ export default function LinesTable({
                           <button
                             type="button"
                             className={"chip-star-btn" + (isPick ? " active" : "")}
-                            onClick={() => onTogglePick?.(l.line, code)}
-                            title={isPick ? "Unpick for this scenario" : "Pick for this scenario"}
+                            onClick={() => !locked && onTogglePick?.(l.line, code)}
+                            disabled={locked}
+                            title={
+                              locked
+                                ? "Scenario is locked"
+                                : isPick
+                                  ? "Unpick for this scenario"
+                                  : "Pick for this scenario"
+                            }
                             aria-pressed={isPick}
                           >
                             {isPick ? "★" : "☆"}

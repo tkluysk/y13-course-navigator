@@ -54,12 +54,16 @@ const EDGE_PRIORITY: Record<EdgeKind, number> = {
   pathway: 0,
 };
 
-/** A single real course, or a synthetic "any of these Y12 courses" group
- * (used for "or another Social Science" style alternative pathways, so the
- * graph shows one node instead of one per sibling course). */
+/** A single real course, a synthetic "any of these Y12 courses" group (used
+ * for "or another Social Science" style alternative pathways, so the graph
+ * shows one node instead of one per sibling course), or a free-text "beyond
+ * school" note — the prospectus's "Pathway:" prose almost always describes
+ * where a course leads (tertiary study, careers) without naming a specific
+ * NCEA course, so there's nothing to link to but it's still worth showing. */
 export type GraphEndpoint =
   | { type: "course"; course: Course }
-  | { type: "group"; id: string; label: string; members: Course[] };
+  | { type: "group"; id: string; label: string; members: Course[] }
+  | { type: "text"; id: string; text: string };
 
 export function endpointKey(e: GraphEndpoint): string {
   return e.type === "course" ? e.course.code : e.id;
@@ -194,6 +198,20 @@ export function buildCourseGraph(
         addNode(group, "upstream");
         addEdge(group, centerEndpoint, "alternative", center.required_credits, label);
       }
+    }
+
+    // "Beyond school" note: the pathway prose almost always describes where
+    // the course leads without naming a specific course code (e.g. "This
+    // can lead to tertiary study..."). Show it as a downstream text node so
+    // it's visible on the graph, not just buried in the side panel.
+    if (center.pathway) {
+      const textNode: GraphEndpoint = {
+        type: "text",
+        id: `beyond:${center.code}`,
+        text: center.pathway,
+      };
+      addNode(textNode, "downstream");
+      addEdge(centerEndpoint, textNode, "pathway", null, "beyond school");
     }
   }
 

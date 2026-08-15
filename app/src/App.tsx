@@ -1,10 +1,15 @@
 import { useMemo, useState } from "react";
 import coursesData from "./data/courses.json";
-import { LINES, LINES_Y12, CURRENT_PICKS_Y12 } from "./data/lines";
+import { LINES, LINES_Y12 } from "./data/lines";
 import type { Course } from "./types";
 import { buildPathwayIndex, buildCourseGraph } from "./pathways";
 import { useLocalStorage } from "./useLocalStorage";
-import { makeDefaultScenario, newScenarioId, type Scenario } from "./scenarios";
+import {
+  makeDefaultY13Scenarios,
+  makeDefaultY12Scenarios,
+  newScenarioId,
+  type Scenario,
+} from "./scenarios";
 import LinesTable from "./components/LinesTable";
 import CourseBrowser from "./components/CourseBrowser";
 import CourseDetail from "./components/CourseDetail";
@@ -17,19 +22,77 @@ const courses = coursesData as Course[];
 
 type View = "lines13" | "lines12" | "browse";
 
-function App() {
-  const [scenarios, setScenarios] = useLocalStorage<Scenario[]>("y13nav.scenarios", [
-    makeDefaultScenario(),
-  ]);
-  const [activeScenarioId, setActiveScenarioId] = useLocalStorage<string>(
-    "y13nav.activeScenario",
-    scenarios[0]?.id ?? "actual"
+function useScenarioSet(storageKey: string, makeDefaults: () => Scenario[]) {
+  const [scenarios, setScenarios] = useLocalStorage<Scenario[]>(storageKey, makeDefaults());
+  const [activeId, setActiveId] = useLocalStorage<string>(
+    `${storageKey}.active`,
+    scenarios[0]?.id ?? ""
   );
-  const [bookmarks, setBookmarks] = useLocalStorage<string[]>("y13nav.bookmarks", []);
+  const active = scenarios.find((s) => s.id === activeId) ?? scenarios[0];
 
-  const [selectedCode, setSelectedCode] = useState<string | null>(
-    scenarios[0]?.picks[1] ?? null
+  const togglePick = (line: number, code: string) => {
+    setScenarios((prev) =>
+      prev.map((s) =>
+        s.id !== active.id || s.locked
+          ? s
+          : { ...s, picks: { ...s.picks, [line]: s.picks[line] === code ? null : code } }
+      )
+    );
+  };
+
+  const create = (name: string) => {
+    const s: Scenario = { id: newScenarioId(), name, picks: {} };
+    setScenarios((prev) => [...prev, s]);
+    setActiveId(s.id);
+  };
+
+  const duplicate = (id: string) => {
+    const source = scenarios.find((s) => s.id === id);
+    if (!source) return;
+    const s: Scenario = {
+      id: newScenarioId(),
+      name: `${source.name} copy`,
+      picks: { ...source.picks },
+    };
+    setScenarios((prev) => [...prev, s]);
+    setActiveId(s.id);
+  };
+
+  const rename = (id: string, name: string) => {
+    setScenarios((prev) => prev.map((s) => (s.id === id ? { ...s, name } : s)));
+  };
+
+  const toggleLock = (id: string) => {
+    setScenarios((prev) => prev.map((s) => (s.id === id ? { ...s, locked: !s.locked } : s)));
+  };
+
+  const remove = (id: string) => {
+    setScenarios((prev) => {
+      const target = prev.find((s) => s.id === id);
+      if (target?.locked) return prev;
+      const next = prev.filter((s) => s.id !== id);
+      return next.length > 0 ? next : makeDefaults();
+    });
+    if (activeId === id) {
+      const remaining = scenarios.filter((s) => s.id !== id);
+      setActiveId(remaining[0]?.id ?? makeDefaults()[0].id);
+    }
+  };
+
+  return { scenarios, active, setActiveId, togglePick, create, duplicate, rename, toggleLock, remove };
+}
+
+function App() {
+  const y13 = useScenarioSet("y13nav.scenarios.y13", makeDefaultY13Scenarios);
+  const y12 = useScenarioSet("y13nav.scenarios.y12", makeDefaultY12Scenarios);
+
+  const [bookmarks, setBookmarks] = useLocalStorage<string[]>("y13nav.bookmarks", []);
+  const [notInterested, setNotInterested] = useLocalStorage<string[]>(
+    "y13nav.notInterested",
+    []
   );
+
+  const [selectedCode, setSelectedCode] = useState<string | null>(y13.active?.picks[1] ?? null);
   const [view, setView] = useState<View>("lines13");
 
   const courseByCode = useMemo(() => {
@@ -47,10 +110,8 @@ function App() {
     [selectedCode, courseByCode, pathwayIndex]
   );
 
-  const activeScenario =
-    scenarios.find((s) => s.id === activeScenarioId) ?? scenarios[0];
-
   const bookmarkSet = useMemo(() => new Set(bookmarks), [bookmarks]);
+  const notInterestedSet = useMemo(() => new Set(notInterested), [notInterested]);
 
   const toggleBookmark = (code: string) => {
     setBookmarks((prev) =>
@@ -58,53 +119,10 @@ function App() {
     );
   };
 
-  const togglePick = (line: number, code: string) => {
-    setScenarios((prev) =>
-      prev.map((s) =>
-        s.id !== activeScenario.id
-          ? s
-          : {
-              ...s,
-              picks: {
-                ...s.picks,
-                [line]: s.picks[line] === code ? null : code,
-              },
-            }
-      )
+  const toggleNotInterested = (code: string) => {
+    setNotInterested((prev) =>
+      prev.includes(code) ? prev.filter((c) => c !== code) : [...prev, code]
     );
-  };
-
-  const createScenario = (name: string) => {
-    const s: Scenario = { id: newScenarioId(), name, picks: {} };
-    setScenarios((prev) => [...prev, s]);
-    setActiveScenarioId(s.id);
-  };
-
-  const duplicateScenario = (id: string) => {
-    const source = scenarios.find((s) => s.id === id);
-    if (!source) return;
-    const s: Scenario = {
-      id: newScenarioId(),
-      name: `${source.name} copy`,
-      picks: { ...source.picks },
-    };
-    setScenarios((prev) => [...prev, s]);
-    setActiveScenarioId(s.id);
-  };
-
-  const renameScenario = (id: string, name: string) => {
-    setScenarios((prev) => prev.map((s) => (s.id === id ? { ...s, name } : s)));
-  };
-
-  const deleteScenario = (id: string) => {
-    setScenarios((prev) => {
-      const next = prev.filter((s) => s.id !== id);
-      return next.length > 0 ? next : [makeDefaultScenario()];
-    });
-    if (activeScenarioId === id) {
-      const remaining = scenarios.filter((s) => s.id !== id);
-      setActiveScenarioId(remaining[0]?.id ?? "actual");
-    }
   };
 
   return (
@@ -158,36 +176,54 @@ function App() {
           {view === "lines13" && (
             <>
               <ScenarioBar
-                scenarios={scenarios}
-                activeId={activeScenario.id}
-                onSwitch={setActiveScenarioId}
-                onCreate={createScenario}
-                onRename={renameScenario}
-                onDelete={deleteScenario}
-                onDuplicate={duplicateScenario}
+                scenarios={y13.scenarios}
+                activeId={y13.active.id}
+                onSwitch={y13.setActiveId}
+                onCreate={y13.create}
+                onRename={y13.rename}
+                onDelete={y13.remove}
+                onDuplicate={y13.duplicate}
+                onToggleLock={y13.toggleLock}
               />
               <LinesTable
                 lines={LINES}
                 courseByCode={courseByCode}
                 selectedCode={selectedCode}
                 onSelect={setSelectedCode}
-                currentPicks={activeScenario.picks}
+                currentPicks={y13.active.picks}
                 editable
-                onTogglePick={togglePick}
+                locked={y13.active.locked}
+                onTogglePick={y13.togglePick}
                 bookmarks={bookmarkSet}
+                notInterested={notInterestedSet}
               />
             </>
           )}
           {view === "lines12" && (
-            <LinesTable
-              lines={LINES_Y12}
-              courseByCode={courseByCode}
-              selectedCode={selectedCode}
-              onSelect={setSelectedCode}
-              currentPicks={CURRENT_PICKS_Y12}
-              bookmarks={bookmarkSet}
-              hint="Her Y12 (2026) picks, for reference — read-only."
-            />
+            <>
+              <ScenarioBar
+                scenarios={y12.scenarios}
+                activeId={y12.active.id}
+                onSwitch={y12.setActiveId}
+                onCreate={y12.create}
+                onRename={y12.rename}
+                onDelete={y12.remove}
+                onDuplicate={y12.duplicate}
+                onToggleLock={y12.toggleLock}
+              />
+              <LinesTable
+                lines={LINES_Y12}
+                courseByCode={courseByCode}
+                selectedCode={selectedCode}
+                onSelect={setSelectedCode}
+                currentPicks={y12.active.picks}
+                editable
+                locked={y12.active.locked}
+                onTogglePick={y12.togglePick}
+                bookmarks={bookmarkSet}
+                notInterested={notInterestedSet}
+              />
+            </>
           )}
           {view === "browse" && (
             <CourseBrowser
@@ -206,6 +242,8 @@ function App() {
             onSelectCode={setSelectedCode}
             isBookmarked={selectedCode ? bookmarkSet.has(selectedCode) : false}
             onToggleBookmark={toggleBookmark}
+            isNotInterested={selectedCode ? notInterestedSet.has(selectedCode) : false}
+            onToggleNotInterested={toggleNotInterested}
           />
         </div>
       </main>

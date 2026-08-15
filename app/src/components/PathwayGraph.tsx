@@ -10,12 +10,43 @@ interface Props {
 
 const NODE_W = 180;
 const NODE_H = 56;
+const TEXT_NODE_W = 240;
+const TEXT_NODE_MIN_H = 72;
 const COL_GAP = 220;
 const ROW_GAP = 16;
 const PAD = 24;
+const CHARS_PER_LINE = 34;
+const LINE_HEIGHT = 13;
 
 function truncate(s: string, n: number) {
   return s.length > n ? s.slice(0, n - 1) + "…" : s;
+}
+
+function wrapText(s: string, charsPerLine: number): string[] {
+  const words = s.split(/\s+/);
+  const lines: string[] = [];
+  let current = "";
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word;
+    if (candidate.length > charsPerLine && current) {
+      lines.push(current);
+      current = word;
+    } else {
+      current = candidate;
+    }
+  }
+  if (current) lines.push(current);
+  return lines;
+}
+
+function nodeHeight(endpoint: GraphEndpoint): number {
+  if (endpoint.type !== "text") return NODE_H;
+  const lines = wrapText(endpoint.text, CHARS_PER_LINE);
+  return Math.max(TEXT_NODE_MIN_H, 20 + lines.length * LINE_HEIGHT + 12);
+}
+
+function nodeWidth(endpoint: GraphEndpoint): number {
+  return endpoint.type === "text" ? TEXT_NODE_W : NODE_W;
 }
 
 const EDGE_COLOR: Record<EdgeKind, string> = {
@@ -44,28 +75,44 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
 
   if (!center) return null;
 
-  const rows = Math.max(upstream.length, downstream.length, 1);
-  const height = PAD * 2 + rows * NODE_H + (rows - 1) * ROW_GAP;
-  const width = PAD * 2 + NODE_W * 3 + COL_GAP * 2;
+  const colWidth = {
+    upstream: Math.max(NODE_W, ...upstream.map((n) => nodeWidth(n.endpoint)), NODE_W),
+    center: NODE_W,
+    downstream: Math.max(NODE_W, ...downstream.map((n) => nodeWidth(n.endpoint)), NODE_W),
+  };
 
-  const colX = { upstream: PAD, center: PAD + NODE_W + COL_GAP, downstream: PAD + (NODE_W + COL_GAP) * 2 };
+  const colTotalH = (nodes: typeof upstream) => {
+    if (nodes.length === 0) return NODE_H;
+    const heights = nodes.map((n) => nodeHeight(n.endpoint));
+    return heights.reduce((a, b) => a + b, 0) + (nodes.length - 1) * ROW_GAP;
+  };
 
-  const yFor = (idx: number, count: number) => {
-    const totalH = count * NODE_H + (count - 1) * ROW_GAP;
+  const height = PAD * 2 + Math.max(colTotalH(upstream), colTotalH(downstream), NODE_H);
+  const colX = {
+    upstream: PAD,
+    center: PAD + colWidth.upstream + COL_GAP,
+    downstream: PAD + colWidth.upstream + COL_GAP + colWidth.center + COL_GAP,
+  };
+  const width = colX.downstream + colWidth.downstream + PAD;
+
+  const yPositions = (nodes: typeof upstream) => {
+    const totalH = colTotalH(nodes);
     const start = (height - totalH) / 2;
-    return start + idx * (NODE_H + ROW_GAP);
+    const map = new Map<string, number>();
+    let y = start;
+    for (const n of nodes) {
+      map.set(endpointKey(n.endpoint), y);
+      y += nodeHeight(n.endpoint) + ROW_GAP;
+    }
+    return map;
   };
 
   const centerY = height / 2 - NODE_H / 2;
 
   const positions = new Map<string, { x: number; y: number }>();
   positions.set(endpointKey(center.endpoint), { x: colX.center, y: centerY });
-  upstream.forEach((n, i) =>
-    positions.set(endpointKey(n.endpoint), { x: colX.upstream, y: yFor(i, upstream.length) })
-  );
-  downstream.forEach((n, i) =>
-    positions.set(endpointKey(n.endpoint), { x: colX.downstream, y: yFor(i, downstream.length) })
-  );
+  for (const [key, y] of yPositions(upstream)) positions.set(key, { x: colX.upstream, y });
+  for (const [key, y] of yPositions(downstream)) positions.set(key, { x: colX.downstream, y });
 
   const expandedNode = graph.nodes.find(
     (n) => n.endpoint.type === "group" && n.endpoint.id === expandedGroup
@@ -103,10 +150,13 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
           const from = positions.get(endpointKey(e.from));
           const to = positions.get(endpointKey(e.to));
           if (!from || !to) return null;
-          const x1 = from.x + NODE_W;
-          const y1 = from.y + NODE_H / 2;
+          const fromW = nodeWidth(e.from);
+          const fromH = nodeHeight(e.from);
+          const toH = nodeHeight(e.to);
+          const x1 = from.x + fromW;
+          const y1 = from.y + fromH / 2;
           const x2 = to.x;
-          const y2 = to.y + NODE_H / 2;
+          const y2 = to.y + toH / 2;
           const midX = (x1 + x2) / 2;
           const path = `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
           const labelX = (x1 + x2) / 2;
@@ -154,12 +204,15 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
           if (!pos) return null;
           const isCenter = n.role === "center";
           const isGroup = n.endpoint.type === "group";
+          const isText = n.endpoint.type === "text";
+          const w = nodeWidth(n.endpoint);
+          const h = nodeHeight(n.endpoint);
 
           const handleClick = () => {
-            if (isCenter) return;
+            if (isCenter || isText) return;
             if (n.endpoint.type === "group") {
               setExpandedGroup(expandedGroup === n.endpoint.id ? null : n.endpoint.id);
-            } else {
+            } else if (n.endpoint.type === "course") {
               onSelectCode(n.endpoint.course.code);
             }
           };
@@ -174,22 +227,24 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
                 ]
                   .filter(Boolean)
                   .join("\n")
-              : `${n.endpoint.label}: ${n.endpoint.members.map((m) => m.code).join(", ")}`;
+              : n.endpoint.type === "group"
+                ? `${n.endpoint.label}: ${n.endpoint.members.map((m) => m.code).join(", ")}`
+                : n.endpoint.text;
 
           return (
             <g
               key={key}
               transform={`translate(${pos.x}, ${pos.y})`}
-              className={"graph-node" + (isCenter ? " graph-node-center" : "")}
+              className={"graph-node" + (isCenter ? " graph-node-center" : "") + (isText ? " graph-node-text" : "")}
               onClick={handleClick}
-              style={{ cursor: isCenter ? "default" : "pointer" }}
+              style={{ cursor: isCenter || isText ? "default" : "pointer" }}
             >
               <title>{tooltip}</title>
               <rect
-                width={NODE_W}
-                height={NODE_H}
+                width={w}
+                height={h}
                 rx={10}
-                fill={isCenter ? "var(--accent-bg)" : "var(--bg)"}
+                fill={isCenter ? "var(--accent-bg)" : isText ? "var(--bg-alt)" : "var(--bg)"}
                 stroke={isCenter ? "var(--accent)" : "var(--border)"}
                 strokeWidth={isCenter ? 2 : 1}
                 strokeDasharray={isGroup ? "3 3" : undefined}
@@ -206,7 +261,7 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
                     {n.endpoint.course.level}
                   </text>
                 </>
-              ) : (
+              ) : n.endpoint.type === "group" ? (
                 <>
                   <text x={12} y={24} fontSize={10.5} fontWeight={700} fill="#1f8080">
                     {truncate(n.endpoint.label, 26)}
@@ -214,6 +269,23 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
                   <text x={12} y={40} fontSize={9.5} fill="var(--text)">
                     {n.endpoint.members.length} courses — click to list
                   </text>
+                </>
+              ) : (
+                <>
+                  <text x={12} y={16} fontSize={9} fontWeight={700} fill="var(--text)" letterSpacing={0.4}>
+                    BEYOND SCHOOL
+                  </text>
+                  {wrapText(n.endpoint.text, CHARS_PER_LINE).map((line, li) => (
+                    <text
+                      key={li}
+                      x={12}
+                      y={20 + 14 + li * LINE_HEIGHT}
+                      fontSize={10}
+                      fill="var(--text-h)"
+                    >
+                      {line}
+                    </text>
+                  ))}
                 </>
               )}
             </g>

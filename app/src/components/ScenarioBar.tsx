@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Scenario } from "../scenarios";
+import LockIcon from "./LockIcon";
 
 interface Props {
   scenarios: Scenario[];
@@ -9,6 +10,7 @@ interface Props {
   onRename: (id: string, name: string) => void;
   onDelete: (id: string) => void;
   onDuplicate: (id: string) => void;
+  onToggleLock: (id: string) => void;
 }
 
 export default function ScenarioBar({
@@ -19,11 +21,13 @@ export default function ScenarioBar({
   onRename,
   onDelete,
   onDuplicate,
+  onToggleLock,
 }: Props) {
   const [renamingId, setRenamingId] = useState<string | null>(null);
   const [draftName, setDraftName] = useState("");
 
   const startRename = (s: Scenario) => {
+    if (s.locked) return;
     setRenamingId(s.id);
     setDraftName(s.name);
   };
@@ -35,13 +39,19 @@ export default function ScenarioBar({
     setRenamingId(null);
   };
 
+  const deletableCount = scenarios.filter((s) => !s.locked).length;
+
   return (
     <div className="scenario-bar">
       <div className="scenario-tabs">
         {scenarios.map((s) => (
           <div
             key={s.id}
-            className={"scenario-tab" + (s.id === activeId ? " active" : "")}
+            className={
+              "scenario-tab" +
+              (s.id === activeId ? " active" : "") +
+              (s.locked ? " locked" : "")
+            }
           >
             {renamingId === s.id ? (
               <input
@@ -61,12 +71,16 @@ export default function ScenarioBar({
                 className="scenario-tab-label"
                 onClick={() => onSwitch(s.id)}
                 onDoubleClick={() => startRename(s)}
-                title="Click to switch, double-click to rename"
+                title={
+                  s.locked
+                    ? "Locked — click to switch"
+                    : "Click to switch, double-click to rename"
+                }
               >
                 {s.name}
               </button>
             )}
-            {scenarios.length > 1 && (
+            {!s.locked && deletableCount > 1 && (
               <button
                 type="button"
                 className="scenario-tab-close"
@@ -76,6 +90,14 @@ export default function ScenarioBar({
                 ×
               </button>
             )}
+            <button
+              type="button"
+              className={"scenario-tab-lock" + (s.locked ? " locked" : "")}
+              onClick={() => onToggleLock(s.id)}
+              title={s.locked ? "Unlock this scenario" : "Lock this scenario"}
+            >
+              <LockIcon locked={s.locked} size={15} />
+            </button>
           </div>
         ))}
         <button

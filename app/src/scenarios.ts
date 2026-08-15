@@ -1,13 +1,20 @@
-import { CURRENT_PICKS } from "./data/lines";
+import { CURRENT_PICKS, CURRENT_PICKS_Y12 } from "./data/lines";
 
 export interface Scenario {
   id: string;
   name: string;
   picks: Record<number, string | null>;
+  locked?: boolean;
 }
 
-export function makeDefaultScenario(): Scenario {
-  return { id: "actual", name: "Primary picks", picks: { ...CURRENT_PICKS } };
+export function makeDefaultY13Scenarios(): Scenario[] {
+  return [{ id: "y13-actual", name: "Primary picks", picks: { ...CURRENT_PICKS } }];
+}
+
+export function makeDefaultY12Scenarios(): Scenario[] {
+  return [
+    { id: "y12-actual", name: "Her Y12 picks", picks: { ...CURRENT_PICKS_Y12 }, locked: true },
+  ];
 }
 
 export function newScenarioId(): string {
