@@ -1,0 +1,2227 @@
+[
+  {
+    "code": "LIT000",
+    "level": "Y12-13",
+    "title": "LITERACY",
+    "faculty": null,
+    "ue": false,
+    "scholarship": false,
+    "description": "",
+    "pathway": "",
+    "components": [
+      "In addition to continuing to develop foundational literacy skills, this course will offer two pathways to gain the corequisite qualification:",
+      "Pathway 1: passing the reading and writing CAA exams (10 external credits).",
+      "Pathway 2: passing two of the internal standards throughout the year (10 internal credits)."
+    ],
+    "external_credits": null,
+    "internal_credits": null,
+    "metrics_raw": "",
+    "also_listed_under": []
+  },
+  {
+    "code": "NUM000",
+    "level": "Y12-13",
+    "title": "NUMERACY",
+    "faculty": null,
+    "ue": false,
+    "scholarship": false,
+    "description": "",
+    "pathway": "",
+    "components": [
+      "In addition to continuing to develop foundational numeracy skills, this course will offer three internal NCEA Level 1 standards that provide a pathway to gaining the numeracy corequisite. Some students are entered into the CAA after discussion with teacher and whānau. 15"
+    ],
+    "external_credits": null,
+    "internal_credits": null,
+    "metrics_raw": "",
+    "also_listed_under": []
+  },
+  {
+    "code": "PER000",
+    "level": "Y11-L2-3",
+    "title": "PERFORMANCE",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is an opportunity to collaborate in the performing arts. It is a chance to be involved in performances, both onstage and off, without having to take Drama and Music as curriculum subjects. Assessment is not the purpose of the course, and it is optional.",
+    "pathway": "This course can be continued through Years 11-13",
+    "components": [
+      "These will be developed in collaboration with the students and constructed to suit individual needs, but will include:",
+      "Workshops on aspects of performance",
+      "New original performance during the year",
+      "An end of year cabaret/showcase",
+      "Opportunities for event technology and management (costume, hair and make-up, stage management, set and props etc). This course is not a replacement for senior Drama and Music, and cannot count as a pre-approved UE subject."
+    ],
+    "external_credits": 0,
+    "internal_credits": 10,
+    "metrics_raw": "0 10 $45 � � EXTERNAL CREDITS INTERNAL CREDITS By arrangement only for Year 12 and 13 DONATION To cover visiting instructors ENTRY Open Y11 |TOI002 TOI MĀORI Te Ao Tawhito – Mana Tūpuna Students will develop their understanding and knowledge of the history and whakapapa practice of Toi Māori in Aotearoa. Students will base their work and research on their own whakapapa, wharenui, iwi and hapū art traditions. Tauira will develop their skills using drawing, painting and carving. Non-Māori students will study local iwi and hapū Toi traditions. Pathway: This course prepares you for Senior Level Toi Māori and other Art courses. Course components • Intro to Toi Māori o Toi Tūturu (customary art) o Toi Rereke (contemporary art) o Toi Whakawhiti (trans-customary art) • Research iwi and hapū art traditions • Develop skills in identifying and understanding Toi Māori • Create poupou for Taraika (carved panel for school Wharenui) • Study ngā Ringa Toi. 5 $40 � � INTERNAL CREDITS DONATION Plus Art pack ($65). ENTRY Open 17 Level 2 Level 2 Visual Arts students have the option of choosing up to two visual arts courses.",
+    "also_listed_under": []
+  },
+  {
+    "code": "DES223",
+    "level": "L2",
+    "title": "DESIGN",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "In this course, you develop and present ideas visually through drawing and digital manipulation to communicate ideas using image and text.",
+    "pathway": "This course prepares you for DES335.",
+    "components": [
+      "Explore techniques by hand and in Photoshop and Adobe Illustrator",
+      "Develop an understanding of the design process and working to a brief",
+      "Create a portfolio of work based on skills you have learnt."
+    ],
+    "external_credits": 12,
+    "internal_credits": 8,
+    "metrics_raw": "12 8 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS DONATION Plus a self- supplied Art pack ($45) ENTRY Recommended previous experience in Year 11 Art",
+    "also_listed_under": []
+  },
+  {
+    "code": "DRA223",
+    "level": "L2",
+    "title": "DRAMA",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "Drama is a collaborative, group-based. You will perform original work and participate in two scripted performances.",
+    "pathway": "This course prepares you for DRA335.",
+    "components": [
+      "Use drama techniques in a scripted context",
+      "Devise and perform a drama",
+      "Rehearse and perform in a production."
+    ],
+    "external_credits": 0,
+    "internal_credits": 14,
+    "metrics_raw": "0 14 $65 � � EXTERNAL CREDITS INTERNAL CREDITS Literacy credits offered DONATION For theatre visits ENTRY Open",
+    "also_listed_under": []
+  },
+  {
+    "code": "MUS223",
+    "level": "L2",
+    "title": "MUSIC PERFORMANCE",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course focuses on instrument mastery, ensemble work, and music creation, designed for practical performers.",
+    "pathway": "This course prepares you for MUS335.",
+    "components": [
+      "Solo performance",
+      "Ensemble performance",
+      "Composition",
+      "Research or analysis (optional). Students taking a senior music course are required to sign up for itinerant music lessons at school or have an instrumental tutor. 19 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION Free itinerant instrument or vocal lessons ENTRY Year 11 or interview required."
+    ],
+    "external_credits": null,
+    "internal_credits": null,
+    "metrics_raw": "",
+    "also_listed_under": []
+  },
+  {
+    "code": "MST223",
+    "level": "L2",
+    "title": "MUSIC STUDIES",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "A comprehensive, analytical approach to music, focusing on score analysis, music theory and developing musical literacy, as well as performance and composition.",
+    "pathway": "MUS335",
+    "components": [
+      "Solo and group performance",
+      "Composition or instrumentation",
+      "Music theory and score conventions",
+      "Aural understanding",
+      "Students taking a senior music course are required to sign up for itinerant music lessons at school or have an instrumental tutor."
+    ],
+    "external_credits": 8,
+    "internal_credits": 12,
+    "metrics_raw": "8 12 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY Some knowledge of music theory or a strong desire to upskill in this area. 18",
+    "also_listed_under": []
+  },
+  {
+    "code": "APT223",
+    "level": "L2",
+    "title": "PAINTING",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "In this course, you will develop your skills in painting techniques and develop your ideas based on your own choice of subject matter.",
+    "pathway": "This course prepares you for APT335.",
+    "components": [
+      "Explore the different approaches to how paintings can be created",
+      "Develop skills in a related series of works",
+      "Create your own portfolio of paintings exploring a theme of your choice."
+    ],
+    "external_credits": 12,
+    "internal_credits": 8,
+    "metrics_raw": "12 8 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS DONATION Plus Art pack ($65). ENTRY Recommended previous experience in Year 11 Art",
+    "also_listed_under": []
+  },
+  {
+    "code": "PHO223",
+    "level": "L2",
+    "title": "PHOTOGRAPHY",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is a practical course covering camera handling, composition plus digital and physical manipulation of photographs. You will use these skills to create your own body of work for a portfolio exploring a theme of your choice.",
+    "pathway": "This course prepares you for PHO335.",
+    "components": [
+      "Learn about contemporary art practice in photography",
+      "Create your own portfolio of work",
+      "Use photography to explore the world around you. Owning your own camera is a bonus for this course, however, we do have school cameras available."
+    ],
+    "external_credits": 12,
+    "internal_credits": 8,
+    "metrics_raw": "12 8 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS DONATION Plus Art pack ($35) ENTRY Recommended previous experience in Year 11 Art",
+    "also_listed_under": []
+  },
+  {
+    "code": "APR223",
+    "level": "L2",
+    "title": "PRINTMAKING",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "In this course, you will develop skills using a range of printmaking techniques including monotype, woodblock, intaglio etching and their processes. You will apply these skills to produce a portfolio of work.",
+    "pathway": "This course prepares you for APR335.",
+    "components": [
+      "Develop skills in traditional and contemporary drawing practice",
+      "Develop skills in a range of printmaking processes",
+      "Study contemporary artists",
+      "Create a portfolio of work based on skills you have learnt based on a theme of your choice."
+    ],
+    "external_credits": 12,
+    "internal_credits": 8,
+    "metrics_raw": "12 8 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Plus a self- supplied Art pack ($60) ENTRY Recommended previous experience in Year 11 Art 19",
+    "also_listed_under": []
+  },
+  {
+    "code": "ASC223",
+    "level": "L2",
+    "title": "SCULPTURE",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "In this course, you become familiar with a range of sculptural practices that include installation, time-based and object-based art. You learn how to work in a systematic way to develop your ideas to make a body of work for a portfolio.",
+    "pathway": "prepares you for ASC335.",
+    "components": [
+      "Begin to understand the technical and communicative conventions of sculpture making",
+      "Develop a series of related works",
+      "Focus on developing a portfolio of work around a theme of your choice."
+    ],
+    "external_credits": 12,
+    "internal_credits": 8,
+    "metrics_raw": "12 8 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS DONATION Plus a self- supplied Art pack ($50) ENTRY Recommended previous experience in Year 11 Art",
+    "also_listed_under": []
+  },
+  {
+    "code": "SON223",
+    "level": "L2",
+    "title": "SONIC ARTS",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "Sonic Arts is a practical course for students who want to create, record and produce music using digital audio technology. Working with industry-standard software and equipment, you’ll explore projects such as music production, remixing, DJing, field recording, film scoring, podcast sound design, music videos and live event audio. The courses encourages creativity, collaboration and experimentation while developing valuable technical skills.",
+    "pathway": "SON335, tertiary study in music technology, audio production or creative media, independent music making and production.",
+    "components": [
+      "Digital music production and recording",
+      "Audio editing, sequencing and sampling",
+      "Sound media design for film, podcasts and live performance",
+      "Creative project development using digital audio tools",
+      "Introduction to industry-standard music production workflows."
+    ],
+    "external_credits": 0,
+    "internal_credits": 17,
+    "metrics_raw": "0 17 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Open",
+    "also_listed_under": [
+      "TECHNOLOGY"
+    ]
+  },
+  {
+    "code": "TOI003",
+    "level": "L2-3",
+    "title": "TOI MĀORI",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "Level 2 focus – Te Ao Hurihuri Mana Tiriti – Today’s world Level 3 focus – Te Ao Tūroa – Future world Through this course students will focus on customary and contemporary Māori art practices and practitioners. Students will develop skills through drawing, painting, clay and carving. Students will explore in depth the history and meaning of Toi Māori and will base their work on iwi and hapū art traditions inspired by tūrangawaewae, whakapapa pūrākau and Taonga. Non-Māori students will explore in depth the history and meaning of Toi Māori and create mahi based on pūrākau, social and historical events.",
+    "pathway": "This course prepares you for te Ao Māori, Toi Māori, art studies at tertiary level, creative art industries, arts and cultural spaces.",
+    "components": [
+      "Develop skills in customary and contemporary toi practice",
+      "Develop skills in understanding and identifying toi Māori practices.",
+      "Study iwi and hapū history and art traditions",
+      "Create poupou for Taraika (carved panel for school Wharenui)",
+      "Study ngā Ringatoi (artist models)",
+      "Create a portfolio of work based on skills you have learnt",
+      "Participate in wānanga (mostly rāranga)."
+    ],
+    "external_credits": 0,
+    "internal_credits": 20,
+    "metrics_raw": "0 20 $40 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION Plus Art pack ($65) ENTRY Open 20 Level 3 Level 3 Visual Arts students can choose up to two visual arts courses.",
+    "also_listed_under": []
+  },
+  {
+    "code": "DES335",
+    "level": "L3",
+    "title": "DESIGN",
+    "faculty": "ARTS",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course further develops your understanding of the design process from Level 2. You combine creative thinking with digital technology to communicate ideas through image and text, conceptualising and realising a personal design project for a client.",
+    "pathway": "This course can lead to university, art school, and jobs in creative industries.",
+    "components": [
+      "Design as problem-solving",
+      "Establishing a client’s requirements",
+      "Writing and working to a brief",
+      "Use a variety of art and design practices, and be prepared to work digitally to bring ideas to fruition for a folio."
+    ],
+    "external_credits": 14,
+    "internal_credits": 8,
+    "metrics_raw": "14 8 $40 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Plus Art pack ($45) ENTRY 12 credits at Level 2 Design or interview on enrolment.",
+    "also_listed_under": []
+  },
+  {
+    "code": "DRA335",
+    "level": "L3",
+    "title": "DRAMA",
+    "faculty": "ARTS",
+    "ue": true,
+    "scholarship": false,
+    "description": "This course has a strong focus on public performance opportunities: production, scripted scenes and original devised work.",
+    "pathway": "This course prepares you for University, Toi Whakaari, teacher training, performing arts training, and any field of interest that requires confidence and communication skills.",
+    "components": [
+      "Devise an original drama",
+      "Rehearse and perform in a major production",
+      "Interpret drama techniques."
+    ],
+    "external_credits": 0,
+    "internal_credits": 14,
+    "metrics_raw": "0 14 $65 � � EXTERNAL CREDITS INTERNAL CREDITS Literacy credits offered DONATION For theatre visits ENTRY Open",
+    "also_listed_under": []
+  },
+  {
+    "code": "MUS335",
+    "level": "L3",
+    "title": "MUSIC",
+    "faculty": "ARTS",
+    "ue": true,
+    "scholarship": true,
+    "description": "A practical opportunity to refine your skills as a musician. Construct your own course, which may include performance, composition, arranging and research.",
+    "pathway": "These include music studies, film and media, music therapy, commercial music. It can support any field or pastime that requires creative problem solving / people skills.",
+    "components": [
+      "Performance – solo, group and / or second instrument",
+      "Composing – any style or genre",
+      "Arranging",
+      "Research Students taking a senior music course are required to sign up for itinerant music lessons at school or have private lessons."
+    ],
+    "external_credits": 0,
+    "internal_credits": 32,
+    "metrics_raw": "0 32 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Most students will sit around 20 of the credits on offer. Literacy credits offered DONATION Free itinerant instrument or vocal lessons ENTRY Level 2 or interview and audition as required.",
+    "also_listed_under": []
+  },
+  {
+    "code": "APT335",
+    "level": "L3",
+    "title": "PAINTING",
+    "faculty": "ARTS",
+    "ue": true,
+    "scholarship": true,
+    "description": "This a practical course that builds on the skills that you have developed in Level 2. You will develop a body of work based around a theme of your choice.",
+    "pathway": "This course prepares you for university, art school, and jobs in creative industries.",
+    "components": [
+      "Develop and extend your skills and understanding of historic and contemporary painting practice",
+      "Learn how to reflect and respond to art and your own art work",
+      "Focus on developing a portfolio of work."
+    ],
+    "external_credits": 14,
+    "internal_credits": 8,
+    "metrics_raw": "14 8 $40 � � EXTERNAL CREDITS Maximum INTERNAL CREDITS Maximum DONATION Plus Art pack ($65) ENTRY 12 credits at Level 2 Painting or interview on enrolment. 21",
+    "also_listed_under": []
+  },
+  {
+    "code": "PHO335",
+    "level": "L3",
+    "title": "PHOTOGRAPHY",
+    "faculty": "ARTS",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course extends your photography skills in new and innovative ways. You develop ideas based on a theme of your choice.",
+    "pathway": "This course can lead to university, art school and employment in creative industries.",
+    "components": [
+      "Develop and refine skills in creative problem solving",
+      "Learn how to reflect and respond to art and your own art work",
+      "Produce a substantial body of work for a folio. Owning your own camera is a bonus for this course, however, we do have school cameras available."
+    ],
+    "external_credits": 14,
+    "internal_credits": 8,
+    "metrics_raw": "14 8 $40 � � EXTERNAL CREDITS Maximum INTERNAL CREDITS Maximum DONATION Plus Art pack ($35) ENTRY Level 2 Art 12 credits or proven ability, by interview",
+    "also_listed_under": []
+  },
+  {
+    "code": "APR335",
+    "level": "L3",
+    "title": "PRINTMAKING",
+    "faculty": "ARTS",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course extends your printmaking skills in new ways. You will develop ideas based on a theme of your choice.",
+    "pathway": "This course can lead to university, art school and jobs in creative industries.",
+    "components": [
+      "Extend your skills in contemporary printmaking",
+      "Reflect and respond to art and your own work",
+      "Learn how to produce a substantial body of work for a folio based on a theme of your choice."
+    ],
+    "external_credits": 14,
+    "internal_credits": 8,
+    "metrics_raw": "14 8 $40 � � EXTERNAL CREDITS Maximum INTERNAL CREDITS Maximum DONATION Plus Art pack ($60) ENTRY Level 2 Art 12 credits or proven ability, interview upon enrolment",
+    "also_listed_under": []
+  },
+  {
+    "code": "ASC335",
+    "level": "L3",
+    "title": "SCULPTURE",
+    "faculty": "ARTS",
+    "ue": true,
+    "scholarship": true,
+    "description": "Further develop your sculpture making skills around a theme of your choice.",
+    "pathway": "This course prepares you for tertiary studies, art school and creative industries such as Weta workshop.",
+    "components": [
+      "Develop skills in creative problem solving in 3- dimensional form",
+      "Investigate New Zealand and international contemporary sculpture",
+      "Learn how to reflect and respond to art and your own art work",
+      "Learn how to produce a substantial body of work for a folio."
+    ],
+    "external_credits": 14,
+    "internal_credits": 8,
+    "metrics_raw": "14 8 $40 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits offered DONATION Plus Art pack ($50) ENTRY Level 2 Art 12 credits or proven ability, interview upon enrolment",
+    "also_listed_under": []
+  },
+  {
+    "code": "SON334",
+    "level": "L3",
+    "title": "SONIC ARTS",
+    "faculty": "ARTS",
+    "ue": false,
+    "scholarship": false,
+    "description": "An advanced-project-based course for students who want to develop their creative voice through music and sound. Students will produce original work using industry-standard software and equipment while exploring areas including music production, EP creation, live recording, film and media scoring, sound design and creative audio technology. This course encourages independent projects, collaboration and authentic creative outcomes reflecting students’ interests and artistic direction.",
+    "pathway": "Tertiary study and careers in music production, audio engineering, sound design, film and media, creative technologies and the wider music industry. This course also provides valuable experience for students wishing to pursue independent music production or performance.",
+    "components": [
+      "Advanced music production and composition",
+      "EP development and release",
+      "Recording, mixing and mastering",
+      "Sound media design for film, games, podcasts and live performance",
+      "Creative project management and collaboration",
+      "Industry-standard digital audio production workflows."
+    ],
+    "external_credits": 0,
+    "internal_credits": 21,
+    "metrics_raw": "0 21 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Entry in consultation with HoF & Sonic Arts teacher 22",
+    "also_listed_under": [
+      "TECHNOLOGY"
+    ]
+  },
+  {
+    "code": "ENG223",
+    "level": "L2",
+    "title": "ENGLISH",
+    "faculty": "ENGLISH",
+    "ue": false,
+    "scholarship": false,
+    "description": "We are surrounded by many different messages in this modern world and it is important to understand how we are all affected by what we read, see and hear. In ENG223 you will investigate the social implications of the way ideas are presented to us. You will learn about the conventions found in a range of written texts and practise writing in a variety of styles, both creative and transactional.",
+    "pathway": "This course can lead to any Level 3 English course.",
+    "components": [
+      "Developing an understanding of genre conventions",
+      "Developing further skills in writing, with an emphasis on reading, film and presenting",
+      "Opportunities to learn and demonstrate information literacy skills exploring a topic of interest to you."
+    ],
+    "external_credits": 8,
+    "internal_credits": 13,
+    "metrics_raw": "8 13 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS UE Literacy credits DONATION Trips and outings as appropriate ENTRY",
+    "also_listed_under": []
+  },
+  {
+    "code": "EPB223",
+    "level": "L2",
+    "title": "ENGLISH PROJECT BASED",
+    "faculty": "ENGLISH",
+    "ue": false,
+    "scholarship": false,
+    "description": "If you are a great self-manager and prefer to select your own texts to study and topics to write and speak about, then EPB223 is for you. In 2027, EPB223 students will spend time studying self- selected texts and sharing their ideas and insights through writing, presenting and speaking. Students will map their own pathway to develop skills related to the English curriculum.",
+    "pathway": "This course can lead to any Level 3 English course; or tertiary courses or employment.",
+    "components": [
+      "Personal mentoring and review with your teacher, peers and the wider community will be an important component of this course.",
+      "Assessments arise from your interests and passion. 4-8 12-16 $ TBC � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY AS91927 Literacy corequisite Endorsement from your 2026 English teacher"
+    ],
+    "external_credits": null,
+    "internal_credits": null,
+    "metrics_raw": "",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENR223",
+    "level": "L2",
+    "title": "ENGLISH WITH RELIGION",
+    "faculty": "ENGLISH",
+    "ue": false,
+    "scholarship": false,
+    "description": "Are you interested in the various beliefs and faiths that make our world so diverse? In this course, you will study world religions and their influence in the realm of literature. You will look at religions through a philosophical lens, and use texts dealing with religion as a context for applying key English skills.",
+    "pathway": "This course can lead to any Level 3 English course.",
+    "components": [
+      "You will gain an overview of a range of world religions, and improve your overall ‘religious literacy’",
+      "You will explore issues and themes across these religions, with an emphasis on contemporary issues and events",
+      "Opportunities will be provided for you to focus in more depth on one religion, looking at a range of literary texts with links to this religion",
+      "Religious Studies standards will be offered alongside English standards."
+    ],
+    "external_credits": 8,
+    "internal_credits": 20,
+    "metrics_raw": "8 20 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS UE Literacy credits DONATION Trips and outings as appropriate ENTRY 24",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENW223",
+    "level": "L2",
+    "title": "ENGLISH FOR WRITERS",
+    "faculty": "ENGLISH",
+    "ue": false,
+    "scholarship": false,
+    "description": "If you really enjoy writing and would like the opportunity to develop your skills as an author, this is the course for you. The focus will be on what makes great writing and you will read texts and think about how they could inspire your own work.",
+    "pathway": "This course can lead to any Level 3 English course.",
+    "components": [
+      "Using other authors’ work as models for your own writing",
+      "The chance to workshop and develop your writing",
+      "Opportunities to deepen your study of written literature."
+    ],
+    "external_credits": 8,
+    "internal_credits": 14,
+    "metrics_raw": "8 14 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS UE Literacy credits DONATION Trips and outings as appropriate ENTRY",
+    "also_listed_under": []
+  },
+  {
+    "code": "PWD223",
+    "level": "L2",
+    "title": "PAINTED WORD",
+    "faculty": "ENGLISH",
+    "ue": false,
+    "scholarship": false,
+    "description": "If you would like to learn more about famous art, and find out more about the art you like, then this course is for you. You will explore how to talk about and write about art, visit galleries and hear from curators and dealers.",
+    "pathway": "This course can lead to PWD335.",
+    "components": [
+      "Studying artists and artistic movements through documentaries and written materials",
+      "Visiting galleries in Wellington",
+      "Researching your favourite artists and sharing your findings with your classmates."
+    ],
+    "external_credits": 8,
+    "internal_credits": 14,
+    "metrics_raw": "8 14 $ TBC � � EXTERNAL CREDITS Course endorsement offered. INTERNAL CREDITS UE Literacy credits. DONATION Trips and outings as appropriate. ENTRY",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENS223",
+    "level": "L2",
+    "title": "ENGLISH WITH SCIENCE FICTION",
+    "faculty": "ENGLISH",
+    "ue": false,
+    "scholarship": false,
+    "description": "Do you dream of Electric Sheep? Are aliens and androids your thing? In English with Science Fiction, we read a range of science fiction texts, watch sci-fi films, and discuss what science fiction stories can teach us about the world we live in. The future is now!",
+    "pathway": "This course can lead to any Level 3 English course.",
+    "components": [
+      "Reading and reviewing Science Fiction texts",
+      "Researching the history of the Science Fiction genre",
+      "Presenting to your classmates",
+      "Developing writing, reading and close viewing skills."
+    ],
+    "external_credits": 8,
+    "internal_credits": 14,
+    "metrics_raw": "8 14 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS UE Literacy credits DONATION Trips and outings as appropriate ENTRY 25 Level 3 At Level 3 students can take PWD335 in conjunction with other English courses. Students cannot take a combination of ENG335, ENP335, ENC335 or ENW335. Course entry without the entry requirements will only occur under special circumstances and must be approved by Caitlin Reilly, Michael Kingston or Emma Wood. A laptop is required in all classes.",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENG335",
+    "level": "L3",
+    "title": "ENGLISH LITERATURE",
+    "faculty": "ENGLISH",
+    "ue": true,
+    "scholarship": false,
+    "description": "A course for those who love reading and critically analysing texts, or who are intending to study a text- based subject at university. You will take your study of literature to the next level and look at the way literature can act as an agent for disruption and as a challenge to the status quo. Be prepared to extend yourselves by engaging with a variety of literature that may touch on adult themes and is aimed at adult readers and viewers. You will learn to tackle academic texts such as literary criticisms and articles on literary theory. You will explore literary theories and apply them to texts to gain new meanings. You will also develop your expository writing and discussion skills in preparation for further study.",
+    "pathway": "Tertiary courses or employment.",
+    "components": [
+      "The continued study of written and visual texts",
+      "An in-depth study in which you will learn how to apply literary theories to texts",
+      "Opportunities to further develop and demonstrate writing and speaking skills."
+    ],
+    "external_credits": 8,
+    "internal_credits": 11,
+    "metrics_raw": "8 11 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Trips and outings as appropriate ENTRY UE literacy 12 credits from a Level 2 English course including AS91101, AS91106 and AS91100",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENC335",
+    "level": "L3",
+    "title": "ENGLISH CRIME FICTION",
+    "faculty": "ENGLISH",
+    "ue": true,
+    "scholarship": false,
+    "description": "Do you enjoy mysteries, thrillers and crime? Then this could be the course for you! In this course you will read texts from throughout crime fiction history, and explore how these stories often reflected real-life fears. We will consider how stories created for popular entertainment can both critique and uphold societal values and you will get the chance to investigate a sub-genre of your choosing, like cozy crime, locked-room mysteries, or child detectives.",
+    "pathway": "Tertiary courses or employment.",
+    "components": [
+      "The continued study of written and visual texts in the crime genre",
+      "An in-depth study in which you will learn to apply literary theories to texts",
+      "Opportunities to further develop and demonstrate writing and speaking skills including crime writing and podcasts."
+    ],
+    "external_credits": 8,
+    "internal_credits": 11,
+    "metrics_raw": "8 11 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Trips and outings as appropriate ENTRY UE literacy 12 credits from a L2 English course including AS91101, AS91106 and AS91100.",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENP335",
+    "level": "L3",
+    "title": "ENGLISH WITH PHILOSOPHY",
+    "faculty": "ENGLISH",
+    "ue": true,
+    "scholarship": false,
+    "description": "You think, therefore you are… going to enjoy English with Philosophy. You will gain an overview of the history of philosophy, and apply philosophical concepts to literature. The course places emphasis on rich discussions, so be prepared to speak up.",
+    "pathway": "Tertiary courses or employment.",
+    "components": [
+      "An emphasis on the use of logic and reason",
+      "A strong focus on discussion",
+      "The study of philosophical ideas in books and films",
+      "Opportunities to further develop and demonstrate writing skills."
+    ],
+    "external_credits": 8,
+    "internal_credits": 11,
+    "metrics_raw": "8 11 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Trips and outings as appropriate ENTRY UE literacy 14 credits from a L2 English course 26",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENW335",
+    "level": "L3",
+    "title": "ENGLISH FOR WRITERS",
+    "faculty": "ENGLISH",
+    "ue": true,
+    "scholarship": false,
+    "description": "You engage with the Level 3 English curriculum through the lens of creative writing. You will analyse the work of authors with a view to using their work as models for your own writing drafts.",
+    "pathway": "Tertiary courses or employment.",
+    "components": [
+      "Using other authors’ work as models for your own writing",
+      "The chance to workshop and develop your writing",
+      "Opportunities to deepen your study of written literature through looking at connections between the work of various authors and applying critical lenses to works of literature"
+    ],
+    "external_credits": 8,
+    "internal_credits": 11,
+    "metrics_raw": "8 11 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Trips and outings as appropriate ENTRY UE literacy 12 credits from a Level 2 English course including AS91101, AS91106 and AS91100",
+    "also_listed_under": []
+  },
+  {
+    "code": "PWD335",
+    "level": "L3",
+    "title": "PAINTED WORD",
+    "faculty": "ENGLISH",
+    "ue": true,
+    "scholarship": false,
+    "description": "What is art? How can art further our understanding of contemporary issues such as cultural appropriation, racism and feminism? If you love art and are interested in how artists think, create and critically communicate ideas in their work, this is for you. This course helps develop an appreciation and understanding of art through the ages with emphasis on Modern American and New Zealand art. You will study extraordinary periods of rapid and exciting change.",
+    "pathway": "Tertiary courses or employment.",
+    "components": [
+      "You will visit galleries and hear from artists and curators",
+      "The English aspects will involve writing around Art History themes and investigating the connections between visual and written art",
+      "Most credits will be from the Art History domain"
+    ],
+    "external_credits": 4,
+    "internal_credits": 16,
+    "metrics_raw": "4 16 $ TBC � � EXTERNAL CREDITS Assessments to be negotiated INTERNAL CREDITS Literacy credits. Assessments to be negotiated DONATION Trips and outings as appropriate. Bring a laptop to class ENTRY 14 credits from a Level 2 English course (including UE Literacy) and an interest in art 27",
+    "also_listed_under": []
+  },
+  {
+    "code": "HED223",
+    "level": "L2",
+    "title": "HEALTH EDUCATION",
+    "faculty": "HEALTH & PHYSICAL EDUCATION",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is aimed at students who love to examine life. From resilience, to connecting to the community, this course offers you the ability to give back to others, and understand the complex nature of the world we live in.",
+    "pathway": "This course can lead to HED335.",
+    "components": [
+      "Evaluate factors that influence people’s ability to manage change",
+      "Take action to enhance an aspect of people’s well-being",
+      "Analyse an interpersonal issue(s) that places personal safety at risk. This course has a high literacy requirement"
+    ],
+    "external_credits": 4,
+    "internal_credits": 10,
+    "metrics_raw": "4 10 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Nil ENTRY 4 credits in Level 1 Health Education",
+    "also_listed_under": []
+  },
+  {
+    "code": "ODE223/ODI223*",
+    "level": "L2",
+    "title": "OUTDOOR EDUCATION",
+    "faculty": "HEALTH & PHYSICAL EDUCATION",
+    "ue": false,
+    "scholarship": false,
+    "description": "Our Outdoor Education course offers you the stimulating combination of the challenges of the natural environment, the excitement of taking more self- responsibility and the joy of finding worth and value in one’s self. The teaching and learning emphasis in the Level 2 Outdoor Education course is to enhance resilience, self-organisation, self-dependence and responsibility.",
+    "pathway": "This course can lead to ODE335.",
+    "components": [
+      "Risk management strategies in outdoor activity",
+      "Demonstrate social responsibility",
+      "Examine the implementation and outcomes of an event or opportunity",
+      "Demonstrate quality movement in sport. *N.B. ODI223 is offered to international students."
+    ],
+    "external_credits": 0,
+    "internal_credits": 19,
+    "metrics_raw": "0 19 $660 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION $180 course fee, $480 Whanganui River trip ENTRY Priority given to students who have completed ODE112. Subject to availability and suitability for the course other students may be considered.",
+    "also_listed_under": []
+  },
+  {
+    "code": "SPS223",
+    "level": "L2",
+    "title": "SPORTS SCIENCE",
+    "faculty": "HEALTH & PHYSICAL EDUCATION",
+    "ue": false,
+    "scholarship": false,
+    "description": "Sports Science includes a range of physical activities, fitness and training programmes and a look at the significance for self and society of a sporting event. You will learn how to apply biomechanical knowledge, sports psychology techniques and motor skill learning theories to training programmes as you learn in, through and about movement.",
+    "pathway": "This course can lead to SPS335.",
+    "components": [
+      "Apply biophysical principles in a sports context",
+      "Evaluate strength training programme",
+      "Demonstrate quality movement in sport",
+      "Examine the significance of a sporting event."
+    ],
+    "external_credits": 0,
+    "internal_credits": 20,
+    "metrics_raw": "0 20 $60 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Course fees and activities ENTRY Passing SOLO anatomy assessment is advantageous, or by HOF approval 29",
+    "also_listed_under": []
+  },
+  {
+    "code": "PED223",
+    "level": "L2",
+    "title": "PHYSICAL EDUCATION",
+    "faculty": "HEALTH & PHYSICAL EDUCATION",
+    "ue": false,
+    "scholarship": false,
+    "description": "An interest and commitment to all areas of sports and a want to develop skills is essential. You will develop your physical ability in a number of different contexts, including team, individual and outdoor pursuit activities. You will complete an overnight camp with a focus on self-management and social responsibility.",
+    "pathway": "This course can lead to PED334.",
+    "components": [
+      "Demonstrate self-management in an outdoor activity",
+      "Demonstrate social responsibility",
+      "Participation in adventure-based learning",
+      "Demonstrate knowledge of sports officiating."
+    ],
+    "external_credits": 0,
+    "internal_credits": 27,
+    "metrics_raw": "0 27 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Unit standards DONATION ENTRY Open Level 3",
+    "also_listed_under": []
+  },
+  {
+    "code": "HED335",
+    "level": "L3",
+    "title": "HEALTH EDUCATION",
+    "faculty": "HEALTH & PHYSICAL EDUCATION",
+    "ue": true,
+    "scholarship": false,
+    "description": "You will explore a range of attitudes, values and different practices that support/ undermine health and well-being. Topics include health practices, New Zealand and international health issues and the debate surrounding ethical issues. You are posed with issues that face the youth of today and are given the chance to make recommendations for change.",
+    "pathway": "This course can lead to university entrance and careers in the health industry.",
+    "components": [
+      "Analyse a New Zealand health issue",
+      "Evaluate health practices currently used in New Zealand",
+      "Analyse a contemporary ethical issue in relation to well-being",
+      "Analyse a New Zealand health issue."
+    ],
+    "external_credits": 5,
+    "internal_credits": 14,
+    "metrics_raw": "5 14 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Trip to Tory Urban Retreat. Yoga sessions ENTRY 10 credits in level 2 Health Education",
+    "also_listed_under": []
+  },
+  {
+    "code": "SPS335",
+    "level": "L3",
+    "title": "SPORT SCIENCE",
+    "faculty": "HEALTH & PHYSICAL EDUCATION",
+    "ue": true,
+    "scholarship": false,
+    "description": "You will take a detailed look at biophysical principles using video analysis, and learn how these apply to your own performance improvement. You will plan, implement and evaluate a skill improvement programme, utilising skill learning theories and sports psychology. You will challenge assumptions around performance improvement theories and examine the role money plays in New Zealand sport.",
+    "pathway": "This course is university approved and leads to careers in the sports and leisure industry.",
+    "components": [
+      "Analyse a physical skill using biomechanical knowledge",
+      "Evaluate the effectiveness of a performance programme",
+      "Demonstrate quality movement in sport",
+      "Examine a current physical activity, event, trend or issue and its impact on New Zealand society."
+    ],
+    "external_credits": 0,
+    "internal_credits": 19,
+    "metrics_raw": "0 19 $60 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION Course fees and activities ENTRY 10 credits in Level 2 Sport Science 30",
+    "also_listed_under": []
+  },
+  {
+    "code": "ODE335",
+    "level": "L3",
+    "title": "OUTDOOR EDUCATION",
+    "faculty": "HEALTH & PHYSICAL EDUCATION",
+    "ue": true,
+    "scholarship": false,
+    "description": "This course is a student-centred programme where you will learn to challenge yourself mentally, physically, socially and emotionally. The integrated approach within this course allows for practical activities, theoretical concepts, and relationship with the environment to be incorporated into a meaningful programme of learning. The course aims to develop self-awareness and leadership through opportunities to plan for, and facilitate outdoor experiences.",
+    "pathway": "This course is a university approved course and can lead to a career in adventure tourism, ecotourism and careers in the outdoor industry.",
+    "components": [
+      "Devise strategies for lifelong well-being",
+      "Demonstrate quality movement in sport",
+      "Examine a current physical activity event, trend or issue and its impact on New Zealand society",
+      "Devise safety management strategies."
+    ],
+    "external_credits": 0,
+    "internal_credits": 20,
+    "metrics_raw": "0 20 $600 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION $150 course fee and $450 Whanganui river trip ENTRY Priority given to students who have successfully completed ODE223. Subject to availability and suitability for the course other students may be considered.",
+    "also_listed_under": []
+  },
+  {
+    "code": "PED334",
+    "level": "L3",
+    "title": "PHYSICAL EDUCATION",
+    "faculty": "HEALTH & PHYSICAL EDUCATION",
+    "ue": false,
+    "scholarship": false,
+    "description": "You will develop advanced physical skills in a number of different contexts, including team sports, adventure- based learning, fitness and training. You will learn how to plan coaching sessions, completing a coaching qualification with a primary or intermediate school.",
+    "pathway": "This course can lead into further coaching opportunities and other sports positions within the community. Sports co-ordinating and further education into the tertiary sector are also supported by this course.",
+    "components": [
+      "Demonstrate knowledge of biomechanics and body systems",
+      "Demonstrate leadership while participating in adventure-based learning activities",
+      "Develop and run a sports coaching session",
+      "Prepare and participate in a multi night tramp."
+    ],
+    "external_credits": 0,
+    "internal_credits": 28,
+    "metrics_raw": "0 28 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Unit standards DONATION Nil ENTRY Open 31",
+    "also_listed_under": []
+  },
+  {
+    "code": "TAH000",
+    "level": "Y11-L2-3",
+    "title": "TE AO HAKA",
+    "faculty": "LANGUAGES",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course covers a range of items within Te Ao Haka disciplines: waiata, mōteatea, haka etc. It focuses on the elements and key features of each discipline to strengthen students confidence in performing, while learning reo Māori and Mātauranga Māori.",
+    "pathway": "This course can lead to credits in Te Ao Haka at a higher level. Credits will be negotiated with the Kaiako depending on your year level.",
+    "components": [
+      "Waiata-ā- ringa",
+      "Poi",
+      "Mōteatea",
+      "Haka and Mau rākau",
+      "Whakaraka",
+      "Māori Theatre."
+    ],
+    "external_credits": 0,
+    "internal_credits": 11,
+    "metrics_raw": "0 11 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Open Level 2",
+    "also_listed_under": []
+  },
+  {
+    "code": "CHI223",
+    "level": "L2",
+    "title": "CHINESE",
+    "faculty": "LANGUAGES",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course focuses on furthering communication skills so that you can justify your ideas on topics such as lifestyles, the best places for holidays, health issues, and planning a birthday party.",
+    "pathway": "This course can lead to Level 3 Chinese.",
+    "components": [
+      "Demonstrate understanding of a variety of spoken and written Chinese texts",
+      "Give a spoken presentation in Chinese",
+      "Interact using spoken Chinese",
+      "Write a variety of text types in Chinese."
+    ],
+    "external_credits": 10,
+    "internal_credits": 14,
+    "metrics_raw": "10 14 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION ENTRY CHI112 and Head of Department approval",
+    "also_listed_under": []
+  },
+  {
+    "code": "JPN223",
+    "level": "L2",
+    "title": "JAPANESE",
+    "faculty": "LANGUAGES",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course focuses on furthering communication skills so that you can justify your ideas on topics such as cooking, school and the environment.",
+    "pathway": "This course can lead to Level 3 Japanese.",
+    "components": [
+      "Demonstrate understanding of a variety of spoken and written Japanese texts",
+      "Give a spoken presentation in Japanese",
+      "Interact using spoken Japanese",
+      "Write a variety of text types in Japanese."
+    ],
+    "external_credits": 10,
+    "internal_credits": 14,
+    "metrics_raw": "10 14 $10 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For hardcopy workbooks (optional) ENTRY JPN112 and Head of Department approval",
+    "also_listed_under": []
+  },
+  {
+    "code": "SPA223",
+    "level": "L2",
+    "title": "SPANISH",
+    "faculty": "LANGUAGES",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course focuses on furthering communication skills so that you can justify your ideas on topics such as school and teen issues. We will also look at aspects of Latin American and Spanish culture.",
+    "pathway": "This course can lead to Level 3 Spanish.",
+    "components": [
+      "Demonstrate understanding of a variety of spoken and written Spanish texts",
+      "Give a spoken presentation in Spanish",
+      "Interact using spoken Spanish",
+      "Write a variety of text types in Spanish."
+    ],
+    "external_credits": 10,
+    "internal_credits": 14,
+    "metrics_raw": "10 14 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION ENTRY SPA112 and Head of Department approval 33",
+    "also_listed_under": []
+  },
+  {
+    "code": "MAO223",
+    "level": "L2",
+    "title": "TE REO MĀORI",
+    "faculty": "LANGUAGES",
+    "ue": false,
+    "scholarship": false,
+    "description": "In this course, you use te reo to look at your aspirations and dreams. You will begin to form and present your own ideas in te reo.",
+    "pathway": "This course can lead to Level 3 Te Reo Māori.",
+    "components": [
+      "Demonstrate understanding of a variety of spoken and written Te Reo Māori texts",
+      "Create a portfolio of spoken Te Reo Māori",
+      "Write a variety of text types in Te Reo Māori."
+    ],
+    "external_credits": 12,
+    "internal_credits": 12,
+    "metrics_raw": "12 12 $0 � � EXTERNAL CREDITS Maximum INTERNAL CREDITS Literacy credits DONATION ENTRY MAO112 and Head of Department approval Level 3",
+    "also_listed_under": []
+  },
+  {
+    "code": "CHI335",
+    "level": "L3",
+    "title": "CHINESE",
+    "faculty": "LANGUAGES",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course focuses on furthering communication skills that allow you to discuss different points of view on current topics such as the use of technology, social media, health, future plans and comparing cultural differences.",
+    "pathway": "This course can lead to Stage 2 Chinese at university.",
+    "components": [
+      "Demonstrate understanding of a variety of spoken and written Chinese texts",
+      "Give a spoken presentation in Chinese",
+      "Interact using spoken Chinese",
+      "Write a variety of text types in Chinese."
+    ],
+    "external_credits": 10,
+    "internal_credits": 14,
+    "metrics_raw": "10 14 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION ENTRY CHI223 and Head of Department approval",
+    "also_listed_under": []
+  },
+  {
+    "code": "JPN335",
+    "level": "L3",
+    "title": "JAPANESE",
+    "faculty": "LANGUAGES",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course develops language skills that allow you to discuss different points of view on topics such as social and environmental issues.",
+    "pathway": "This course can lead to Stage 2 Japanese at university.",
+    "components": [
+      "Demonstrate understanding of a variety of spoken and written Japanese texts",
+      "Give a spoken presentation in Japanese",
+      "Interact using spoken Japanese",
+      "Write a variety of text types in Japanese."
+    ],
+    "external_credits": 10,
+    "internal_credits": 14,
+    "metrics_raw": "10 14 $10 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For hardcopy workbooks (optional) ENTRY JPN223 and Head of Department approval",
+    "also_listed_under": []
+  },
+  {
+    "code": "MAI035",
+    "level": "Y11-L2-3",
+    "title": "TE REO MĀORI IMMERSION",
+    "faculty": "LANGUAGES",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course is designed to extend the level of fluent te reo Māori speakers by studying in a language immersion environment. Topics will be based on student interest.",
+    "pathway": "This course can lead to Stage 1 and 2 Te Reo Māori at university.",
+    "components": [
+      "Demonstrate understanding of a variety of spoken and written Te Reo Māori texts",
+      "Create a portfolio of spoken Te Reo Māori",
+      "Write a variety of text types in Te Reo Māori."
+    ],
+    "external_credits": 12,
+    "internal_credits": 16,
+    "metrics_raw": "12 16 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION ENTRY MAO223 and Head of Department approval 34",
+    "also_listed_under": []
+  },
+  {
+    "code": "SPA335",
+    "level": "L3",
+    "title": "SPANISH",
+    "faculty": "LANGUAGES",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course develops language skills that allow you to discuss different points of view. Topics include comparing cultural practices, history and technology. You can choose topics of study that interest you.",
+    "pathway": "This course can lead to Stage 2 Spanish at university.",
+    "components": [
+      "Demonstrate understanding of a variety of spoken and written Spanish texts",
+      "Give a spoken presentation in Spanish",
+      "Interact using spoken Spanish",
+      "Write a variety of text types in Spanish."
+    ],
+    "external_credits": 10,
+    "internal_credits": 14,
+    "metrics_raw": "10 14 $0 � � EXTERNAL CREDITS Maximum INTERNAL CREDITS Maximum DONATION ENTRY SPA223 and Head of Department approval English Language – proficiency-based courses",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENL000",
+    "level": "Pre-NCEA",
+    "title": "ENGLISH LANGUAGE - FOUNDATION",
+    "faculty": "LANGUAGES",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is designed to help students who have VERY little or no English Language proficiency. It is a full 25 hour course that covers a range of subjects.",
+    "pathway": "This course can lead to ENL010 English Language – Beginner.",
+    "components": [
+      "Alphabet recognition",
+      "Learning to recognise, read and write basic words and sentences",
+      "Improve listening and spoken communication skills",
+      "Understand basic instructions. 0 $0 � � CREDITS DONATION ENTRY By prior arrangement with the Head of Department"
+    ],
+    "external_credits": null,
+    "internal_credits": null,
+    "metrics_raw": "",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENL010",
+    "level": "Pre-NCEA",
+    "title": "ENGLISH LANGUAGE - BASIC",
+    "faculty": "LANGUAGES",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is designed to help students who have low levels of English language proficiency. It is a 16 hour course that covers a range of subjects.",
+    "pathway": "This course can lead to ENL010 English Language – Beginner.",
+    "components": [
+      "Improve listening comprehension and speaking confidence",
+      "Develop writing and punctuation skills",
+      "Grow reading comprehension skills",
+      "Improve vocabulary. 10 $0 � � INTERNAL CREDITS DONATION ENTRY By prior arrangement with the Head of Department"
+    ],
+    "external_credits": null,
+    "internal_credits": null,
+    "metrics_raw": "",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENL011",
+    "level": "Pre-NCEA",
+    "title": "ENGLISH LANGUAGE - BEGINNER",
+    "faculty": "LANGUAGES",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is for non-native English speakers who have basic competence in English. This is an intensive 12 hour per week course that aims to increase students’ knowledge of useful English and the language needed for Numeracy and Literacy corequisites.",
+    "pathway": "This course can lead to ENL021 English – Pre- intermediate.",
+    "components": [
+      "Develop writing and reading skills",
+      "Develop grammatical accuracy and paragraphing skills",
+      "Improve vocabulary and the language knowledge needed for the Numeracy and Literacy corequisites. 10 $0 � � INTERNAL CREDITS Literacy corequisite (if ready) DONATION ENTRY By prior arrangement with the Head of Department 35 Y11 | ENL021 ENGLISH LANGUAGE – PRE-INTERMEDIATE This course is for non-native English speakers who wish to gain the skills required for the national literacy corequisite standards. It is an 8 hour course. Pathway: This course can lead to ENL032 Intermediate English Language. Course components",
+      "Demonstrate understanding of a variety of written and spoken English texts.",
+      "Write a variety of simple texts in English."
+    ],
+    "external_credits": 10,
+    "internal_credits": 10,
+    "metrics_raw": "10 10 $0 � � EXTERNAL CREDITS Literacy Corequisite INTERNAL CREDITS Level 2 ENL credits DONATION ENTRY Completion of ENL011 or by arrangement with the Head of Department",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENL032",
+    "level": "L2",
+    "title": "ENGLISH LANGUAGE - INTERMEDIATE",
+    "faculty": "LANGUAGES",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is for non-native English speakers who have the Literacy corequisite but do not yet have the skills to attain UE literacy. Level 3 unit standards can be gained through this course.",
+    "pathway": "This course can lead to ENL043 Advanced English Language.",
+    "components": [
+      "Demonstrate understanding of spoken information in English on familiar topics",
+      "Read and understand texts in English on familiar topics",
+      "Write a variety of text types in English on familiar topics",
+      "Converse and present information verbally."
+    ],
+    "external_credits": 0,
+    "internal_credits": 20,
+    "metrics_raw": "0 20 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Completion of ENL021 or by prior arrangement with the Head of Department",
+    "also_listed_under": []
+  },
+  {
+    "code": "ENL043",
+    "level": "L3",
+    "title": "ENGLISH LANGUAGE - ADVANCED",
+    "faculty": "LANGUAGES",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is for non-native English speakers who wish to gain University Entrance Literacy. It requires a reasonably high level of English language competency. Students who also need the literacy corequisites can attain them through this course.",
+    "pathway": "This course can be studied in conjunction with Level 2 English (ENG223).",
+    "components": [
+      "Developing skills to write formal academic essays",
+      "Reading and understanding academic texts."
+    ],
+    "external_credits": 0,
+    "internal_credits": 22,
+    "metrics_raw": "0 22 $0 � � EXTERNAL CREDITS INTERNAL CREDITS UE literacy credits 11 Level 3 EAP literacy corequisite credits if needed DONATION ENTRY Completion of ENL032 or by prior arrangement with the Head of Department 36",
+    "also_listed_under": []
+  },
+  {
+    "code": "HKIP",
+    "level": "Y11-13",
+    "title": "HE KĀKANO INDIVIDUAL PROGRAMME",
+    "faculty": "LEARNING SERVICES",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course provides an invitation only, individualised programme, developed with He Kākano Specialist Teachers. This course meets learning needs in an identified curriculum area where no existing course meets the needs of a He Kākano student.",
+    "pathway": "",
+    "components": [
+      "Course developed around student needs as required."
+    ],
+    "external_credits": 0,
+    "internal_credits": 0,
+    "metrics_raw": "0 0 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY Invitation only. Please discuss with He Kākano teachers Y11 | LSF000 LEARNING SKILLS FOR LIFE This course is a compulsory subject for all ORS funded He Kākano students unless the He Kākano Specialist Teachers have granted an exemption or ORS funded students are participating in a full NCEA programme. Course components • Support to develop life skills enabling students to increase their independence • Support to participate in activities that may include the Duke of Edinburgh’s Award. 0 0 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY All ORS funded students Y11 | LHK000 & NHK000 SENIOR LITERACY & NUMERACY Compulsory for all He Kākano students unless the He Kākano Specialist Teachers have granted an exemption or ORS funded students are participating in a full NCEA programme. Course components • Development of literacy skills using Structured Literacy approaches. This may include supplemental online programmes. • Development of numeracy skills using Numicon. This may include supplemental online programmes. 0 0 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY All ORS funded students On the course choices planning sheets, the above courses come under the umbrella code HKO000 Y11 | LSS100 STUDY SUPPORT An‘ invite only’ option for students who need additional support to achieve NCEA. There are no NCEA credits on offer. Course components ● Course developed around student needs as required ● Support to develop organisation and time management skills relevant to school ● Unpacking and understanding assessment tasks from other subjects ● Structured time for students to work on assessments, homework, and classwork from other subjects in school, with support ● Opportunity to develop social, communication and life skills in a small setting. 0 0 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATI ON ENTRY Invitation only — discuss with HoF Learning Services On the course choices planning sheets, the above courses come under the umbrella code HKO100 37",
+    "also_listed_under": []
+  },
+  {
+    "code": "FIN223",
+    "level": "L2",
+    "title": "FINANCE",
+    "faculty": "MATHEMATICS",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course focuses on managing money in everyday life. You will learn how to make informed decisions about spending and saving money and how to adapt to changing financial situations. This course has a high level of literacy (both reading and writing).",
+    "pathway": "This course supports the development of skills for application in real-life and leads on to FIN330.",
+    "components": [
+      "Personal income and budgeting",
+      "Taxation",
+      "Banking products",
+      "Insurance products."
+    ],
+    "external_credits": 0,
+    "internal_credits": 10,
+    "metrics_raw": "0 10 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Literacy and Numeracy CAAs 38",
+    "also_listed_under": []
+  },
+  {
+    "code": "MAT223",
+    "level": "L2",
+    "title": "MATHEMATICS (STUDENT DIRECTED)",
+    "faculty": "MATHEMATICS",
+    "ue": false,
+    "scholarship": false,
+    "description": "This is for year 12 students and offers a choice of Level 2 standards in whichever areas of the curriculum you are interested, or need for your future career path. Some Level 3 credits may be available. You should choose a minimum of 4 standards.",
+    "pathway": "This course can lead to Calculus (MAC335) or Statistics (MAS335) or Mathematics (MAT335) in year 13, depending on the standards you choose.",
+    "components": [
+      "Algebra",
+      "Geometry and measurement",
+      "Probability",
+      "Statistics. Note: 10 Level 1 Numeracy credits are required for UE 12 TBC $10 � � EXTERNAL CREDITS Maximum. Course endorsement offered INTERNAL CREDITS Numeracy credits & some literacy credits DONATION $10 per workbook. ENTRY At least 4 topics from MAT112 as well as AS91944 (1.1 - Stats enquiry NCEA internal)"
+    ],
+    "external_credits": null,
+    "internal_credits": null,
+    "metrics_raw": "",
+    "also_listed_under": []
+  },
+  {
+    "code": "MTL223",
+    "level": "L2",
+    "title": "MATHEMATICS (TEACHER-LED)",
+    "faculty": "MATHEMATICS",
+    "ue": false,
+    "scholarship": false,
+    "description": "This is for year 12 students and offers a pathway for those who prefer a teacher-led approach to learning. Focus areas are statistics and discrete mathematics. Students wanting to do Algebra or Calculus should not select this course. The whole class complete the same topic led by the teacher.",
+    "pathway": "This course can lead to Statistics (MAS335) or Mathematics (MAT335) in year 13.",
+    "components": [
+      "Statistics (questionnaires / inference)",
+      "Networks",
+      "Sequences and series",
+      "Probability."
+    ],
+    "external_credits": 4,
+    "internal_credits": 11,
+    "metrics_raw": "4 11 $27 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION Donation for 3 workbooks. You will also need a laptop. ENTRY At least 3 topics from MAT112 or MTL112 including AS91944 (1.1 – stats enquiry NCEA internal) Level 3",
+    "also_listed_under": []
+  },
+  {
+    "code": "MAC335",
+    "level": "L3",
+    "title": "CALCULUS",
+    "faculty": "MATHEMATICS",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course is centred on the further development of calculus and its applications. It should be a first choice for you if you are hoping to do further study in mathematics, physical sciences, engineering, graphics and economics.",
+    "pathway": "This course can lead to tertiary study in mathematics or associated courses.",
+    "components": [
+      "Differentiation",
+      "Integration",
+      "Algebra",
+      "Trigonometry."
+    ],
+    "external_credits": 17,
+    "internal_credits": 4,
+    "metrics_raw": "17 4 $25 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Numeracy credits DONATION For workbooks. You also need a laptop or equivalent (a phone is not sufficient). ENTRY Credits from 4 standards in MAT223 including AS91262 (2.7) and merit in AS91261(2.6). AS91587 (3.15) would be advantageous",
+    "also_listed_under": []
+  },
+  {
+    "code": "FIN330",
+    "level": "L3",
+    "title": "FINANCE",
+    "faculty": "MATHEMATICS",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course focuses on external factors that impact on your income, setting realistic budgets, developing plans to achieve financial goals and looking at credit options and their implications and risks. This course has a high level of literacy (both reading and writing).",
+    "pathway": "This course supports the development of skills for application in real-life.",
+    "components": [
+      "Managing income",
+      "Setting goals and budgeting",
+      "Spending and transacting",
+      "Credit and debt",
+      "Working in a team."
+    ],
+    "external_credits": 0,
+    "internal_credits": 16,
+    "metrics_raw": "0 16 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Literacy and Numeracy CAAs 39",
+    "also_listed_under": []
+  },
+  {
+    "code": "MAT335",
+    "level": "L3",
+    "title": "MATHEMATICS",
+    "faculty": "MATHEMATICS",
+    "ue": true,
+    "scholarship": false,
+    "description": "This course is for those who want to carry on with mathematics and includes a mixture of algebra, statistics and discrete mathematics. This is a teacher directed course.",
+    "pathway": "This course can lead to tertiary study in associated courses.",
+    "components": [
+      "Algebra",
+      "Statistics",
+      "Probability",
+      "Critical path analysis."
+    ],
+    "external_credits": 8,
+    "internal_credits": 12,
+    "metrics_raw": "8 12 $40 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Numeracy & some Literacy credits DONATION For workbooks. You also need a laptop or equivalent. ENTRY Credits from 4 standards from MAT223 or MTL223 including AS 91267(2.12) (external) and AS91264 (2.9) (internal)",
+    "also_listed_under": []
+  },
+  {
+    "code": "MAS335",
+    "level": "L3",
+    "title": "STATISTICS",
+    "faculty": "MATHEMATICS",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course is centred on the further development of statistics and probability. It should be the first choice for you if you are hoping to do further study in mathematics or statistics, biological and social sciences, commerce and administration.",
+    "pathway": "This course can lead to tertiary study in statistics or associated courses.",
+    "components": [
+      "Time series",
+      "Bivariate data",
+      "Inference",
+      "Probability."
+    ],
+    "external_credits": 8,
+    "internal_credits": 12,
+    "metrics_raw": "8 12 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Numeracy & Literacy credits DONATION For workbooks. You also need a laptop or equivalent (a phone is not sufficient). ENTRY Credits from 4 standards from MAT223 or MTL223 including AS 91267 (2.12) (external) and AS91264 (2.9) (internal) 40",
+    "also_listed_under": []
+  },
+  {
+    "code": "BIO223",
+    "level": "L2",
+    "title": "BIOLOGY",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "Biology is the science that focuses on the study of life and living organisms. You will learn how cells interact with their environment and with each other.",
+    "pathway": "This course can lead to BIO335.",
+    "components": [
+      "Life processes at the cellular level",
+      "Ecological communities",
+      "Gene expression",
+      "Designing an investigation."
+    ],
+    "external_credits": 8,
+    "internal_credits": 8,
+    "metrics_raw": "8 8 $40 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION for workbook and field trips ENTRY Demonstrated understanding of Fundamentals of Biology through assessment or with HOF approval",
+    "also_listed_under": []
+  },
+  {
+    "code": "CHE223",
+    "level": "L2",
+    "title": "CHEMISTRY",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "Chemistry is the study of substances and their interaction with each other and with energy. In this course, you will gain an understanding of the particles involved in each aspect to explain the material world around you.",
+    "pathway": "This course can lead to CHE335.",
+    "components": [
+      "Quantitative analysis",
+      "Chemical reactivity and equilibria",
+      "Structure, bonding and energy",
+      "Organic reactions",
+      "Oxidation and reduction processes."
+    ],
+    "external_credits": 13,
+    "internal_credits": 10,
+    "metrics_raw": "13 10 $25 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For workbook ENTRY Demonstrated understanding of Fundamentals of Chemistry through assessment or with HOF approval Y11 | HCL112 HORTICULTURE This course is for you if you are interested in plants, the environment and working outdoors. This course enables you to develop a working knowledge and basic practical skills in plant propagation and management. Pathway: This course leads to HCL223 and then either: 1. Polytechnic courses and apprenticeship opportunities in the wide-ranging environmental and horticulture sectors OR 2. HCL335 and university courses Course components ● Plant life processes ● Basic plant propagation skills ● Soil management ● Landscape design to meet user needs. 6 $0 � � INTERNAL CREDITS DONATION ENTRY Open 41",
+    "also_listed_under": []
+  },
+  {
+    "code": "ESS223",
+    "level": "L2",
+    "title": "EARTH AND SPACE SCIENCE",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "You will learn why stars shine, how the planets were formed and what causes earthquakes and forms volcanoes. You will explore a local landform to discover its origins, and find out how some of the hardiest organisms on Earth survive.",
+    "pathway": "This course can lead to ESS335.",
+    "components": [
+      "Extreme events (volcanoes, earthquakes etc.)",
+      "Stars and planets",
+      "Local rocks and landforms",
+      "Extreme organisms."
+    ],
+    "external_credits": 8,
+    "internal_credits": 12,
+    "metrics_raw": "8 12 $60 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Workbook and field trip ENTRY 4 Level 1 Science credits, Literacy corequisite or, with HOF approval",
+    "also_listed_under": []
+  },
+  {
+    "code": "HCL223",
+    "level": "L2",
+    "title": "HORTICULTURE",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course will develop a working knowledge and practical skills in commercial plant propagation and plant management. You will enjoy this course if you are interested in one or more of the primary industry horticulture sectors such as viticulture, crop management, biosecurity, plant pathology.",
+    "pathway": "This course leads to either HCL335 or polytechnic courses and apprenticeship opportunities in sectors such as landscape construction, arboriculture, plant nursery, botanic gardens.",
+    "components": [
+      "Practical plant propagation and management",
+      "Horticultural investigation",
+      "Environmental impact of horticulture."
+    ],
+    "external_credits": 0,
+    "internal_credits": 17,
+    "metrics_raw": "0 17 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION Nil ENTRY Literacy corequisite and numeracy, or with HOF approval",
+    "also_listed_under": []
+  },
+  {
+    "code": "PHY223",
+    "level": "L2",
+    "title": "PHYSICS",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "Physics is the study of the nature and properties of matter and energy. You will carry out practical investigations linked to the concepts studied.",
+    "pathway": "This course can lead to Physics at Level 3 and/or tertiary study of physics.",
+    "components": [
+      "Radioactivity",
+      "Mechanics",
+      "Electricity and Electromagnetism",
+      "Waves and Optics",
+      "Practical Investigation."
+    ],
+    "external_credits": 16,
+    "internal_credits": 7,
+    "metrics_raw": "16 7 $35 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For a write-in handbook ENTRY Demonstrated understanding of Fundamentals of Physics through assessment or with HOF approval Level 3",
+    "also_listed_under": []
+  },
+  {
+    "code": "BIO335",
+    "level": "L3",
+    "title": "BIOLOGY",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": true,
+    "description": "Biology is the science of life. It covers the relationships between organisms and the environment. You will explore evolutionary processes, animal behaviour and homeostasis. Biology helps you to communicate scientifically, think critically, and better understand the world around you.",
+    "pathway": "This can lead to tertiary study as part of a science, technology, bio-engineering or medical qualifications.",
+    "components": [
+      "Socio-scientific: investigating controversial biological issues and their implications",
+      "Homeostasis: human survival in extreme conditions",
+      "Ecology: animal behaviour and plant responses in the living world",
+      "Evolution: speciation of plants and animals."
+    ],
+    "external_credits": 9,
+    "internal_credits": 9,
+    "metrics_raw": "9 9 $30 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Workbook ENTRY 12 Level 2 Science credits or with HOF approval 42",
+    "also_listed_under": []
+  },
+  {
+    "code": "CHE335",
+    "level": "L3",
+    "title": "CHEMISTRY",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": true,
+    "description": "You will build on the knowledge developed in CHE223, focusing on conceptual understanding, and creating connections between the topics studied.",
+    "pathway": "This course can lead to tertiary study where it is a prerequisite or part of the many science related courses of study, especially in medicine, the health sector or engineering.",
+    "components": [
+      "Structure, bonding, energy and entropy",
+      "Inorganic chemical reactions involving redox and aqueous equilibria",
+      "Organic reactions including polymers",
+      "Spectroscopy",
+      "Oxidation and reduction processes."
+    ],
+    "external_credits": 15,
+    "internal_credits": 9,
+    "metrics_raw": "15 9 $30 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For workbook ENTRY 12 Level 2 Chemistry credits or with HOF approval",
+    "also_listed_under": []
+  },
+  {
+    "code": "ESS335",
+    "level": "L3",
+    "title": "EARTH AND SPACE SCIENCE",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course ties together many aspects of science to understand important issues such as the environment, pollution and climate change. You can also follow your own interests with personal project work.",
+    "pathway": "This course is a good introduction to many university science courses.",
+    "components": [
+      "Oceans and the hydrosphere",
+      "Atmosphere",
+      "Life on other planets",
+      "Socio-scientific issues in relation to Earth and Space Science."
+    ],
+    "external_credits": 8,
+    "internal_credits": 12,
+    "metrics_raw": "8 12 $60 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Workbook and field trip ENTRY 12 credits from any Level 2 Science and Literacy CAA and numeracy, or with HOF approval",
+    "also_listed_under": []
+  },
+  {
+    "code": "HCL335",
+    "level": "L3",
+    "title": "HORTICULTURE",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": false,
+    "description": "You will focus on New Zealand’s primary production industries with an emphasis on plant management practices to meet export market requirements and grower profitability. Complementary subjects are: mathematics, biology, business studies and economics.",
+    "pathway": "This course leads to a wide range of tertiary university courses including agriculture, horticulture, commerce, soil science, forestry, environmental science, landscape architecture etc.",
+    "components": [
+      "Sensory survey on apple fruit attributes",
+      "Research the profitability of a primary product",
+      "Study the production processes of a primary product to meet specific export market requirements",
+      "Analyse a NZ primary production environmental issue."
+    ],
+    "external_credits": 9,
+    "internal_credits": 10,
+    "metrics_raw": "9 10 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION Nil ENTRY 12 credits from any Level 2 Science and Literacy CAA and numeracy, or with HOF approval",
+    "also_listed_under": []
+  },
+  {
+    "code": "PHY335",
+    "level": "L3",
+    "title": "PHYSICS",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": true,
+    "description": "You will study conceptual and mathematical approaches to Physics. You will carry out practical investigations linked to the concepts studied.",
+    "pathway": "This course can lead to university study of physics, especially as part of a science, engineering or medical degree.",
+    "components": [
+      "Modern Physics",
+      "Mechanics",
+      "Electricity and Electromagnetism",
+      "Waves",
+      "Practical Investigations. Note: Studying Calculus MAC335 is recommended."
+    ],
+    "external_credits": 16,
+    "internal_credits": 7,
+    "metrics_raw": "16 7 $35 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For a write-in handbook ENTRY 12 Level 2 Physics credits or with Head of Faculty approval 43 SOCIAL SCIENCES | TIKANGA-Ā-IWI Head of Faculty — Kate Potter YEAR 11 LEVEL 2 LEVEL 3 Activism & Change Business Studies & Economics Heroic Journeys of the Ancient World Global Studies Classical Studies with English Economics Geography History Media with Film Media with Journalism Psychology Sociology Tourism Māori Classical Studies Economics Geography History Media with Film Media with Journalism Psychology Sociology Tourism Māori Y11 | SOC112 ACTIVISM AND SOCIAL CHANGE This course explores a range of current social issues and the ways people work together to create change. You will delve in to the ethics of activism and why people feel strongly about issues confronting communities in Aotearoa and overseas. You will engage in a social action with your classmates. Key themes include diversity, inclusion, rights, power and social justice. Pathway: SOC223 and other Level 2 Social Sciences. Course components ● Evaluate the impact and ethics of social action ● Conduct an inquiry into a social issue ● Participate in a social action designed to challenge or support a system. 5 $0 � � INTERNAL CREDITS DONATION ENTRY Open Y11 | BSE112 BUSINESS STUDIES AND ECONOMICS In this course you will learn about the keys to small business success and use this knowledge to plan and operate a market day business. You will learn introductory economics including supply, demand and price controls. Pathway: ECO223 and other Level 2 Social Sciences. Course components ● Small business operations ● Price determination based on cost modelling, market research and pricing strategies ● How markets determine what goods and services are produced and how much they cost ● Price controls, taxes and subsidies. 5 $ TBC � � INTERNAL CREDITS DONATION Start up costs for small business ENTRY Open Y11 | CLS112 HEROIC JOURNEYS OF THE ANCIENT WORLD This course explores the qualities that define a hero and a heroic journey across multiple times and cultures in the ancient world, from Greece to the Pacific. Pathway: CLE223 and other Level 2 Social Sciences. Course components ● Study the ideas and values in Homer’s Odyssey ● Understand links between the classical world and other cultures from around the world ● Understand how to examine primary sources in historical contexts. 5 $0 � � INTERNAL CREDITS DONATION ENTRY Open 44 Y11 | MDS112 MEDIA STUDIES This is a practical introductory course teaching the basics in film making, and print journalism. Pathway: FLM223, JRN223, and other Level 2 Social Sciences. Course components ● Understand basics of film making and post production ● Understand basics of feature writing and magazine design ● Understand characteristics of narrative and storytelling ● Understand characteristics of film genre. 5 $0 � � INTERNAL CREDITS DONATION ENTRY Open Y11 | GEO112 GLOBAL STUDIES This course focuses on contemporary global issues. What is happening where? Why is it happening there? Why should we care about it? What does the issue look like in Aotearoa? You will explore the issues using local and global case studies. Pathway: GEO223 and other Level 2 Social Sciences. Course components ● Natural processes (tectonic, volcanic and climatic processes) ● Eco-tourism (how humans interact with the natural environment and the consequences) ● Marine sustainability (ocean pollution and microplastics) ● Global issue inquiry (investigate a global issue you care about). We will leave room for global issues that arise during the year, where possible. We also organise a field trip for all Global students. This is a one day bus trip where we follow the Wellington fault line. 5 $30 � � INTERNAL CREDITS DONATION Estimate for field trip costs ENTRY Open Level 2",
+    "also_listed_under": []
+  },
+  {
+    "code": "ECO223",
+    "level": "L2",
+    "title": "ECONOMICS",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "In this course we will study issues including unemployment and the cost of living, the pros and cons of economic growth, and consequences of Government policies such as minimum wage. These topics will add an economic lens to how you understand the world.",
+    "pathway": "ECO335 and other Level 3 Social Sciences.",
+    "components": [
+      "Analysing inflation",
+      "Analysing unemployment and the minimum wage",
+      "Analysing economic growth",
+      "Reviewing Government policies."
+    ],
+    "external_credits": 8,
+    "internal_credits": 10,
+    "metrics_raw": "8 10 $20 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy (for UE) DONATION Write-on workbook ENTRY Literacy corequisite or permission from HoF. Y11 | HIS112 HISTORY This course teaches students the skills of an historian including source analysis, engaging with historical perspectives and understanding the relative significance of events in the past. HIS112 explores topics and events that shaped the world from the 17th century to today, both in Aotearoa New Zealand and globally. Pathway: HIS223 and other Level 2 Social Sciences. Course components ● Exploring the diverse histories of people in Te Whanganui a Tara ● Colonisation in America and The Pacific ● From Black Civil Rights to Black Lives Matter: a history of Black America’s resistance against injustice and oppression. ● Perspectives on war: WWI from the perspective of those left behind. 5 $ TBC � � INTERNAL CREDITS DONATION There may be a cost for day excursions in the Wellington region. ENTRY Open 45",
+    "also_listed_under": []
+  },
+  {
+    "code": "CLE223",
+    "level": "L2",
+    "title": "CLASSICAL STUDIES WITH ENGLISH",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course explores the qualities of humour in both classical and modern society as well as delving into events that shaped the classical world. You do not need to take another English course but you can if you wish. N.B. this course includes English standards and may be taken as an alternative to ENG223.",
+    "pathway": "CLS335 and other Level 3 Social Sciences.",
+    "components": [
+      "Examine ideas and values in the classical world",
+      "Examine significant features of art and architecture",
+      "Understand the relationship between the classical world and other cultures",
+      "Analyse written texts using evidence and produce formal written work."
+    ],
+    "external_credits": 16,
+    "internal_credits": 14,
+    "metrics_raw": "16 14 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY Literacy corequisite",
+    "also_listed_under": []
+  },
+  {
+    "code": "GEO223",
+    "level": "L2",
+    "title": "GEOGRAPHY",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "Geography is the study of the relationship between humans and the environment. At level two we will investigate differences in development, population changes in New York City, spatial patterns of green spaces in Wellington’s CBD, geographic skills and the global issue of modern slavery.",
+    "pathway": "GEO335 and other Level 3 Social Sciences.",
+    "components": [
+      "Analyse the spatial patterns and significance of the issue of modern day slavery",
+      "Demonstrate understanding of a variety of geographic skills (mapping and interpreting graphs).",
+      "Analyse temporal patterns of population change in New York City.",
+      "Analyse global differences in development",
+      "Geographic research on how people access green spaces in Wellington’s CBD"
+    ],
+    "external_credits": 4,
+    "internal_credits": 14,
+    "metrics_raw": "4 14 $30 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy and numeracy for UE DONATION Level 2 skills book ENTRY Open",
+    "also_listed_under": []
+  },
+  {
+    "code": "HIS223",
+    "level": "L2",
+    "title": "HISTORY",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course explores forces and movements that have influenced change at different times in history. The skills of the historian are developed further and students are challenged to explore perspectives from the past, weigh up the significance of historical events and critically analyse primary and secondary sources.",
+    "pathway": "HIS335 and other Level 3 Social Sciences.",
+    "components": [
+      "Explore the histories of blackbirding in the Pacific and the impact of eugenics in New Zealand history",
+      "Understand the perspectives and impacts of the 19th century Taranaki Wars",
+      "Explore the competing forces that led to conflict in Vietnam in the 20th century."
+    ],
+    "external_credits": 5,
+    "internal_credits": 14,
+    "metrics_raw": "5 14 $ 0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY Literacy corequisite",
+    "also_listed_under": []
+  },
+  {
+    "code": "FLM223",
+    "level": "L2",
+    "title": "MEDIA WITH FILM",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "You will develop media literacy and understand the use of mass media, particularly film. You will become a critical consumer of the media and use these skills in the production of your own media product – a horror film.",
+    "pathway": "FLM335 and other Level 3 Social Sciences.",
+    "components": [
+      "Understand the ways that representation in media texts influence society",
+      "Show understanding of an aspect of a specified genre",
+      "Plan and complete a film using a range of conventions Students taking FLM223 cannot be enrolled in JRN223."
+    ],
+    "external_credits": 4,
+    "internal_credits": 16,
+    "metrics_raw": "4 16 $ 0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY Open 46",
+    "also_listed_under": []
+  },
+  {
+    "code": "JRN223",
+    "level": "L2",
+    "title": "MEDIA WITH JOURNALISM",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course focuses on the planning and production of magazine articles for publication in The Flannel. You will develop skills in analysing a media genre and will produce your own written media, both in a short piece and a longer feature article. You will learn skills in writing and basic design theory.",
+    "pathway": "JRN335 and other Level 3 Social Sciences.",
+    "components": [
+      "Demonstrate understanding of a media genre and the ethical implications within it",
+      "Write an opinion piece to meet the needs of The Flannel readership",
+      "Develop, plan and produce a feature article",
+      "Develop skills in various software products to produce a feature article for The Flannel. Students taking JRN223 cannot be enrolled in FLM223."
+    ],
+    "external_credits": 4,
+    "internal_credits": 16,
+    "metrics_raw": "4 16 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY Literacy corequisite",
+    "also_listed_under": []
+  },
+  {
+    "code": "PSY223",
+    "level": "L2",
+    "title": "PSYCHOLOGY",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "Psychology is the scientific study of the mind and behaviour. In this course you will explore theories explaining behaviours such as addiction. You will also learn about some (in)famous psychological experiments and conduct your own ethical psychological research. The course will introduce you to a range of fields of psychology, for example, health psychology and environmental psychology.",
+    "pathway": "PSY335 and other Level 3 Social Sciences.",
+    "components": [
+      "Explore ethical issues in psychological practice",
+      "Conduct psychological research with guidance",
+      "Investigate psychological theories and approaches."
+    ],
+    "external_credits": 0,
+    "internal_credits": 18,
+    "metrics_raw": "0 18 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY Literacy corequisite",
+    "also_listed_under": []
+  },
+  {
+    "code": "SOC223",
+    "level": "L2",
+    "title": "SOCIOLOGY",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course focuses on contemporary social issues that impact communities. You’ll learn about rights, responsibilities, and ways that people work together to achieve social justice. Importantly, this course provides opportunities to take action in response to a social issue that you care about.",
+    "pathway": "SOC335 and other Level 3 Social Science.",
+    "components": [
+      "Analyse a social action in response to a contemporary issue",
+      "Conduct a social inquiry into a social issue",
+      "Take part in social action related to rights and responsibilities."
+    ],
+    "external_credits": 4,
+    "internal_credits": 14,
+    "metrics_raw": "4 14 $ 0 � � EXTERNAL CREDITS INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY Literacy corequisite For Year 12 students, Level 3 credits in Tourism Māori are on offer for students with a specific interest in this area. See p.48 for details and speak to Megan Southwell. Level 3",
+    "also_listed_under": []
+  },
+  {
+    "code": "CLS335",
+    "level": "L3",
+    "title": "CLASSICAL STUDIES",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": false,
+    "description": "You will explore the social, artistic and ideological aspects of the classical world. Particular focus will be on philosophy, mythology, concepts and beliefs of religion and political propaganda.",
+    "pathway": "This course can lead to tertiary study.",
+    "components": [
+      "Analyse ideas and values of the classical world",
+      "Analyse the significance of Art in the classical world",
+      "Understand significant ideologies in the classical world",
+      "Understand the influence of the classical world on other cultures."
+    ],
+    "external_credits": 8,
+    "internal_credits": 12,
+    "metrics_raw": "8 12 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits DONATION ENTRY 12 Credits in CLE223 or another Social Science or permission from HoF 47",
+    "also_listed_under": []
+  },
+  {
+    "code": "ECO335",
+    "level": "L3",
+    "title": "ECONOMICS",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": false,
+    "description": "You will study how markets operate and will evaluate the pros and cons of free markets and Government interventions. Case studies may include cigarette tax, public transport subsidies, and the sustainability of New Zealand’s fishing quota system.",
+    "pathway": "This course can lead to tertiary study.",
+    "components": [
+      "Microeconomic concepts",
+      "Market efficiency",
+      "Market failure and government intervention",
+      "Macroeconomics (building on ECO223)."
+    ],
+    "external_credits": 10,
+    "internal_credits": 10,
+    "metrics_raw": "10 10 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits for UE DONATION ENTRY 10 credits from Level 2 external exams or permission from the HoF.",
+    "also_listed_under": []
+  },
+  {
+    "code": "GEO335",
+    "level": "L3",
+    "title": "GEOGRAPHY",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": true,
+    "description": "Geography is the study of the relationship between humans and the environment. At level three we will investigate coastal erosion, conduct geographic research in Wellington’s CBD, geographic skills and the global patterns of refugee migration.",
+    "pathway": "This course can lead to tertiary study.",
+    "components": [
+      "Spatial patterns and the significance of the issue of refugee migration.",
+      "Geographic skills (mapping and interpreting graphs)",
+      "Geographic research based in Wellington’s CBD",
+      "Coastal erosion in Aotearoa",
+      "How coastal systems operate on the Kāpiti Coast."
+    ],
+    "external_credits": 4,
+    "internal_credits": 14,
+    "metrics_raw": "4 14 $30 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy and numeracy credits (for UE) DONATION For Level 3 skills book ENTRY 12 Credits from GEO223 or another Level 2 Social Science, English or permission from HoF",
+    "also_listed_under": []
+  },
+  {
+    "code": "HIS335",
+    "level": "L3",
+    "title": "HISTORY",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course explores 19th and 20th century British Imperialism in Aotearoa, Australia, Palestine, Israel and/or India. You will also learn about social change in Aotearoa in the 1980s, for example, the fourth Labour government, economic reform and the birth of the kohanga reo movement. A key focus of the course is independent research and analysis of historical events.",
+    "pathway": "This course can lead to tertiary study.",
+    "components": [
+      "The contested nature of history as a discipline",
+      "Independent research",
+      "Critical analysis of primary and secondary sources"
+    ],
+    "external_credits": 4,
+    "internal_credits": 15,
+    "metrics_raw": "4 15 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY 12 Credits from HIS223 or another Level 2 Social Science, English or permission from HoF",
+    "also_listed_under": []
+  },
+  {
+    "code": "FLM335",
+    "level": "L3",
+    "title": "MEDIA WITH FILM",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": true,
+    "description": "You will develop media literacy and understanding using mass media. You will enhance your critical understanding of media messages and develop skills in the production of your short film.",
+    "pathway": "This course can lead to tertiary study or the world of work.",
+    "components": [
+      "Develop a deeper understanding of the use of media texts",
+      "Show understanding of a media genre and society",
+      "Plan and produce a short film using conventions appropriate to a genre. Students enrolled in FLM335 cannot take JRN335 without a discussion with the Head of Faculty."
+    ],
+    "external_credits": 4,
+    "internal_credits": 16,
+    "metrics_raw": "4 16 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION ENTRY 12 Credits from FLM223 or another Level 2 Social Science subject or permission from HoF 48",
+    "also_listed_under": []
+  },
+  {
+    "code": "JRN335",
+    "level": "L3",
+    "title": "MEDIA WITH JOURNALISM",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": true,
+    "description": "The primary component of this course is the production of The Flannel magazine. Students take total control of the production including editorial policy, writing, designing, desktop publishing and graphics. Students can follow their hunches and passions and investigate issues they feel strongly about.",
+    "pathway": "This course can lead to tertiary study, or the world of work.",
+    "components": [
+      "Write an opinion piece to meet the needs of The Flannel readership",
+      "Develop and produce a feature article including writing and design",
+      "Develop skills in various software products to produce a feature article for The Flannel",
+      "Demonstrate understanding of the media representation of an aspect of Aotearoa culture or society. Students enrolled in JRN335 cannot take FLM335 without a discussion with the Head of Faculty."
+    ],
+    "external_credits": 4,
+    "internal_credits": 16,
+    "metrics_raw": "4 16 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION Nil ENTRY 12 Credits from JRN223, ENG223 or another Level 2 Social Science or permission from HoF.",
+    "also_listed_under": []
+  },
+  {
+    "code": "PSY335",
+    "level": "L3",
+    "title": "PSYCHOLOGY",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": true,
+    "description": "You will study human behaviour and human nature, what motivates us and how social policies can support us. Areas explored include criminal psychology and attachment theories as part of developmental psychology. You will conduct your own experiment in groups and deepen your knowledge of statistics.",
+    "pathway": "This course can lead to tertiary study.",
+    "components": [
+      "Analyse psychological approaches and their interactions",
+      "Conduct psychological research with consultation",
+      "Analyse the impact key psychological research has had on society",
+      "Analyse how theories are applied within a field of psychological practice."
+    ],
+    "external_credits": 0,
+    "internal_credits": 19,
+    "metrics_raw": "0 19 $0 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) ENTRY Literacy corequisite. 12 credits from PSY223 or another Level 2 Social Science or permission from HoF",
+    "also_listed_under": []
+  },
+  {
+    "code": "SOC335",
+    "level": "L3",
+    "title": "SOCIOLOGY",
+    "faculty": "SCIENCE",
+    "ue": true,
+    "scholarship": false,
+    "description": "In this course you will engage with contemporary social issues that impact communities at a local, national, and international level. You’ll learn about campaigns to create social change and will engage in your own social action to change or influence a policy.",
+    "pathway": "This course leads to tertiary study.",
+    "components": [
+      "Understand how and why people/groups work to create change in communities",
+      "Explore ideologies that shape people’s responses to social issues",
+      "Engage in social action to create positive change."
+    ],
+    "external_credits": 4,
+    "internal_credits": 16,
+    "metrics_raw": "4 16 $ TBC � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (for UE) DONATION There may be a cost for day excursions in the Wellington region ENTRY 12 Credits from SOC223 or another Level 2 Social Science subject or permission from HoF.",
+    "also_listed_under": []
+  },
+  {
+    "code": "TMA234",
+    "level": "L3",
+    "title": "TOURISM MĀORI",
+    "faculty": "SCIENCE",
+    "ue": false,
+    "scholarship": false,
+    "description": "Māori identity is a significant part of tourism in Aotearoa. In this course you will look at the importance of Māori place names, tikanga, kaitiaki practices, Māori communication, and kaupapa Māori gatherings in relation to tourism Māori. This is a course for students in Year 12 or 13 who have a genuine interest in learning in a Māori context.",
+    "pathway": "This course can lead to Level 4/5 standards in Māori Tourism offered beyond kura. Credits count towards NCEA Level 3 but not UE.",
+    "components": [
+      "Understanding the meaning and importance of place names in tourism Māori",
+      "Understanding the importance of whānau in tourism",
+      "Learning about the significance of natural and human-made attractions in tourism Māori",
+      "Learning about kaitiakitanga in tourism Māori."
+    ],
+    "external_credits": 0,
+    "internal_credits": 24,
+    "metrics_raw": "0 24 $ TBC � � EXTERNAL CREDITS INTERNAL CREDITS Unit Standards DONATION A possible fieldtrip to Rotorua ENTRY A genuine interest in learning in a Māori context. 49",
+    "also_listed_under": []
+  },
+  {
+    "code": "ANI223",
+    "level": "L2",
+    "title": "ANIMATION",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "You will work with advanced animation techniques and a focus on narrative, to develop your animation skills further. Techniques include character design, walk cycles and compositing. Specific packages used include Adobe Creative Cloud software (Illustrator, Photoshop, Animate, AfterEffects, Premier Pro). Other software includes Blender 3D modelling and stop motion mobile applications.",
+    "pathway": "This course will lead to ANI335 complex animation. After taking this course students can progress on to tertiary courses in Animation, Design and Creative Media Production, and careers in the Movie Industry, Television Production, Game Development and a range of online content streaming and multimedia industries with the skills that they develop.",
+    "components": [
+      "Use advanced techniques and conventions to develop digital media and technologies outcomes This course cannot be taken with GDD223."
+    ],
+    "external_credits": 3,
+    "internal_credits": 13,
+    "metrics_raw": "3 13 $10 � � EXTERNAL CREDITS Maximum Course endorsement offered INTERNAL CREDITS DONATION Adobe ENTRY ANI112 or approval from Technology staff",
+    "also_listed_under": []
+  },
+  {
+    "code": "BAR020",
+    "level": "L2",
+    "title": "BARISTA SKILLS",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This is a full year course for two hours per week which covers the theory of coffee as well as practical barista skills. You will have the opportunity to learn the mechanics of an espresso machine. You will practise skills in preparation for café or barista work.",
+    "pathway": "Employment as a barista.",
+    "components": [
+      "Use of espresso machine",
+      "Preparation and presentation of coffee",
+      "Machine maintenance"
+    ],
+    "external_credits": 0,
+    "internal_credits": 18,
+    "metrics_raw": "0 18 $0 � � EXTERNAL CREDITS INTERNAL CREDITS 10 at Level 2 and 8 at Level 3 unit standard credits DONATION ENTRY Open",
+    "also_listed_under": []
+  },
+  {
+    "code": "CSC223",
+    "level": "L2",
+    "title": "COMPUTER SCIENCE",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is for you if you are interested in computer science. The course covers the design and development process of a software project. This includes looking at user implications such as usability and functionality. You will learn to program in Java and will work on a software project of your own choosing. We will also cover advanced topics in computer science such as Artificial Intelligence and encryption.",
+    "pathway": "The level 3 Computer Science course.",
+    "components": [
+      "We focus on planning, coding and program development"
+    ],
+    "external_credits": 3,
+    "internal_credits": 12,
+    "metrics_raw": "3 12 $0 � � EXTERNAL CREDITS Maximum Course endorsement offered INTERNAL CREDITS DONATION ENTRY CSC112 or by consultation 53",
+    "also_listed_under": []
+  },
+  {
+    "code": "DTW223",
+    "level": "L2",
+    "title": "DESIGN AND TECHNOLOGY WORKSHOP",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course develops the practical focus on constructional skills and expands the range of machinery used when making objects. Students follow the technology design process to identify a stakeholder and develop ideas. A wide range of hard materials knowledge is developed to further assist design-and-make capabilities.",
+    "pathway": "The course leads to PWK334.",
+    "components": [
+      "Develop making skills in a range of materials",
+      "Develop creative thinking and design skills",
+      "Create a series of practical projects",
+      "Learn how to configure and use a range of machine tools under supervision",
+      "Develop understanding and awareness of health and safety issues in a workshop environment"
+    ],
+    "external_credits": 4,
+    "internal_credits": 16,
+    "metrics_raw": "4 16 $50 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION ENTRY Open to all",
+    "also_listed_under": []
+  },
+  {
+    "code": "DVC223",
+    "level": "L2",
+    "title": "DESIGN AND VISUAL COMMUNICATION",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "Take your creativity to another level! If you have an interest in design and drawing, this is the course for you. You’ll continue to hone your creative skills in response to challenging architectural design and product design briefs. You’ll learn to think and sketch like a designer. You’ll extend your visual communication skills in areas such as design drawing, concept model-making, and use of Photoshop. You’ll learn about design history and how Mātauranga Māori can inform design ideas within Aotearoa New Zealand.",
+    "pathway": "The course allows for entry into DVC335. Pathways beyond this include architecture, graphic design, product design, engineering and technical courses at both diploma and university level.",
+    "components": [
+      "Generating design ideas and communicating them through a variety of methods and media."
+    ],
+    "external_credits": 3,
+    "internal_credits": 15,
+    "metrics_raw": "3 15 $35 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Literacy credits (9) DONATION ENTRY 18 credits from DVC112",
+    "also_listed_under": []
+  },
+  {
+    "code": "ELT223",
+    "level": "L2",
+    "title": "ELECTRONICS",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This is a school-based Industry course for those interested in electronics. The course covers theory and practical aspects of electronics. You will finish this course with at least two fully working electronic devices and a good understanding of how electronic components work. It is a chance to gain credits whilst having fun finding out how things work in the world of electronics",
+    "pathway": "This course is a good step towards either industry training courses or further education courses as well as ELT335.",
+    "components": [
+      "Unit standards based on demonstrating knowledge and the practical ability to create working circuits"
+    ],
+    "external_credits": 0,
+    "internal_credits": 17,
+    "metrics_raw": "0 17 $40 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Completion of ELT112 or 12 credits from SCI112 and 8 credits from Level 1 Mathematics",
+    "also_listed_under": []
+  },
+  {
+    "code": "FTX223",
+    "level": "L2",
+    "title": "FASHION AND TEXTILES",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course teaches you all the skills you need to design and make clothing and other textile products. You will learn to use visual communication techniques to present your design ideas, develop and create your own sewing patterns, and learn couture sewing techniques.",
+    "pathway": "The course leads to FTX335.",
+    "components": [
+      "Develop skills in garment making",
+      "Develop creative thinking and design skills",
+      "Create a fashion design portfolio",
+      "Develop awareness of fashion and design history",
+      "Learn skills in pattern making"
+    ],
+    "external_credits": 3,
+    "internal_credits": 13,
+    "metrics_raw": "3 13 $45 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For practical components towards projects ENTRY Level 1 Fashion OR Interview with TIC Fashion. Recommended previous sewing experience. 54",
+    "also_listed_under": []
+  },
+  {
+    "code": "FTE223",
+    "level": "L2",
+    "title": "FOOD TECHNOLOGY",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "Develop your cooking skills and knowledge, building on FTE 112 whilst engaging in product development using your ideas, creative problem-solving skills and food science.",
+    "pathway": "The course leads to FTE335.",
+    "components": [
+      "Working with stakeholders from our community to design and develop a product",
+      "Quality control and testing in food processing.",
+      "Social, cultural and technical considerations in food product design.",
+      "Food science in the selection of ingredients"
+    ],
+    "external_credits": 4,
+    "internal_credits": 16,
+    "metrics_raw": "4 16 $50 � � EXTERNAL CREDITS Literacy credits (4) INTERNAL CREDITS Literacy credits (4) DONATION ENTRY Level 1 literacy and numeracy credits",
+    "also_listed_under": []
+  },
+  {
+    "code": "FCM220",
+    "level": "L2",
+    "title": "FURNITURE AND CABINET MAKING",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is aimed at students who enjoy, or feel they would enjoy, working in a workshop environment, practical skills can be used in the construction industry. It follows a traditional apprenticeship-style approach. You will gain skills in using woodworking, hand and power tools, as well as processes and materials knowledge. This Level 2 course is also industry recognised.",
+    "pathway": "The course leads to a range of possible industry apprenticeship schemes.",
+    "components": [
+      "The correct and safe use of hand and power tools, and the construction of furniture pieces"
+    ],
+    "external_credits": 0,
+    "internal_credits": 17,
+    "metrics_raw": "0 17 $50 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Commitment to Health & Safety.",
+    "also_listed_under": []
+  },
+  {
+    "code": "GDD223",
+    "level": "L2",
+    "title": "GAME DESIGN",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "In this course, you will take a deep dive into the design techniques that go into making a videogame, as well as the considerations that must be made to meet the needs of certain audiences. Students will work independently to develop various concepts for games, and turn their final concept into a fully functional video game using the Godot engine. Students should have access to a PC or laptop they can play 3D games on.",
+    "pathway": "GDD223 leads into GDD335, pathways in the gaming industry, degree programmes at VUW and Youbee.",
+    "components": [
+      "Use advanced techniques and conventions to develop digital media and technologies outcomes This course cannot be taken with ANI223."
+    ],
+    "external_credits": 3,
+    "internal_credits": 13,
+    "metrics_raw": "3 13 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Completion of GDD112 or independent work in Godot",
+    "also_listed_under": []
+  },
+  {
+    "code": "HOS223",
+    "level": "L2",
+    "title": "HOSPITALITY",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "In this course, you will be developing the cookery and food service skills required for the hospitality industry. There is an emphasis on food safety and a variety of cookery techniques.",
+    "pathway": "HOS334, further training at polytechnic, an apprenticeship or work in the food service industry.",
+    "components": [
+      "Food safety in a food business",
+      "Cook food by grilling, baking, braising and stewing"
+    ],
+    "external_credits": 0,
+    "internal_credits": 16,
+    "metrics_raw": "0 16 $60 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Open 55",
+    "also_listed_under": []
+  },
+  {
+    "code": "MEG223",
+    "level": "L2",
+    "title": "MECHANICAL ENGINEERING",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is for you if you wish to develop your knowledge and skills in a workshop environment focusing predominantly on metalwork. This course is particularly suitable for you if you are interested in engineering-related careers as it offers a balanced practically orientated course. Health and Safety in the workplace takes a high priority in this course.",
+    "pathway": "MEG223 can lead to higher level qualifications, apprenticeship or Gateway opportunities. To ensure a clear pathway to the end of Year 13, MEG335 will be available to Year 13 students who have gained 12 credits or more in MEG223.",
+    "components": [
+      "Use and development of technical plans to complete a series of engineering projects"
+    ],
+    "external_credits": 0,
+    "internal_credits": 18,
+    "metrics_raw": "0 18 $50 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Successful completion of course MEG 112 and brief interview with HoF/TiC",
+    "also_listed_under": []
+  },
+  {
+    "code": "NET230",
+    "level": "L2",
+    "title": "NETWORKING",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course covers computer network technologies and topologies, practical hands-on networking skills and the mathematical underpinnings of computer networks.",
+    "pathway": "There are industry qualifications that this course leads on to such as CISCO CCNA, IT company apprenticeships, tertiary courses.",
+    "components": [
+      "Computer Networking construction and management"
+    ],
+    "external_credits": 0,
+    "internal_credits": 11,
+    "metrics_raw": "0 11 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Numeracy (2), DONATION ENTRY 6 credits from CSC223 OR currently enrolled in CSC223",
+    "also_listed_under": []
+  },
+  {
+    "code": "ANI335",
+    "level": "L3",
+    "title": "ANIMATION",
+    "faculty": "TECHNOLOGY",
+    "ue": true,
+    "scholarship": true,
+    "description": "Whether you are interested in storytelling or technology, software or more of an artist, you could find yourself at home in Animation. In ANI335 students develop skills creating narratives integrating relevant requirements for their audience.",
+    "pathway": "University courses e.g. Massey University’s Bachelor of Digital Screen or entry to the industry locally/globally.",
+    "components": [
+      "Develop a short animation in stages including finding a story, creating characters, designing environments and putting it all together with sound. This course cannot be taken with GDD335"
+    ],
+    "external_credits": 3,
+    "internal_credits": 13,
+    "metrics_raw": "3 13 $10 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION Adobe ENTRY 9 credits from ANI223 56",
+    "also_listed_under": []
+  },
+  {
+    "code": "CSC335",
+    "level": "L3",
+    "title": "COMPUTER SCIENCE",
+    "faculty": "TECHNOLOGY",
+    "ue": true,
+    "scholarship": true,
+    "description": "This is a course that focuses on programming and computer science concepts. It introduces you to a wide range of real-world programming and data modelling skills that are transferable to industry and further tertiary studies. You will also learn about formal programming languages through practical exercises. We will also cover advanced topics such as Computer Vision and Big Data.",
+    "pathway": "University or similar tertiary study.",
+    "components": [
+      "Program creation and project management."
+    ],
+    "external_credits": 3,
+    "internal_credits": 12,
+    "metrics_raw": "3 12 $15 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY 9 credits from CSC223 or Level 2 Maths",
+    "also_listed_under": []
+  },
+  {
+    "code": "DTE355",
+    "level": "L3+",
+    "title": "DIGITAL TECHNOLOGY",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": true,
+    "description": "This course is primarily aimed at students who have completed CSC335 although some students enrolled in ANI335/CSC335 or GDD335 may be admitted. This course’s primary aim is to support students enrolled in computer science courses at VUW, or game design at Massey. Advanced topics will be discussed using University approved course units.",
+    "pathway": "This course assumes that VUW computing courses/Game Design at Massey will be the chosen pathway. This is an approved and accredited university foundation level study. Students are encouraged to enrol in Scholarship for Technology (project) and/or Digital Technology (exam).",
+    "components": [],
+    "external_credits": 0,
+    "internal_credits": 0,
+    "metrics_raw": "0 0 $0 � � EXTERNAL CREDITS No NCEA credits offered. Students should be confident about getting UE from other subjects INTERNAL CREDITS DONATION ENTRY Successful completion of or co- enrolment in CSC335. UE literacy. Merit at NCEA Level 2.",
+    "also_listed_under": []
+  },
+  {
+    "code": "DVC335",
+    "level": "L3",
+    "title": "DESIGN AND VISUAL COMMUNICATION",
+    "faculty": "TECHNOLOGY",
+    "ue": true,
+    "scholarship": true,
+    "description": "Take your creativity to another level! If you have an interest in design and drawing, this is the course for you. You’ll continue to hone your creative skills in response to challenging architectural design and exhibition design briefs. You’ll learn to think and sketch like a designer. You’ll extend your visual communication skills in areas such as design drawing, concept model- making, and use of Photoshop. You’ll learn about design history and how Mātauranga Māori can inform design ideas within Aotearoa New Zealand.",
+    "pathway": "This course can lead to architecture, graphic design, product design, engineering etc at university; technical courses at diploma level.",
+    "components": [
+      "Generating design ideas and communicating them through a variety of methods and media."
+    ],
+    "external_credits": 4,
+    "internal_credits": 12,
+    "metrics_raw": "4 12 $50 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY 15 credits from DVC223",
+    "also_listed_under": []
+  },
+  {
+    "code": "ELT335",
+    "level": "L3",
+    "title": "ELECTRONICS",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course builds on the ELT223 course. It is project- based and involves a high level of practical activity, gaining more skills. Particular skills developed are programming of a micro controller and use of microchips in general. At least two fully functioning projects will be built during the course. If opting to take a second year, students undertake different projects to gain UE approved achievement standards.",
+    "pathway": "This course can lead to Weltec and Polytech courses, and employment or apprenticeship opportunities.",
+    "components": [
+      "Microcontroller programming",
+      "Microchip configuration and use",
+      "Wider range of components in practical projects"
+    ],
+    "external_credits": 0,
+    "internal_credits": 16,
+    "metrics_raw": "0 16 $40 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Open. Good common sense, safety consciousness, and an interest in practical workshop activity required. 57",
+    "also_listed_under": []
+  },
+  {
+    "code": "FTX335",
+    "level": "L3",
+    "title": "FASHION AND TEXTILES",
+    "faculty": "TECHNOLOGY",
+    "ue": true,
+    "scholarship": true,
+    "description": "Build on your knowledge from FTX223 and begin to draft your own patterns, explore the possibilities of applied design for textiles and make bespoke clothing.",
+    "pathway": "This course contributes to UE and can lead to many university design and fashion pathways beyond school.",
+    "components": [
+      "Hone your visual communication techniques to create a fashion design portfolio.",
+      "Develop creative thinking and design skills",
+      "Learn how to master challenging sewing techniques like a pro",
+      "Learn how to draft pattern blocks from scratch and use these to make your own patterns."
+    ],
+    "external_credits": 4,
+    "internal_credits": 16,
+    "metrics_raw": "4 16 $60 � � EXTERNAL CREDITS Course endorsement offered. Literacy credits INTERNAL CREDITS Maximum DONATION ENTRY Minimum 13 credits at FTX223 or by interview with TiC Fashion and Textiles",
+    "also_listed_under": []
+  },
+  {
+    "code": "FTE335",
+    "level": "L3",
+    "title": "FOOD TECHNOLOGY",
+    "faculty": "TECHNOLOGY",
+    "ue": true,
+    "scholarship": true,
+    "description": "This course extends the knowledge, and capabilities in technology, focusing on food product development. You will use your cooking skills and design knowledge to work on individual products with clients from our community. Scholarship Technology is also available to suitable candidates.",
+    "pathway": "This course can lead to university and Polytech courses. When combined with science subjects this course can lead to study and careers in Food Science, Food Technology and Food Engineering.",
+    "components": [
+      "Food preservation and processing",
+      "Sensory science",
+      "Food product development",
+      "Working with community stakeholders",
+      "Research",
+      "Structure and function of ingredients."
+    ],
+    "external_credits": 4,
+    "internal_credits": 16,
+    "metrics_raw": "4 16 $60 � � EXTERNAL CREDITS Course endorsement offered. Literacy credits INTERNAL CREDITS Maximum DONATION ENTRY Level 1 literacy and numeracy credits",
+    "also_listed_under": []
+  },
+  {
+    "code": "GDD335",
+    "level": "L3",
+    "title": "GAME DESIGN",
+    "faculty": "TECHNOLOGY",
+    "ue": true,
+    "scholarship": true,
+    "description": "Whether you are interested in storytelling or technology, into software or more of an artist, you could find yourself at home in Game Design, especially if you are passionate about games.",
+    "pathway": "University courses e.g. Massey’s Bachelor of Digital Screen or VUW Computing Faculty courses.",
+    "components": [
+      "Students research advanced projects such as environments and games using VR",
+      "Develop a game using the Godot game development environment. This course cannot be taken with ANI335. Students will need access to a PC/laptop at home that they can play 3D games on."
+    ],
+    "external_credits": 3,
+    "internal_credits": 13,
+    "metrics_raw": "3 13 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY 9 credits from GDD223 58",
+    "also_listed_under": []
+  },
+  {
+    "code": "HOS334",
+    "level": "L3",
+    "title": "HOSPITALITY",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This course is designed to give you specific industry training which will be advantageous for a career in Hospitality. The course has a large practical component and you are expected to demonstrate independence and the level of professionalism required to be working in a commercial kitchen.",
+    "pathway": "Entry into Weltec, Polytech, the food service industry or New Zealand apprenticeship.",
+    "components": [
+      "Develop knowledge of culinary terms and products.",
+      "Production and service of preserves, bakery products, and sandwiches",
+      "Food safety."
+    ],
+    "external_credits": 0,
+    "internal_credits": 18,
+    "metrics_raw": "0 18 $60 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Unit Standard 167 is essential",
+    "also_listed_under": []
+  },
+  {
+    "code": "MEG335",
+    "level": "L3",
+    "title": "MECHANICAL ENGINEERING",
+    "faculty": "TECHNOLOGY",
+    "ue": true,
+    "scholarship": false,
+    "description": "This course is offered to students who have gained a minimum of 12 Level 2 credits in MEG222. Students will continue developing their engineering skills to develop a one-off prototype in negotiation with the tutor. The course will offer a mix of Level 3 UE approved standards and Level 3 Unit standards.",
+    "pathway": "The course allows a pathway to university courses, higher level qualifications, or apprenticeship opportunities.",
+    "components": [
+      "A collection of making engineering projects from technical plans that expand your skill set and knowledge."
+    ],
+    "external_credits": 0,
+    "internal_credits": 18,
+    "metrics_raw": "0 18 $50 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY At least 12 credits at Level 2 in MEG222",
+    "also_listed_under": []
+  },
+  {
+    "code": "PWK334",
+    "level": "L3",
+    "title": "PRACTICAL WORKSHOP",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "This is project-based and involves a high level of practical activity, gaining more skills and a greater knowledge of process and materials. Students follow the technology design process to identify a stakeholder, write a brief and develop their idea. Work extends to use of CAD CAM machinery to produce accurate repeatable work pieces.",
+    "pathway": "This course can lead to Weltec and Polytech courses, employment and apprenticeship opportunities.",
+    "components": [
+      "A range of unit standards address the Level 3 outcomes in each of the applications studied. These are based on safe workshop practice, and the ability to work with a wider range of machine tools."
+    ],
+    "external_credits": 0,
+    "internal_credits": 16,
+    "metrics_raw": "0 16 $50 � � EXTERNAL CREDITS INTERNAL CREDITS Maximum DONATION ENTRY Open. Good common sense, safety consciousness, and an interest in practical workshop activity required.",
+    "also_listed_under": []
+  },
+  {
+    "code": "PATHWAYS",
+    "level": "L2-3",
+    "title": "This is an individually targeted transition course for Year",
+    "faculty": "TECHNOLOGY",
+    "ue": false,
+    "scholarship": false,
+    "description": "12 and 13 students to help you move into meaningful employment/further education and training with a minimum of NCEA Level 2 or Level 3. Work experience placements are offered for interested students.",
+    "pathway": "This course will give you the opportunity to explore career pathway ideas and may lead to entry into a trade or workplace of choice beyond WHS.",
+    "components": [
+      "CVs, cover letters",
+      "Career research and planning",
+      "Interview skills",
+      "Job search skills",
+      "Employment law One or more of the following:",
+      "One Gateway work placement or work experience",
+      "A Health and Safety programme to improve employability skills (12 credits)",
+      "Study related to your Gateway placement where possible",
+      "Study for your Driver’s Learner License",
+      "Short Polytech taster courses",
+      "Volunteer work",
+      "STAR courses."
+    ],
+    "external_credits": 0,
+    "internal_credits": 20,
+    "metrics_raw": "0 20 $0 � � EXTERNAL CREDITS INTERNAL CREDITS DONATION ENTRY Open 60 TRADES ACADEMIES L2 / L3 | NZMA EARLY CHILDHOOD TRADE ACADEMY This programme (1 day a week) offers an introduction to a pathway in Early Childhood Education and is a platform for entry into the NZMA Level 4/5 courses. This course takes place in Porirua. 0 30 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Level 3 DONATION ENTRY Open L2 / L3 | NZMA HEALTH CARE AND NURSING This programme (1 day a week) offers an introduction to a pathway in healthcare and nursing and is a platform for entry into the NZMA Level 4/5 courses. This course takes place in Porirua. Note: There is a cost to students for this course. The school may be able to offer a contribution but this is decided on a case-by-case basis. 0 22 $1200* � � EXTERNAL CREDITS INTERNAL CREDITS Level 3 *TBC. Fee payable (in part or full) ENTRY Year 13 L2 / L3 | NZIS POLICE AND UNIFORMED SERVICES This one-day-a-week programme provides an opportunity to explore career pathways in the NZ Police, the NZDF, and other uniformed government services such as customs, firefighting, and security services. Note: There is a cost to students for this course. The school may be able to offer a contribution but this is decided on a case-by-case basis. 0 23 $1200* � � EXTERNAL CREDITS INTERNAL CREDITS Levell 3 *TBC. Fee payable (in part or full) ENTRY Year 13 L2 / L3 | PAPA TAIAO Keen to get out of the classroom and be in a team that does something to help nature and people? Papa Taiao Earthcare courses that introduce you to key environmental and social issues locally and in Aotearoa. You will work with Wellington-based experts to complete courses that are focused on learning in the natural environment. Each course includes outdoor activities and overnight noho/camps. Pathway: This can lead to careers in conservation or sustainability-based industries. You can achieve a NZQA Certificate in Land Based Sustainability Course components There are three courses to choose from: 1. Tides and tracks runs for the whole year 2. Traps and trails runs for terms 1 and 2. 3. Te Ara Kai runs for terms 1 and 2 only. Students who choose half-year courses MUST choose 6 subjects as this programme finishes at the end of Term 2. Students must have at least 5 subjects at all times. 0 24 $0 � � EXTERNAL CREDITS INTERNAL CREDITS Level 3 DONATION ENTRY Year 13 61 WELLINGTON TRADES ACADEMY Want to stay at school but try something different? Wellington Trades Academy lets you enjoy both worlds. Enjoy the benefits of staying at secondary school but learn new, relevant skills for your career. Examples of Wellington Trades Academy courses Course Level Campus Bakery / Café Service 2 WelTec Petone Barbering 3 Whitireia Porirua or WelTec Petone Construction Mixed Trades 2 Whitireia Porirua or WelTec Petone Digital Media: Animation and Game Design 2 or 3 WelTec Petone Engineering and Automotive 2 Whitireia Porirua Film Making 2 or 3 Whitireia Porirua Health Pathways 2 or 3 Whitireia Porirua Health Pathways: Anatomy and Physiology 3 or 4 Whitireia Porirua Salon Environment 2 Whitireia Porirua L2 / L3| WELLINGTON TRADES ACADEMY WHS partners with a Vocational Pathway programme that allows you to achieve NCEA Level 2 and Level 3. You’ll be coached by industry professionals keen to share their expertise. Courses are either one or two days per week. Pathway: This course can lead to employment, apprenticeships or higher-level studies. Course components ● Either three days at school and two days’ practical learning programme to learn new skills or four days at school and one day of practical learning. ● Earn credits towards your NCEA Level 2 or Level 3 and a National Certificate in your Trades Academy area ● Relevant safety gear, materials and field trips are provided ● NOTE: If you choose this option, you will also do 3 or 4 subjects when at school 0 40-45 $0 � � EXTERNAL CREDITS INTERNAL CREDITS plus school credits DONATION Plus subsidised transport ENTRY Open. Speak to BAC 62 Y11 / L2 / L3 BEYOND WELLINGTON HIGH If you are 16 years old, and ready to progress from school directly on to a career-focused pathway, Wellington High can help you make that transition. We have assisted many young people to join trades and employment courses at the following Wellington education centres: Capital Training | www.capitaltraining.co.nz/ A lower North Island-based, NZQA accredited, private training establishment (PTE) offering a wide spectrum of courses and qualifications to prepare you for the modern workplace. They provide a range of youth guarantee (fees free) courses in retail, business administration, computing, hospitality and construction. They have training centres in Lambton Quay, Upper Hutt, Lower Hutt, Paraparaumu, Waipukurau and Ōtaki, as well as providing in-work training nationwide. Elite - School of Beauty and Spa| www.elitebeautyschool.co.nz/ Make Up Artistry (Level 3), Beauty (Level 4) and Professional Face, Body and Spa Therapies (L5) The Learning Connexion | www.tlc.ac.nz/ A school of Creativity and Art offering a Certificate, Diploma or Advanced Diploma in Creativity (Levels 3-6). Specialist areas include: 3D, Design, Drawing, Painting, Photography, Computer Graphics. NZ Defence Force | www.nzdf.mil.nz/ Three unique services, each with its own strengths: Navy, Army, and Air Force. With many exciting roles available, there really is something for everyone. NZIS – New Zealand Institute of Sports | www.nzis.co.nz NZIS offers a range of courses from Foundation Skills (Level 2) to one year Diploma courses (Levels 4 / 5). Sports, recreation, exercise, personal training, uniformed services preparation (Level 3 / 4). NZMA – New Zealand Management Academies Ltd | www.nzma.ac.nz Part of the New Education Group, a provider of quality education services. NZQA has ranked NZMA a category 1 provider: their highest ranking. All campuses are fully equipped with purpose-built, top-of-the-line facilities. From bars, cafes and commercial kitchens, to retail shops, live contact centre suites and construction workshops – our realistic workplace training environments will get you work-ready quicker. Courses in a wide-range of vocations are available. NZST School of Tourism | nzschooloftourism.co.nz A national NZQA approved organisation with a strong school in Wellington offering a wide range of programmes and qualifications that get students work ready. Courses range from Level 2 and Level 3 Certificate course to Level 4-6 Diplomas and a Level 7 degree course in International Tourism and Hotel Management. Specialist areas of study include: Tourism and Hospitality, Travel and Airline industry travel agents, tour guides, travel operations, flight attendants – Hotels/resorts/cruise ships, Hotel and hospitality Management, Tourism and travel management, Aviation and Tourism management. Skills Institute (High St, Lower Hutt) | https://skillsinstitute.co.nz Innovative leaders in the education industry offering dynamic courses. Using practical, hands-on methods you’ll work towards nationally recognised qualifications that are approved by the New Zealand Qualifications Authority. Courses on offer include: Level 3 NZ Certificates in Hairdressing/Salon Support, Barbering Skills: Level 4 NZ certificates in Hairdressing Stylist, Beauty Therapy (also Level 5), Nail Technician. WelTec | weltec.ac.nz or Whitireia | www.whitireia.ac.nz/ Both offer a wide range of Trades related programmes across most Trades as well as IT courses, Business, Cooking and Hospitality, Creative Technology, Salon, Hairdressing and make up, Health courses, Social and Community, Creative Arts. Their campuses are in Wellington, Petone and Porirua. Whitecliffe – School of Fashion and Sustainability | www.whitecliffe.ac.nz/fashion NZ Fashion Tech is New Zealand’s leading educator in the fashion and sewn products industries. It is an award-winning fashion and garment technology college, registered and accredited with the NZ Qualifications Authority (NZQA). NZ Fashion Tech is considered to be one of the best practical technical trainers to the industry in the country. Courses include: L3 Certificate in Fashion Technology, Level 4 Certificate in Pattern Design and a Level 5 Diploma in Fashion Technology. Whitecliffe Technology / School of Information Technology | www.whitecliffe.ac.nz/technology IT Training specialists with L5&6 qualifications in IT, Web development, Tech support, Networking and Software Development Te Wānanga o Aotearoa | http://www.twoa.ac.nz Te Wānanga o Aotearoa provides holistic education opportunities of the highest quality for Māori, peoples of Aotearoa and the world. Te Wānanga o Aotearoa is one of New Zealand's largest tertiary education providers offering a wide range of certificate to degree level qualifications to New Zealanders of all ages and walks of life. YOOBEE — School of Design | https://www.yoobee.ac.nz Yoobee programmes embrace new and emerging technologies, with pathways from certificates and diplomas through to degrees with some of our partner schools. From Digital Media and Design, Web Design and UX and 3D Animation, to Filmmaking, Game Art and Development and 3D Graphics, programmes keep you plugged in to industry advances, and on top of your game. Delivering full time, part time and online programmes, Yoobee opens doors to the best digital and design studios in the world. 63 PLANNING PAGE ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ ___________________________________________________________________________________________________________ v5. 12.8.2026",
+    "also_listed_under": []
+  }
+]
