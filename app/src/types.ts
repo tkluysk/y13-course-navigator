@@ -18,6 +18,8 @@ export interface Course {
   required_credits: number | null;
   explicit_prerequisites: string[];
   implied_prerequisite: string | null;
+  alternative_category: string | null;
+  alternative_faculty: string | null;
 }
 
 export interface LineDefinition {

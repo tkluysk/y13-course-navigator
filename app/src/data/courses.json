@@ -22,7 +22,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "NUM000",
@@ -45,7 +47,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "PER000",
@@ -72,7 +76,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "DES223",
@@ -97,7 +103,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "DRA223",
@@ -122,7 +130,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MUS223",
@@ -148,7 +158,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MST223",
@@ -175,7 +187,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "APT223",
@@ -200,7 +214,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "PHO223",
@@ -225,7 +241,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "APR223",
@@ -251,7 +269,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ASC223",
@@ -276,7 +296,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "SON223",
@@ -305,7 +327,9 @@
     ],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "TOI003",
@@ -334,7 +358,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "DES335",
@@ -360,7 +386,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Design",
+    "alternative_faculty": "ARTS"
   },
   {
     "code": "DRA335",
@@ -385,7 +413,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": "DRA223"
+    "implied_prerequisite": "DRA223",
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MUS335",
@@ -411,7 +441,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": "MUS223",
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "APT335",
@@ -436,7 +468,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Painting",
+    "alternative_faculty": "ARTS"
   },
   {
     "code": "PHO335",
@@ -461,7 +495,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Art",
+    "alternative_faculty": "ARTS"
   },
   {
     "code": "APR335",
@@ -486,7 +522,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Art",
+    "alternative_faculty": "ARTS"
   },
   {
     "code": "ASC335",
@@ -512,7 +550,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Art",
+    "alternative_faculty": "ARTS"
   },
   {
     "code": "SON334",
@@ -542,7 +582,9 @@
     ],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": "SON223"
+    "implied_prerequisite": "SON223",
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENG223",
@@ -567,7 +609,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "EPB223",
@@ -591,7 +635,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENR223",
@@ -617,7 +663,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENW223",
@@ -642,7 +690,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "PWD223",
@@ -667,7 +717,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENS223",
@@ -693,7 +745,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENG335",
@@ -718,7 +772,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "English",
+    "alternative_faculty": "ENGLISH"
   },
   {
     "code": "ENC335",
@@ -743,7 +799,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENP335",
@@ -769,7 +827,9 @@
     "also_listed_under": [],
     "required_credits": 14,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENW335",
@@ -794,7 +854,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "English",
+    "alternative_faculty": "ENGLISH"
   },
   {
     "code": "PWD335",
@@ -819,7 +881,9 @@
     "also_listed_under": [],
     "required_credits": 14,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "English",
+    "alternative_faculty": "ENGLISH"
   },
   {
     "code": "HED223",
@@ -844,7 +908,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ODE223/ODI223*",
@@ -870,7 +936,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "SPS223",
@@ -896,7 +964,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "PED223",
@@ -922,7 +992,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "HED335",
@@ -948,7 +1020,9 @@
     "also_listed_under": [],
     "required_credits": 10,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Health",
+    "alternative_faculty": "HEALTH & PHYSICAL EDUCATION"
   },
   {
     "code": "SPS335",
@@ -974,7 +1048,9 @@
     "also_listed_under": [],
     "required_credits": 10,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Sport",
+    "alternative_faculty": "HEALTH & PHYSICAL EDUCATION"
   },
   {
     "code": "ODE335",
@@ -1002,7 +1078,9 @@
     "explicit_prerequisites": [
       "ODE223/ODI223*"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "PED334",
@@ -1028,7 +1106,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": "PED223"
+    "implied_prerequisite": "PED223",
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "TAH000",
@@ -1056,7 +1136,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "CHI223",
@@ -1082,7 +1164,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "JPN223",
@@ -1108,7 +1192,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "SPA223",
@@ -1134,7 +1220,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MAO223",
@@ -1159,7 +1247,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "CHI335",
@@ -1187,7 +1277,9 @@
     "explicit_prerequisites": [
       "CHI223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "JPN335",
@@ -1215,7 +1307,9 @@
     "explicit_prerequisites": [
       "JPN223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MAI035",
@@ -1240,7 +1334,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "SPA335",
@@ -1268,7 +1364,9 @@
     "explicit_prerequisites": [
       "SPA223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENL000",
@@ -1294,7 +1392,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENL010",
@@ -1320,7 +1420,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENL011",
@@ -1347,7 +1449,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENL032",
@@ -1373,7 +1477,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ENL043",
@@ -1399,7 +1505,9 @@
     "explicit_prerequisites": [
       "ENL032"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "HKIP",
@@ -1422,7 +1530,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "FIN223",
@@ -1448,7 +1558,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MAT223",
@@ -1474,7 +1586,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MTL223",
@@ -1500,7 +1614,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MAC335",
@@ -1528,7 +1644,9 @@
     "explicit_prerequisites": [
       "MAT223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "FIN330",
@@ -1555,7 +1673,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": "FIN223"
+    "implied_prerequisite": "FIN223",
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MAT335",
@@ -1584,7 +1704,9 @@
       "MAT223",
       "MTL223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MAS335",
@@ -1613,7 +1735,9 @@
       "MAT223",
       "MTL223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "BIO223",
@@ -1639,7 +1763,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "CHE223",
@@ -1666,7 +1792,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ESS223",
@@ -1692,7 +1820,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "HCL223",
@@ -1717,7 +1847,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "PHY223",
@@ -1744,7 +1876,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "BIO335",
@@ -1770,7 +1904,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Science",
+    "alternative_faculty": "SCIENCE"
   },
   {
     "code": "CHE335",
@@ -1797,7 +1933,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Chemistry",
+    "alternative_faculty": "SCIENCE"
   },
   {
     "code": "ESS335",
@@ -1823,7 +1961,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Science",
+    "alternative_faculty": "SCIENCE"
   },
   {
     "code": "HCL335",
@@ -1849,7 +1989,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Science",
+    "alternative_faculty": "SCIENCE"
   },
   {
     "code": "PHY335",
@@ -1869,20 +2011,22 @@
     ],
     "external_credits": 16,
     "internal_credits": 7,
-    "metrics_raw": "16 7 $35 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For a write-in handbook ENTRY 12 Level 2 Physics credits or with Head of Faculty approval 43 SOCIAL SCIENCES | TIKANGA-Ā-IWI Head of Faculty — Kate Potter YEAR 11 LEVEL 2 LEVEL 3",
+    "metrics_raw": "16 7 $35 � � EXTERNAL CREDITS Course endorsement offered INTERNAL CREDITS Maximum DONATION For a write-in handbook ENTRY 12 Level 2 Physics credits or with Head of Faculty approval 43",
     "entry_text": "12 Level 2 Physics credits or with Head of Faculty approval",
     "donation_text": "For a write-in handbook",
     "donation_amount": "$35",
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Physics",
+    "alternative_faculty": "SCIENCE"
   },
   {
     "code": "ECO223",
     "level": "L2",
     "title": "ECONOMICS",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": false,
     "scholarship": false,
     "description": "In this course we will study issues including unemployment and the cost of living, the pros and cons of economic growth, and consequences of Government policies such as minimum wage. These topics will add an economic lens to how you understand the world.",
@@ -1902,13 +2046,15 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "CLE223",
     "level": "L2",
     "title": "CLASSICAL STUDIES WITH ENGLISH",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": false,
     "scholarship": false,
     "description": "This course explores the qualities of humour in both classical and modern society as well as delving into events that shaped the classical world. You do not need to take another English course but you can if you wish. N.B. this course includes English standards and may be taken as an alternative to ENG223.",
@@ -1928,13 +2074,15 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "GEO223",
     "level": "L2",
     "title": "GEOGRAPHY",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": false,
     "scholarship": false,
     "description": "Geography is the study of the relationship between humans and the environment. At level two we will investigate differences in development, population changes in New York City, spatial patterns of green spaces in Wellington’s CBD, geographic skills and the global issue of modern slavery.",
@@ -1955,13 +2103,15 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "HIS223",
     "level": "L2",
     "title": "HISTORY",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": false,
     "scholarship": false,
     "description": "This course explores forces and movements that have influenced change at different times in history. The skills of the historian are developed further and students are challenged to explore perspectives from the past, weigh up the significance of historical events and critically analyse primary and secondary sources.",
@@ -1980,13 +2130,15 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "FLM223",
     "level": "L2",
     "title": "MEDIA WITH FILM",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": false,
     "scholarship": false,
     "description": "You will develop media literacy and understand the use of mass media, particularly film. You will become a critical consumer of the media and use these skills in the production of your own media product – a horror film.",
@@ -2005,13 +2157,15 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "JRN223",
     "level": "L2",
     "title": "MEDIA WITH JOURNALISM",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": false,
     "scholarship": false,
     "description": "This course focuses on the planning and production of magazine articles for publication in The Flannel. You will develop skills in analysing a media genre and will produce your own written media, both in a short piece and a longer feature article. You will learn skills in writing and basic design theory.",
@@ -2031,13 +2185,15 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "PSY223",
     "level": "L2",
     "title": "PSYCHOLOGY",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": false,
     "scholarship": false,
     "description": "Psychology is the scientific study of the mind and behaviour. In this course you will explore theories explaining behaviours such as addiction. You will also learn about some (in)famous psychological experiments and conduct your own ethical psychological research. The course will introduce you to a range of fields of psychology, for example, health psychology and environmental psychology.",
@@ -2056,13 +2212,15 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "SOC223",
     "level": "L2",
     "title": "SOCIOLOGY",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": false,
     "scholarship": false,
     "description": "This course focuses on contemporary social issues that impact communities. You’ll learn about rights, responsibilities, and ways that people work together to achieve social justice. Importantly, this course provides opportunities to take action in response to a social issue that you care about.",
@@ -2081,13 +2239,15 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "CLS335",
     "level": "L3",
     "title": "CLASSICAL STUDIES",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": true,
     "scholarship": false,
     "description": "You will explore the social, artistic and ideological aspects of the classical world. Particular focus will be on philosophy, mythology, concepts and beliefs of religion and political propaganda.",
@@ -2109,13 +2269,15 @@
     "explicit_prerequisites": [
       "CLE223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Social Science",
+    "alternative_faculty": "SOCIAL SCIENCES"
   },
   {
     "code": "ECO335",
     "level": "L3",
     "title": "ECONOMICS",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": true,
     "scholarship": false,
     "description": "You will study how markets operate and will evaluate the pros and cons of free markets and Government interventions. Case studies may include cigarette tax, public transport subsidies, and the sustainability of New Zealand’s fishing quota system.",
@@ -2135,13 +2297,15 @@
     "also_listed_under": [],
     "required_credits": 10,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": "ECO223",
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "GEO335",
     "level": "L3",
     "title": "GEOGRAPHY",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": true,
     "scholarship": true,
     "description": "Geography is the study of the relationship between humans and the environment. At level three we will investigate coastal erosion, conduct geographic research in Wellington’s CBD, geographic skills and the global patterns of refugee migration.",
@@ -2164,13 +2328,15 @@
     "explicit_prerequisites": [
       "GEO223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Social Science",
+    "alternative_faculty": "SOCIAL SCIENCES"
   },
   {
     "code": "HIS335",
     "level": "L3",
     "title": "HISTORY",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": true,
     "scholarship": true,
     "description": "This course explores 19th and 20th century British Imperialism in Aotearoa, Australia, Palestine, Israel and/or India. You will also learn about social change in Aotearoa in the 1980s, for example, the fourth Labour government, economic reform and the birth of the kohanga reo movement. A key focus of the course is independent research and analysis of historical events.",
@@ -2191,13 +2357,15 @@
     "explicit_prerequisites": [
       "HIS223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Social Science",
+    "alternative_faculty": "SOCIAL SCIENCES"
   },
   {
     "code": "FLM335",
     "level": "L3",
     "title": "MEDIA WITH FILM",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": true,
     "scholarship": true,
     "description": "You will develop media literacy and understanding using mass media. You will enhance your critical understanding of media messages and develop skills in the production of your short film.",
@@ -2218,13 +2386,15 @@
     "explicit_prerequisites": [
       "FLM223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Social Science",
+    "alternative_faculty": "SOCIAL SCIENCES"
   },
   {
     "code": "JRN335",
     "level": "L3",
     "title": "MEDIA WITH JOURNALISM",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": true,
     "scholarship": true,
     "description": "The primary component of this course is the production of The Flannel magazine. Students take total control of the production including editorial policy, writing, designing, desktop publishing and graphics. Students can follow their hunches and passions and investigate issues they feel strongly about.",
@@ -2247,13 +2417,15 @@
       "ENG223",
       "JRN223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Social Science",
+    "alternative_faculty": "SOCIAL SCIENCES"
   },
   {
     "code": "PSY335",
     "level": "L3",
     "title": "PSYCHOLOGY",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": true,
     "scholarship": true,
     "description": "You will study human behaviour and human nature, what motivates us and how social policies can support us. Areas explored include criminal psychology and attachment theories as part of developmental psychology. You will conduct your own experiment in groups and deepen your knowledge of statistics.",
@@ -2275,13 +2447,15 @@
     "explicit_prerequisites": [
       "PSY223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Social Science",
+    "alternative_faculty": "SOCIAL SCIENCES"
   },
   {
     "code": "SOC335",
     "level": "L3",
     "title": "SOCIOLOGY",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": true,
     "scholarship": false,
     "description": "In this course you will engage with contemporary social issues that impact communities at a local, national, and international level. You’ll learn about campaigns to create social change and will engage in your own social action to change or influence a policy.",
@@ -2302,13 +2476,15 @@
     "explicit_prerequisites": [
       "SOC223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Social Science",
+    "alternative_faculty": "SOCIAL SCIENCES"
   },
   {
     "code": "TMA234",
     "level": "L3",
     "title": "TOURISM MĀORI",
-    "faculty": "SCIENCE",
+    "faculty": "SOCIAL SCIENCES",
     "ue": false,
     "scholarship": false,
     "description": "Māori identity is a significant part of tourism in Aotearoa. In this course you will look at the importance of Māori place names, tikanga, kaitiaki practices, Māori communication, and kaupapa Māori gatherings in relation to tourism Māori. This is a course for students in Year 12 or 13 who have a genuine interest in learning in a Māori context.",
@@ -2328,7 +2504,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ANI223",
@@ -2351,7 +2529,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "BAR020",
@@ -2376,7 +2556,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "CSC223",
@@ -2399,7 +2581,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "DTW223",
@@ -2426,7 +2610,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "DVC223",
@@ -2449,7 +2635,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ELT223",
@@ -2472,7 +2660,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "FTX223",
@@ -2499,7 +2689,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "FTE223",
@@ -2525,7 +2717,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "FCM220",
@@ -2548,7 +2742,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "GDD223",
@@ -2571,7 +2767,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "HOS223",
@@ -2595,7 +2793,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MEG223",
@@ -2618,7 +2818,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "NET230",
@@ -2641,7 +2843,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ANI335",
@@ -2666,7 +2870,9 @@
     "explicit_prerequisites": [
       "ANI223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "CSC335",
@@ -2691,7 +2897,9 @@
     "explicit_prerequisites": [
       "CSC223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": "Maths",
+    "alternative_faculty": "MATHEMATICS"
   },
   {
     "code": "DTE355",
@@ -2714,7 +2922,9 @@
     "explicit_prerequisites": [
       "CSC335"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "DVC335",
@@ -2739,7 +2949,9 @@
     "explicit_prerequisites": [
       "DVC223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ELT335",
@@ -2764,7 +2976,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": "ELT223"
+    "implied_prerequisite": "ELT223",
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "FTX335",
@@ -2792,7 +3006,9 @@
     "explicit_prerequisites": [
       "FTX223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "FTE335",
@@ -2820,7 +3036,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": "FTE223"
+    "implied_prerequisite": "FTE223",
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "GDD335",
@@ -2846,7 +3064,9 @@
     "explicit_prerequisites": [
       "GDD223"
     ],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "HOS334",
@@ -2871,7 +3091,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": "HOS223"
+    "implied_prerequisite": "HOS223",
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "MEG335",
@@ -2894,7 +3116,9 @@
     "also_listed_under": [],
     "required_credits": 12,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": "MEG223",
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "PWK334",
@@ -2917,7 +3141,9 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "PATHWAYS",
@@ -2951,6 +3177,8 @@
     "also_listed_under": [],
     "required_credits": null,
     "explicit_prerequisites": [],
-    "implied_prerequisite": null
+    "implied_prerequisite": null,
+    "alternative_category": null,
+    "alternative_faculty": null
   }
 ]

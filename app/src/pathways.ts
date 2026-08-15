@@ -42,18 +42,39 @@ export function buildPathwayIndex(courses: Course[]): Map<string, PathwayLinks> 
   return index;
 }
 
-export type EdgeKind = "pathway" | "prerequisite" | "gap";
+export type EdgeKind = "pathway" | "prerequisite" | "gap" | "alternative";
+
+// Higher wins when two edges exist for the same course pair — a stated
+// entry requirement (with its credit count) is more informative than a
+// generic "leads to" pathway-text mention of the same pair.
+const EDGE_PRIORITY: Record<EdgeKind, number> = {
+  prerequisite: 3,
+  gap: 2,
+  alternative: 1,
+  pathway: 0,
+};
+
+/** A single real course, or a synthetic "any of these Y12 courses" group
+ * (used for "or another Social Science" style alternative pathways, so the
+ * graph shows one node instead of one per sibling course). */
+export type GraphEndpoint =
+  | { type: "course"; course: Course }
+  | { type: "group"; id: string; label: string; members: Course[] };
+
+export function endpointKey(e: GraphEndpoint): string {
+  return e.type === "course" ? e.course.code : e.id;
+}
 
 export interface GraphEdge {
-  from: Course; // earlier/prerequisite course
-  to: Course; // later course the edge leads into
+  from: GraphEndpoint;
+  to: GraphEndpoint;
   kind: EdgeKind;
   requiredCredits: number | null;
   label: string;
 }
 
 export interface GraphNode {
-  course: Course;
+  endpoint: GraphEndpoint;
   role: "center" | "upstream" | "downstream";
 }
 
@@ -62,12 +83,21 @@ export interface PathwayGraph {
   edges: GraphEdge[];
 }
 
+function subjectPrefix(code: string): string {
+  return code.match(/^[A-Z]+/)?.[0] ?? code;
+}
+
 /** Build the direct-neighbor graph (Y12 <-> Y13, one hop) for a selected
- * course, combining two independent signals from the prospectus:
+ * course, combining three independent signals from the prospectus:
  *  - "pathway" prose (e.g. "This course can lead to BIO335")
  *  - the structured entry-requirement extraction (explicit prerequisite
- *    codes + credit counts, and unstated-prerequisite gaps like FIN330).
- * Edges carry the required-credit count when the entry text states one. */
+ *    codes + credit counts, and unstated-prerequisite gaps like FIN330)
+ *  - a general "or another <Faculty>" alternative pathway (e.g. CLS335
+ *    accepting credits from any Level 2 Social Science, not just CLE223) —
+ *    resolved against every other Y12 course in the same faculty and
+ *    collapsed into a single grouped node so the graph stays readable.
+ * When more than one signal links the same pair, the richer one (credits >
+ * gap > general alternative > bare pathway mention) is kept. */
 export function buildCourseGraph(
   code: string,
   courseByCode: Map<string, Course>,
@@ -77,78 +107,141 @@ export function buildCourseGraph(
   if (!center) return null;
 
   const links = pathwayIndex.get(code) ?? { upstream: [], downstream: [] };
-  const nodesByCode = new Map<string, GraphNode>();
-  const edges: GraphEdge[] = [];
-  const edgeKey = new Set<string>();
+  const nodesByKey = new Map<string, GraphNode>();
+  const edgeByKey = new Map<string, GraphEdge>();
 
-  const addEdge = (from: Course, to: Course, kind: EdgeKind, requiredCredits: number | null, label: string) => {
-    const key = `${from.code}->${to.code}`;
-    if (edgeKey.has(key)) return;
-    edgeKey.add(key);
-    edges.push({ from, to, kind, requiredCredits, label });
+  const centerEndpoint: GraphEndpoint = { type: "course", course: center };
+
+  const addEdge = (
+    from: GraphEndpoint,
+    to: GraphEndpoint,
+    kind: EdgeKind,
+    requiredCredits: number | null,
+    label: string
+  ) => {
+    const key = `${endpointKey(from)}->${endpointKey(to)}`;
+    const existing = edgeByKey.get(key);
+    if (existing && EDGE_PRIORITY[existing.kind] >= EDGE_PRIORITY[kind]) return;
+    edgeByKey.set(key, { from, to, kind, requiredCredits, label });
   };
 
-  const addNode = (course: Course, role: GraphNode["role"]) => {
-    if (!nodesByCode.has(course.code)) nodesByCode.set(course.code, { course, role });
+  const addNode = (endpoint: GraphEndpoint, role: GraphNode["role"]) => {
+    const key = endpointKey(endpoint);
+    if (!nodesByKey.has(key)) nodesByKey.set(key, { endpoint, role });
   };
 
-  addNode(center, "center");
+  addNode(centerEndpoint, "center");
 
   // Pathway-prose links (forward = pathway text of an earlier course
-  // mentions a later one it leads to).
+  // mentions a later one it leads to). Added first — lowest priority, so
+  // a richer entry-requirement edge for the same pair overrides it below.
   for (const up of links.upstream) {
-    addNode(up, "upstream");
-    addEdge(up, center, "pathway", null, "leads to");
+    const ep: GraphEndpoint = { type: "course", course: up };
+    addNode(ep, "upstream");
+    addEdge(ep, centerEndpoint, "pathway", null, "leads to");
   }
   for (const down of links.downstream) {
-    addNode(down, "downstream");
-    addEdge(center, down, "pathway", null, "leads to");
+    const ep: GraphEndpoint = { type: "course", course: down };
+    addNode(ep, "downstream");
+    addEdge(centerEndpoint, ep, "pathway", null, "leads to");
   }
 
-  // Entry-requirement links, from either side.
+  const prereqLabel = (creditedCourse: Course) =>
+    creditedCourse.required_credits
+      ? `${creditedCourse.required_credits}+ credits`
+      : "prerequisite";
+
+  // Entry-requirement links when center is the L3(+) side.
   if (center.level === "L3" || center.level === "L3+") {
     for (const prereqCode of center.explicit_prerequisites) {
       const prereq = courseByCode.get(prereqCode);
       if (!prereq) continue;
-      addNode(prereq, "upstream");
-      addEdge(
-        prereq,
-        center,
-        "prerequisite",
-        center.required_credits,
-        center.required_credits ? `${center.required_credits}+ credits` : "prerequisite"
-      );
+      const ep: GraphEndpoint = { type: "course", course: prereq };
+      addNode(ep, "upstream");
+      addEdge(ep, centerEndpoint, "prerequisite", center.required_credits, prereqLabel(center));
     }
     if (center.implied_prerequisite) {
       const gap = courseByCode.get(center.implied_prerequisite);
       if (gap) {
-        addNode(gap, "upstream");
-        addEdge(gap, center, "gap", null, "same subject — not required");
+        const ep: GraphEndpoint = { type: "course", course: gap };
+        addNode(ep, "upstream");
+        addEdge(ep, centerEndpoint, "gap", null, "same subject — not required");
       }
     }
-  }
-  // Courses at L2 that name `code` as their own explicit/implied prerequisite
-  // target (i.e. this IS the L3 side for some other course's requirement) —
-  // already covered above when center is L3. When center is L2, find L3
-  // courses whose prerequisite fields point back at it.
-  if (center.level === "L2") {
-    for (const other of courseByCode.values()) {
-      if (other.level !== "L3" && other.level !== "L3+") continue;
-      if (other.explicit_prerequisites.includes(center.code)) {
-        addNode(other, "downstream");
-        addEdge(
-          center,
-          other,
-          "prerequisite",
-          other.required_credits,
-          other.required_credits ? `${other.required_credits}+ credits` : "prerequisite"
-        );
-      } else if (other.implied_prerequisite === center.code) {
-        addNode(other, "downstream");
-        addEdge(center, other, "gap", null, "same subject — not required");
+    if (center.alternative_category && center.alternative_faculty) {
+      // Exclude L2 courses already covered by an explicit-prerequisite edge
+      // above (e.g. CLE223 for CLS335) so the group doesn't duplicate them.
+      const alreadyLinkedSubjects = new Set(
+        center.explicit_prerequisites.map((c) => subjectPrefix(c))
+      );
+      alreadyLinkedSubjects.add(subjectPrefix(center.code));
+      const members = Array.from(courseByCode.values()).filter(
+        (o) =>
+          o.level === "L2" &&
+          o.faculty === center.alternative_faculty &&
+          !alreadyLinkedSubjects.has(subjectPrefix(o.code))
+      );
+      if (members.length > 0) {
+        const label = center.required_credits
+          ? `${center.required_credits}+ credits (any ${center.alternative_category})`
+          : `any ${center.alternative_category}`;
+        const group: GraphEndpoint = {
+          type: "group",
+          id: `alt:${center.alternative_faculty}:L2:${center.code}`,
+          label: `Any other L2 ${center.alternative_category}`,
+          members,
+        };
+        addNode(group, "upstream");
+        addEdge(group, centerEndpoint, "alternative", center.required_credits, label);
       }
     }
   }
 
-  return { nodes: Array.from(nodesByCode.values()), edges };
+  // When center is L2: find L3 courses whose prerequisite fields point
+  // back at it, including as a general same-faculty alternative (grouped
+  // into one "accepts any Y13 <faculty> course" node rather than one edge
+  // per L3 course). Multiple different alternative faculties are possible
+  // (e.g. a Maths course could be named by both a Social Sciences course
+  // and a Technology course), so group per matched faculty, not globally.
+  if (center.level === "L2") {
+    const altGroups = new Map<string, { members: Course[]; label: string; credits: number | null }>();
+
+    for (const other of courseByCode.values()) {
+      if (other.level !== "L3" && other.level !== "L3+") continue;
+      if (other.explicit_prerequisites.includes(center.code)) {
+        const ep: GraphEndpoint = { type: "course", course: other };
+        addNode(ep, "downstream");
+        addEdge(centerEndpoint, ep, "prerequisite", other.required_credits, prereqLabel(other));
+      } else if (other.implied_prerequisite === center.code) {
+        const ep: GraphEndpoint = { type: "course", course: other };
+        addNode(ep, "downstream");
+        addEdge(centerEndpoint, ep, "gap", null, "same subject — not required");
+      } else if (
+        other.alternative_category &&
+        other.alternative_faculty === center.faculty &&
+        subjectPrefix(other.code) !== subjectPrefix(center.code)
+      ) {
+        const key = other.alternative_faculty ?? "";
+        const label = other.required_credits
+          ? `${other.required_credits}+ credits (any ${other.alternative_category})`
+          : `any ${other.alternative_category}`;
+        const entry = altGroups.get(key) ?? { members: [], label, credits: other.required_credits };
+        entry.members.push(other);
+        altGroups.set(key, entry);
+      }
+    }
+
+    for (const [facultyKey, { members, label, credits }] of altGroups) {
+      const group: GraphEndpoint = {
+        type: "group",
+        id: `alt:${facultyKey}:L3:${center.code}`,
+        label: `Any other L3 ${facultyKey}`.trim(),
+        members,
+      };
+      addNode(group, "downstream");
+      addEdge(centerEndpoint, group, "alternative", credits, label);
+    }
+  }
+
+  return { nodes: Array.from(nodesByKey.values()), edges: Array.from(edgeByKey.values()) };
 }

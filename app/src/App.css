@@ -631,6 +631,60 @@
   stroke: var(--accent);
 }
 
+.graph-group-popover {
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  max-width: 420px;
+}
+
+.graph-group-popover-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12.5px;
+}
+
+.graph-group-popover-head button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1;
+  padding: 2px 4px;
+}
+
+.graph-group-popover ul {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.graph-group-popover li button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  color: var(--text-h);
+}
+
+.graph-group-popover li button:hover {
+  background: var(--bg-alt);
+}
+
 .graph-legend {
   list-style: none;
   display: flex;
@@ -667,6 +721,15 @@
   background-image: repeating-linear-gradient(
     90deg,
     #d9a441 0 4px,
+    transparent 4px 7px
+  );
+}
+
+.legend-swatch.alternative {
+  background: #2aa8a8;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #2aa8a8 0 4px,
     transparent 4px 7px
   );
 }

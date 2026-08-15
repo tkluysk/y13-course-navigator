@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW_TXT = ROOT / "docs" / "prospectus_raw.txt"
 OUT_JSON = ROOT / "app" / "src" / "data" / "courses.json"
 
-FACULTY_RE = re.compile(r"^([A-ZĀĒĪŌŪ][A-ZĀĒĪŌŪ &]+) \| ([A-ZĀĒĪŌŪĀ̄ĀĒĪŌŪ ]+)$")
+FACULTY_RE = re.compile(r"^([A-ZĀĒĪŌŪ][A-ZĀĒĪŌŪ &]+) \| ([A-ZĀĒĪŌŪ \-]+)$")
 LEVEL_PREFIX = (
     r"Y11\s*/\s*Y12\s*/\s*Y13|Y12\s*/\s*Y13|Y11\s*/\s*L2\s*/\s*L3|"
     r"Pre-NCEA|L2\s*/\s*L3|L[123]\+?"
@@ -50,13 +50,91 @@ CODE_IN_TEXT_RE = re.compile(r"\b([A-Z]{2,4}\d{3})\b")
 CREDIT_COUNT_RE = re.compile(
     r"(?:minimum\s+)?(\d+)(?:-\d+)?\s*(?:\+)?\s*credits?", re.I
 )
-LEVEL2_CATEGORY_RE = re.compile(r"level\s*2|\bL2\b", re.I)
+# The prospectus phrases a "credits from a related Level 2 subject" entry
+# requirement in several different ways across courses, e.g.:
+#   "or another Social Science"
+#   "or another Level 2 Social Science, English"
+#   "Level 2 Art 12 credits"
+#   "12 credits at Level 2 Painting"
+#   "12 Level 2 Science credits"
+#   "10 credits in Level 2 Sport Science"
+#   "9 credits from CSC223 or Level 2 Maths"
+# All of these name a *category* (a faculty name, or a subject word that
+# maps to one) rather than a specific course code. Try several orderings
+# and keep the first plausible noun-phrase match; validity against a real
+# faculty/subject is checked by the caller (which has the course list).
+CATEGORY_PATTERNS = [
+    re.compile(r"another\s+(?:level\s*2\s+)?([A-Za-z][A-Za-z ]*?)(?:\s+subject|\s+or\b|,|\.|$)", re.I),
+    # the word(s) immediately after "Level 2" up to the next stop word —
+    # covers "Level 2 English course", "Level 2 Art 12 credits",
+    # "Level 2 Science credits", "Level 2 Sport Science" etc uniformly.
+    re.compile(
+        r"level\s*2\s+(?!or\b)([A-Za-z]+(?:\s+(?!(?:credits?|course|subject|or|and)\b)[A-Za-z]+)?)\s*"
+        r"(?=\d|credits?\b|course\b|subject\b|or\b|and\b|$|,|\.)",
+        re.I,
+    ),
+    re.compile(r"credits?\s+(?:at|in|from)\s+level\s*2\s+([A-Za-z][A-Za-z]*)", re.I),
+    re.compile(r"\d+\s+credits?\s+(?:at|in|from)\s+([A-Za-z][A-Za-z]*)\s*(?:or\b|,|\.|$)", re.I),
+]
+STOPWORD_CATEGORIES = {"or", "in", "at", "from", "external", "and", "any"}
 
 
 def subject_prefix(code: str) -> str:
     """Alphabetic prefix of a course code, e.g. 'CHE335' -> 'CHE'."""
     m = re.match(r"^([A-Z]+)", code)
     return m.group(1) if m else code
+
+
+# Words the prospectus uses for a faculty that don't literally appear in the
+# faculty name or any course title, e.g. "Art" for the ARTS faculty (whose
+# courses are titled Painting/Sculpture/Design/etc, never "Art").
+CATEGORY_SYNONYMS = {
+    "art": "ARTS",
+    "maths": "MATHEMATICS",
+    "math": "MATHEMATICS",
+    "pe": "HEALTH & PHYSICAL EDUCATION",
+}
+
+
+def _singularize(word: str) -> str:
+    if word.endswith("ies"):
+        return word[:-3] + "y"
+    if word.endswith("s") and not word.endswith("ss"):
+        return word[:-1]
+    return word
+
+
+def resolve_category_faculty(phrase: str, faculty_names: set, subject_words: dict) -> str | None:
+    """Match a raw category phrase (e.g. 'Science', 'Painting', 'Art',
+    'Social Science') found in entry-requirement text to a real faculty
+    name, so a stray regex match like 'or' or 'external' doesn't get
+    treated as a valid subject category. Returns the faculty name, or None
+    if the phrase isn't a recognised subject.
+
+    Checked in order of specificity: (1) the whole phrase against a full
+    faculty name (singular/plural tolerant, e.g. "Social Science" ~
+    "SOCIAL SCIENCES"), (2) a known synonym, (3) an exact single-word match
+    against an L2 course title's words (never a substring match — "Science"
+    must not match inside "Science Fiction").
+    """
+    w = phrase.strip().lower()
+    if not w or w in STOPWORD_CATEGORIES:
+        return None
+
+    phrase_words = {_singularize(x) for x in w.split()}
+    for fac in faculty_names:
+        fac_words = {_singularize(x) for x in fac.lower().replace("&", " ").split()}
+        if phrase_words == fac_words:
+            return fac
+
+    if w in CATEGORY_SYNONYMS:
+        return CATEGORY_SYNONYMS[w]
+
+    if len(phrase_words) == 1:
+        (single,) = phrase_words
+        if len(single) >= 4 and single in subject_words:
+            return subject_words[single]
+    return None
 
 
 def annotate_entry_requirements(courses: list) -> None:
@@ -76,16 +154,29 @@ def annotate_entry_requirements(courses: list) -> None:
         for sub in CODE_IN_TEXT_RE.findall(c["code"]):
             subcode_to_stored[sub] = c["code"]
 
+    TITLE_STOPWORDS = {"with", "for", "and", "the", "of", "a", "an", "in", "study", "studies"}
+
     l2_by_subject: dict[str, str] = {}
+    faculty_names: set = set()
+    subject_words: dict[str, str] = {}
     for c in courses:
         if c["level"] == "L2":
             l2_by_subject.setdefault(subject_prefix(c["code"]), c["code"])
+            if c["faculty"]:
+                faculty_names.add(c["faculty"])
+                for word in re.findall(r"[A-Za-z]+", c["title"]):
+                    w = _singularize(word.lower())
+                    if w in TITLE_STOPWORDS:
+                        continue
+                    subject_words.setdefault(w, c["faculty"])
 
     for c in courses:
         if c["level"] not in ("L3", "L3+"):
             c["required_credits"] = None
             c["explicit_prerequisites"] = []
             c["implied_prerequisite"] = None
+            c["alternative_category"] = None
+            c["alternative_faculty"] = None
             continue
 
         entry = c["entry_text"]
@@ -100,21 +191,41 @@ def annotate_entry_requirements(courses: list) -> None:
         credit_match = CREDIT_COUNT_RE.search(entry)
         required_credits = int(credit_match.group(1)) if credit_match else None
 
+        # The entry text may name a general subject *category* rather than
+        # (or in addition to) a specific code — "Level 2 Art", "another
+        # Social Science", "Level 2 Maths" etc. Try each known phrasing and
+        # keep the first candidate that resolves to a real faculty. Store
+        # both the matched word (for display) and the faculty it resolves
+        # to, so the app can list every other L2 course in that faculty
+        # without needing to re-derive the mapping.
+        alternative_category = None
+        alternative_faculty = None
+        for pattern in CATEGORY_PATTERNS:
+            m = pattern.search(entry)
+            if not m:
+                continue
+            candidate = m.group(1).strip()
+            fac = resolve_category_faculty(candidate, faculty_names, subject_words)
+            if fac:
+                alternative_category = candidate
+                alternative_faculty = fac
+                break
+
         # Does a same-subject Y12 course exist that ISN'T named, and the
-        # entry text also doesn't reference the subject by a general
-        # "Level 2 <category>" credits phrase (a legitimate looser
-        # pathway, e.g. BIO335 accepting "Level 2 Science credits")?
+        # entry text also doesn't reference the subject via a validated
+        # general category phrase (a legitimate looser pathway, e.g. BIO335
+        # accepting "Level 2 Science credits")?
         implied_prerequisite = None
         subj = subject_prefix(c["code"])
         l2_sibling = l2_by_subject.get(subj)
-        if l2_sibling and l2_sibling not in explicit_codes:
-            mentions_category = bool(LEVEL2_CATEGORY_RE.search(entry))
-            if not mentions_category:
-                implied_prerequisite = l2_sibling
+        if l2_sibling and l2_sibling not in explicit_codes and not alternative_faculty:
+            implied_prerequisite = l2_sibling
 
         c["required_credits"] = required_credits
         c["explicit_prerequisites"] = explicit_codes
         c["implied_prerequisite"] = implied_prerequisite
+        c["alternative_category"] = alternative_category
+        c["alternative_faculty"] = alternative_faculty
 
 
 def main():

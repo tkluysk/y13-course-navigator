@@ -1,6 +1,6 @@
-import { useMemo } from "react";
-import type { Course } from "../types";
-import type { PathwayGraph as PathwayGraphData } from "../pathways";
+import { useMemo, useState } from "react";
+import type { EdgeKind, GraphEndpoint, PathwayGraph as PathwayGraphData } from "../pathways";
+import { endpointKey } from "../pathways";
 
 interface Props {
   graph: PathwayGraphData;
@@ -8,17 +8,33 @@ interface Props {
   onSelectCode: (code: string) => void;
 }
 
-const NODE_W = 168;
+const NODE_W = 180;
 const NODE_H = 56;
 const COL_GAP = 220;
-const ROW_GAP = 20;
+const ROW_GAP = 16;
 const PAD = 24;
 
 function truncate(s: string, n: number) {
   return s.length > n ? s.slice(0, n - 1) + "…" : s;
 }
 
+const EDGE_COLOR: Record<EdgeKind, string> = {
+  prerequisite: "var(--accent)",
+  gap: "#d9a441",
+  alternative: "#2aa8a8",
+  pathway: "var(--text)",
+};
+
+const EDGE_LABEL_COLOR: Record<EdgeKind, string> = {
+  prerequisite: "var(--accent)",
+  gap: "#b8811f",
+  alternative: "#1f8080",
+  pathway: "var(--text)",
+};
+
 export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props) {
+  const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
+
   const { upstream, center, downstream } = useMemo(() => {
     const upstream = graph.nodes.filter((n) => n.role === "upstream");
     const downstream = graph.nodes.filter((n) => n.role === "downstream");
@@ -43,12 +59,18 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
   const centerY = height / 2 - NODE_H / 2;
 
   const positions = new Map<string, { x: number; y: number }>();
-  positions.set(center.course.code, { x: colX.center, y: centerY });
-  upstream.forEach((n, i) => positions.set(n.course.code, { x: colX.upstream, y: yFor(i, upstream.length) }));
-  downstream.forEach((n, i) => positions.set(n.course.code, { x: colX.downstream, y: yFor(i, downstream.length) }));
+  positions.set(endpointKey(center.endpoint), { x: colX.center, y: centerY });
+  upstream.forEach((n, i) =>
+    positions.set(endpointKey(n.endpoint), { x: colX.upstream, y: yFor(i, upstream.length) })
+  );
+  downstream.forEach((n, i) =>
+    positions.set(endpointKey(n.endpoint), { x: colX.downstream, y: yFor(i, downstream.length) })
+  );
 
-  const edgeColor = (kind: string) =>
-    kind === "gap" ? "var(--gap-edge, #d9a441)" : kind === "prerequisite" ? "var(--accent)" : "var(--text)";
+  const expandedNode = graph.nodes.find(
+    (n) => n.endpoint.type === "group" && n.endpoint.id === expandedGroup
+  );
+  const expandedGroupData = expandedNode?.endpoint.type === "group" ? expandedNode.endpoint : null;
 
   return (
     <div className="pathway-graph-wrap">
@@ -61,44 +83,25 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
         aria-label={`Pathway graph for ${centerCode}`}
       >
         <defs>
-          <marker
-            id="arrow"
-            viewBox="0 0 10 10"
-            refX="9"
-            refY="5"
-            markerWidth="7"
-            markerHeight="7"
-            orient="auto-start-reverse"
-          >
-            <path d="M0,0 L10,5 L0,10 z" fill="var(--text)" />
-          </marker>
-          <marker
-            id="arrow-gap"
-            viewBox="0 0 10 10"
-            refX="9"
-            refY="5"
-            markerWidth="7"
-            markerHeight="7"
-            orient="auto-start-reverse"
-          >
-            <path d="M0,0 L10,5 L0,10 z" fill="#d9a441" />
-          </marker>
-          <marker
-            id="arrow-prereq"
-            viewBox="0 0 10 10"
-            refX="9"
-            refY="5"
-            markerWidth="7"
-            markerHeight="7"
-            orient="auto-start-reverse"
-          >
-            <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)" />
-          </marker>
+          {(Object.keys(EDGE_COLOR) as EdgeKind[]).map((kind) => (
+            <marker
+              key={kind}
+              id={`arrow-${kind}`}
+              viewBox="0 0 10 10"
+              refX="9"
+              refY="5"
+              markerWidth="7"
+              markerHeight="7"
+              orient="auto-start-reverse"
+            >
+              <path d="M0,0 L10,5 L0,10 z" fill={EDGE_COLOR[kind]} />
+            </marker>
+          ))}
         </defs>
 
         {graph.edges.map((e, i) => {
-          const from = positions.get(e.from.code);
-          const to = positions.get(e.to.code);
+          const from = positions.get(endpointKey(e.from));
+          const to = positions.get(endpointKey(e.to));
           if (!from || !to) return null;
           const x1 = from.x + NODE_W;
           const y1 = from.y + NODE_H / 2;
@@ -106,20 +109,18 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
           const y2 = to.y + NODE_H / 2;
           const midX = (x1 + x2) / 2;
           const path = `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
-          const marker =
-            e.kind === "gap" ? "url(#arrow-gap)" : e.kind === "prerequisite" ? "url(#arrow-prereq)" : "url(#arrow)";
           const labelX = (x1 + x2) / 2;
           const labelY = (y1 + y2) / 2;
-          const dashed = e.kind === "gap";
+          const dashed = e.kind === "gap" || e.kind === "alternative";
           return (
             <g key={i}>
               <path
                 d={path}
                 fill="none"
-                stroke={edgeColor(e.kind)}
+                stroke={EDGE_COLOR[e.kind]}
                 strokeWidth={1.6}
                 strokeDasharray={dashed ? "4 3" : undefined}
-                markerEnd={marker}
+                markerEnd={`url(#arrow-${e.kind})`}
                 opacity={0.85}
               />
               <g transform={`translate(${labelX}, ${labelY})`}>
@@ -136,7 +137,7 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
                   textAnchor="middle"
                   dominantBaseline="middle"
                   fontSize={10.5}
-                  fill={e.kind === "gap" ? "#b8811f" : "var(--text)"}
+                  fill={EDGE_LABEL_COLOR[e.kind]}
                   fontFamily="var(--mono)"
                   fontWeight={600}
                 >
@@ -148,17 +149,42 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
         })}
 
         {graph.nodes.map((n) => {
-          const pos = positions.get(n.course.code);
+          const key = endpointKey(n.endpoint);
+          const pos = positions.get(key);
           if (!pos) return null;
           const isCenter = n.role === "center";
+          const isGroup = n.endpoint.type === "group";
+
+          const handleClick = () => {
+            if (isCenter) return;
+            if (n.endpoint.type === "group") {
+              setExpandedGroup(expandedGroup === n.endpoint.id ? null : n.endpoint.id);
+            } else {
+              onSelectCode(n.endpoint.course.code);
+            }
+          };
+
+          const tooltip =
+            n.endpoint.type === "course"
+              ? [
+                  `${n.endpoint.course.code} — ${n.endpoint.course.title} (${n.endpoint.course.level})`,
+                  n.endpoint.course.entry_text && `Entry: ${n.endpoint.course.entry_text}`,
+                  n.endpoint.course.donation_amount &&
+                    `Donation: ${n.endpoint.course.donation_amount}${n.endpoint.course.donation_text ? ` — ${n.endpoint.course.donation_text}` : ""}`,
+                ]
+                  .filter(Boolean)
+                  .join("\n")
+              : `${n.endpoint.label}: ${n.endpoint.members.map((m) => m.code).join(", ")}`;
+
           return (
             <g
-              key={n.course.code}
+              key={key}
               transform={`translate(${pos.x}, ${pos.y})`}
               className={"graph-node" + (isCenter ? " graph-node-center" : "")}
-              onClick={() => !isCenter && onSelectCode(n.course.code)}
+              onClick={handleClick}
               style={{ cursor: isCenter ? "default" : "pointer" }}
             >
+              <title>{tooltip}</title>
               <rect
                 width={NODE_W}
                 height={NODE_H}
@@ -166,26 +192,62 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
                 fill={isCenter ? "var(--accent-bg)" : "var(--bg)"}
                 stroke={isCenter ? "var(--accent)" : "var(--border)"}
                 strokeWidth={isCenter ? 2 : 1}
+                strokeDasharray={isGroup ? "3 3" : undefined}
               />
-              <text x={12} y={22} fontSize={11} fontFamily="var(--mono)" fontWeight={700} fill="var(--accent)">
-                {n.course.code}
-              </text>
-              <text x={12} y={38} fontSize={10.5} fill="var(--text-h)">
-                {truncate(n.course.title, 24)}
-              </text>
-              <text x={12} y={50} fontSize={9} fill="var(--text)" fontFamily="var(--mono)">
-                {n.course.level}
-              </text>
+              {n.endpoint.type === "course" ? (
+                <>
+                  <text x={12} y={22} fontSize={11} fontFamily="var(--mono)" fontWeight={700} fill="var(--accent)">
+                    {n.endpoint.course.code}
+                  </text>
+                  <text x={12} y={38} fontSize={10.5} fill="var(--text-h)">
+                    {truncate(n.endpoint.course.title, 25)}
+                  </text>
+                  <text x={12} y={50} fontSize={9} fill="var(--text)" fontFamily="var(--mono)">
+                    {n.endpoint.course.level}
+                  </text>
+                </>
+              ) : (
+                <>
+                  <text x={12} y={24} fontSize={10.5} fontWeight={700} fill="#1f8080">
+                    {truncate(n.endpoint.label, 26)}
+                  </text>
+                  <text x={12} y={40} fontSize={9.5} fill="var(--text)">
+                    {n.endpoint.members.length} courses — click to list
+                  </text>
+                </>
+              )}
             </g>
           );
         })}
       </svg>
+      {expandedGroupData && (
+        <div className="graph-group-popover">
+          <div className="graph-group-popover-head">
+            <strong>{expandedGroupData.label}</strong>
+            <button type="button" onClick={() => setExpandedGroup(null)}>
+              ×
+            </button>
+          </div>
+          <ul>
+            {expandedGroupData.members.map((m) => (
+              <li key={m.code}>
+                <button type="button" onClick={() => onSelectCode(m.code)}>
+                  <span className="link-chip-code">{m.code}</span> {m.title}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <ul className="graph-legend">
         <li>
           <span className="legend-swatch pathway" /> pathway text
         </li>
         <li>
           <span className="legend-swatch prereq" /> stated entry requirement
+        </li>
+        <li>
+          <span className="legend-swatch alternative" /> accepted as an alternative subject
         </li>
         <li>
           <span className="legend-swatch gap" /> same subject, not stated as required
@@ -195,4 +257,4 @@ export default function PathwayGraph({ graph, centerCode, onSelectCode }: Props)
   );
 }
 
-export type { Course };
+export type { GraphEndpoint };
