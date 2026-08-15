@@ -18,6 +18,28 @@ export interface PathwayLinks {
   upstream: Course[]; // other courses whose pathway text names this course
 }
 
+// Rough ordering so a "downstream" edge can be sanity-checked: pathway
+// prose occasionally names a course laterally (e.g. ENL043 "can be studied
+// in conjunction with ENG223") rather than as something it leads to, and a
+// naive code-mention scan can't tell those apart from a real progression.
+// Requiring the target to be the same level or higher catches that case
+// (and similar future ones) without depending on exact wording.
+const LEVEL_RANK: Record<string, number> = {
+  "Pre-NCEA": 0,
+  Y11: 1,
+  "Y11-13": 1,
+  "Y11-L2-3": 1,
+  L2: 2,
+  "L2-3": 2,
+  "Y12-13": 2,
+  L3: 3,
+  "L3+": 3,
+};
+
+function levelRank(level: string): number {
+  return LEVEL_RANK[level] ?? 2;
+}
+
 /** Precompute, for every course, which other courses reference it in their
  * "pathway" text (upstream = prerequisite-ish, points at this course from
  * elsewhere) vs which courses this course's own pathway text points to
@@ -31,7 +53,7 @@ export function buildPathwayIndex(courses: Course[]): Map<string, PathwayLinks> 
 
   for (const c of courses) {
     const mentioned = codesMentionedIn(c.pathway, courseByCode).filter(
-      (code) => code !== c.code
+      (code) => code !== c.code && levelRank(courseByCode.get(code)!.level) >= levelRank(c.level)
     );
     for (const code of mentioned) {
       index.get(c.code)!.downstream.push(courseByCode.get(code)!);

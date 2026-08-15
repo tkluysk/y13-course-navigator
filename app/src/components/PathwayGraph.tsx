@@ -228,11 +228,11 @@ export default function PathwayGraph({
             const h = nodeHeight(n.endpoint, expandedGroup);
 
             const courseCode = n.endpoint.type === "course" ? n.endpoint.course.code : null;
-            const isPicked = !isCenter && !!courseCode && !!pickedCodes?.has(courseCode);
+            const isPicked = !!courseCode && !!pickedCodes?.has(courseCode);
             const isBookmarked = !!courseCode && !!bookmarkedCodes?.has(courseCode);
             const isNotInterested = !!courseCode && !!notInterestedCodes?.has(courseCode);
             const prereq = courseCode ? prereqStatusByCode?.get(courseCode) : undefined;
-            const hasWarning = !isCenter && !!prereq && prereq.status !== "ok";
+            const hasWarning = !!prereq && prereq.status !== "ok";
 
             const handleHeaderClick = () => {
               if (isCenter || isText) return;
@@ -260,21 +260,31 @@ export default function PathwayGraph({
                   ? `${n.endpoint.label}: ${n.endpoint.members.map((m) => m.code).join(", ")}`
                   : n.endpoint.text;
 
-            let nodeFill = isCenter ? "var(--accent-bg)" : isText ? "var(--bg-alt)" : "var(--bg)";
-            let nodeStroke = isCenter ? "var(--accent)" : "var(--border)";
-            if (!isCenter && n.endpoint.type === "course") {
+            // Fill = state (matches the chip grid's ".current-pick"/warning
+            // tints); stroke = "you're looking at this" (matches the grid's
+            // ".selected" ring). The two are independent so a picked course
+            // that's also the graph's center gets both, same as a chip can
+            // be selected and picked at once.
+            let nodeFill = isText ? "var(--bg-alt)" : "var(--bg)";
+            if (n.endpoint.type === "course") {
               if (isPicked) {
                 nodeFill = "var(--accent-bg)";
-                nodeStroke = "var(--accent-border)";
               } else if (isNotInterested) {
                 nodeFill = "var(--bg-alt)";
               } else if (hasWarning && prereq?.status === "unmet") {
                 nodeFill = "rgba(192, 57, 43, 0.08)";
-                nodeStroke = "rgba(192, 57, 43, 0.4)";
               } else if (hasWarning && prereq?.status === "unclear") {
                 nodeFill = "rgba(217, 164, 65, 0.1)";
-                nodeStroke = "rgba(217, 164, 65, 0.45)";
               }
+            }
+            let nodeStroke = "var(--border)";
+            if (isCenter) {
+              nodeStroke = "var(--accent)";
+            } else if (n.endpoint.type === "course" && hasWarning) {
+              nodeStroke =
+                prereq?.status === "unmet" ? "rgba(192, 57, 43, 0.4)" : "rgba(217, 164, 65, 0.45)";
+            } else if (isPicked) {
+              nodeStroke = "var(--accent-border)";
             }
 
             return (
@@ -295,7 +305,7 @@ export default function PathwayGraph({
                   rx={10}
                   fill={nodeFill}
                   stroke={nodeStroke}
-                  strokeWidth={isCenter || isPicked ? 2 : 1}
+                  strokeWidth={isCenter ? 2 : 1}
                   strokeDasharray={isGroup && !isExpanded ? "3 3" : undefined}
                   opacity={isNotInterested ? 0.6 : 1}
                 />

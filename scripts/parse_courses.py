@@ -110,37 +110,41 @@ def _singularize(word: str) -> str:
     return word
 
 
-def resolve_category_faculty(phrase: str, faculty_names: set, subject_words: dict) -> str | None:
-    """Match a raw category phrase (e.g. 'Science', 'Painting', 'Art',
-    'Social Science') found in entry-requirement text to a real faculty
-    name, so a stray regex match like 'or' or 'external' doesn't get
-    treated as a valid subject category. Returns the faculty name, or None
-    if the phrase isn't a recognised subject.
-
-    Checked in order of specificity: (1) the whole phrase against a full
-    faculty name (singular/plural tolerant, e.g. "Social Science" ~
-    "SOCIAL SCIENCES"), (2) a known synonym, (3) an exact single-word match
-    against an L2 course title's words (never a substring match — "Science"
-    must not match inside "Science Fiction").
+def resolve_category(
+    phrase: str, faculty_names: set, subject_words: dict, subject_codes: dict
+) -> tuple[str | None, str | None]:
+    """Match a raw category phrase (e.g. 'Science', 'Chemistry', 'Art',
+    'Social Science') found in entry-requirement text. Returns
+    (faculty, specific_code):
+      - A phrase that names an entire faculty (its full name, a
+        singular/plural-tolerant match, or a known synonym like "Art" for
+        ARTS) is a genuine general-category acceptance: (faculty, None).
+      - A phrase that names one specific L2 course's subject and that
+        subject ISN'T the same as its faculty name (e.g. "Chemistry" is a
+        subject within SCIENCE, not the faculty itself — unlike "English",
+        which names both the ENGLISH faculty and its own subject at once)
+        is really an explicit single-course prerequisite worded as a
+        category rather than a code: (None, code).
+    A stray regex match like "or"/"external" resolves to (None, None).
     """
     w = phrase.strip().lower()
     if not w or w in STOPWORD_CATEGORIES:
-        return None
+        return None, None
 
     phrase_words = {_singularize(x) for x in w.split()}
     for fac in faculty_names:
         fac_words = {_singularize(x) for x in fac.lower().replace("&", " ").split()}
         if phrase_words == fac_words:
-            return fac
+            return fac, None
 
     if w in CATEGORY_SYNONYMS:
-        return CATEGORY_SYNONYMS[w]
+        return CATEGORY_SYNONYMS[w], None
 
     if len(phrase_words) == 1:
         (single,) = phrase_words
         if len(single) >= 4 and single in subject_words:
-            return subject_words[single]
-    return None
+            return subject_words[single], subject_codes.get(single)
+    return None, None
 
 
 def annotate_entry_requirements(courses: list) -> None:
@@ -165,6 +169,7 @@ def annotate_entry_requirements(courses: list) -> None:
     l2_by_subject: dict[str, str] = {}
     faculty_names: set = set()
     subject_words: dict[str, str] = {}
+    subject_codes: dict[str, str] = {}
     for c in courses:
         if c["level"] == "L2":
             l2_by_subject.setdefault(subject_prefix(c["code"]), c["code"])
@@ -175,6 +180,7 @@ def annotate_entry_requirements(courses: list) -> None:
                     if w in TITLE_STOPWORDS:
                         continue
                     subject_words.setdefault(w, c["faculty"])
+                    subject_codes.setdefault(w, c["code"])
 
     for c in courses:
         if c["level"] not in ("L3", "L3+"):
@@ -200,10 +206,15 @@ def annotate_entry_requirements(courses: list) -> None:
         # The entry text may name a general subject *category* rather than
         # (or in addition to) a specific code — "Level 2 Art", "another
         # Social Science", "Level 2 Maths" etc. Try each known phrasing and
-        # keep the first candidate that resolves to a real faculty. Store
-        # both the matched word (for display) and the faculty it resolves
-        # to, so the app can list every other L2 course in that faculty
-        # without needing to re-derive the mapping.
+        # keep the first candidate that resolves. A phrase naming a whole
+        # faculty (e.g. "Science", "English" — which is both the ENGLISH
+        # faculty's name and its own core subject) is a genuine general
+        # category; a phrase naming one specific subject that ISN'T also
+        # its faculty's name (e.g. "Chemistry" within SCIENCE, "Painting"
+        # within ARTS) is really a single-code prerequisite worded as a
+        # category, so route it into explicit_codes instead — otherwise
+        # "12 Level 2 Chemistry credits" would wrongly accept Biology,
+        # Physics etc as alternatives too.
         alternative_category = None
         alternative_faculty = None
         for pattern in CATEGORY_PATTERNS:
@@ -211,7 +222,10 @@ def annotate_entry_requirements(courses: list) -> None:
             if not m:
                 continue
             candidate = m.group(1).strip()
-            fac = resolve_category_faculty(candidate, faculty_names, subject_words)
+            fac, specific_code = resolve_category(candidate, faculty_names, subject_words, subject_codes)
+            if specific_code and specific_code != c["code"] and specific_code not in explicit_codes:
+                explicit_codes = sorted(explicit_codes + [specific_code])
+                break
             if fac:
                 alternative_category = candidate
                 alternative_faculty = fac

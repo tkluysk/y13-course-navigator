@@ -520,10 +520,12 @@
     "donation_amount": "$40",
     "also_listed_under": [],
     "required_credits": 12,
-    "explicit_prerequisites": [],
+    "explicit_prerequisites": [
+      "DES223"
+    ],
     "implied_prerequisite": null,
-    "alternative_category": "Design",
-    "alternative_faculty": "ARTS"
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "DRA335",
@@ -602,10 +604,12 @@
     "donation_amount": "$40",
     "also_listed_under": [],
     "required_credits": 12,
-    "explicit_prerequisites": [],
+    "explicit_prerequisites": [
+      "APT223"
+    ],
     "implied_prerequisite": null,
-    "alternative_category": "Painting",
-    "alternative_faculty": "ARTS"
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "PHO335",
@@ -1266,10 +1270,12 @@
     "donation_amount": "$50",
     "also_listed_under": [],
     "required_credits": 10,
-    "explicit_prerequisites": [],
+    "explicit_prerequisites": [
+      "HED223"
+    ],
     "implied_prerequisite": null,
-    "alternative_category": "Health",
-    "alternative_faculty": "HEALTH & PHYSICAL EDUCATION"
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "SPS335",
@@ -1294,10 +1300,12 @@
     "donation_amount": "$60",
     "also_listed_under": [],
     "required_credits": 10,
-    "explicit_prerequisites": [],
+    "explicit_prerequisites": [
+      "SPS223"
+    ],
     "implied_prerequisite": null,
-    "alternative_category": "Sport",
-    "alternative_faculty": "HEALTH & PHYSICAL EDUCATION"
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ODE335",
@@ -2534,10 +2542,12 @@
     "donation_amount": "$30",
     "also_listed_under": [],
     "required_credits": null,
-    "explicit_prerequisites": [],
+    "explicit_prerequisites": [
+      "CHE223"
+    ],
     "implied_prerequisite": null,
-    "alternative_category": "Chemistry",
-    "alternative_faculty": "SCIENCE"
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "ESS335",
@@ -2619,10 +2629,12 @@
     "donation_amount": "$35",
     "also_listed_under": [],
     "required_credits": null,
-    "explicit_prerequisites": [],
+    "explicit_prerequisites": [
+      "PHY223"
+    ],
     "implied_prerequisite": null,
-    "alternative_category": "Physics",
-    "alternative_faculty": "SCIENCE"
+    "alternative_category": null,
+    "alternative_faculty": null
   },
   {
     "code": "SOC112",
