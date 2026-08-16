@@ -46,6 +46,12 @@ export default function ScenarioBar({
 
   const deletableCount = scenarios.filter((s) => !s.locked).length;
 
+  const confirmDelete = (s: Scenario) => {
+    if (window.confirm(`Delete scenario "${s.name}"? You can undo this with the Undo button afterwards.`)) {
+      onDelete(s.id);
+    }
+  };
+
   return (
     <div className="scenario-bar">
       <div className="scenario-tabs">
@@ -89,7 +95,7 @@ export default function ScenarioBar({
               <button
                 type="button"
                 className="scenario-tab-close"
-                onClick={() => onDelete(s.id)}
+                onClick={() => confirmDelete(s)}
                 title="Delete this scenario"
               >
                 ×

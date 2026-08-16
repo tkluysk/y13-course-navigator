@@ -49,6 +49,28 @@ export default function LinesTable({
     Object.values(currentPicks).filter((c): c is string => !!c)
   );
 
+  // Some courses only appear in one column across the whole grid — they
+  // have no other line where they could ever be picked. If the pick made
+  // on that line is one of those single-line-only courses, every other
+  // single-line-only course on the same line has just become permanently
+  // unreachable (only one pick is allowed per line), so flag them.
+  const codeLineCount = new Map<string, number>();
+  for (const l of lines) {
+    for (const code of l.codes) {
+      codeLineCount.set(code, (codeLineCount.get(code) ?? 0) + 1);
+    }
+  }
+  const lockedOutCodes = new Set<string>();
+  for (const l of lines) {
+    const pick = currentPicks[l.line];
+    if (!pick || codeLineCount.get(pick) !== 1) continue;
+    for (const code of l.codes) {
+      if (code !== pick && codeLineCount.get(code) === 1) {
+        lockedOutCodes.add(code);
+      }
+    }
+  }
+
   return (
     <div className="lines-table-wrap">
       <p className="hint">
@@ -95,6 +117,7 @@ export default function LinesTable({
                   const isSelected = selectedCode === code;
                   const isPick = currentPicks[l.line] === code;
                   const isPickedElsewhere = !isPick && pickedElsewhere.has(code);
+                  const isLockedOut = !isPick && !isPickedElsewhere && lockedOutCodes.has(code);
                   const isBookmarked = bookmarks?.has(code);
                   const isNotInterested = notInterested?.has(code);
                   const prereq = prereqStatusByCode?.get(code);
@@ -108,12 +131,15 @@ export default function LinesTable({
                           (isPick ? " current-pick" : "") +
                           (isNotInterested ? " not-interested" : "") +
                           (isPickedElsewhere ? " picked-elsewhere" : "") +
+                          (isLockedOut ? " locked-out" : "") +
                           (prereq && prereq.status !== "ok" ? " has-warning warning-" + prereq.status : "")
                         }
                         title={
                           isPickedElsewhere
                             ? `${course?.title ?? code} — already picked on another line`
-                            : course?.title ?? "Placeholder slot — not in prospectus"
+                            : isLockedOut
+                              ? `${course?.title ?? code} — only offered on this line, and this line's pick has already been used, so this course can no longer be picked`
+                              : course?.title ?? "Placeholder slot — not in prospectus"
                         }
                       >
                         <button
@@ -132,6 +158,14 @@ export default function LinesTable({
                           <span
                             className={"chip-warning chip-warning-" + prereq.status}
                             title={prereq.reason}
+                          >
+                            <WarningIcon size={12} />
+                          </span>
+                        )}
+                        {isLockedOut && (
+                          <span
+                            className="chip-warning chip-warning-locked-out"
+                            title={`Only offered on this line — no longer pickable now that this line's pick has been used elsewhere.`}
                           >
                             <WarningIcon size={12} />
                           </span>

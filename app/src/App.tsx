@@ -124,8 +124,51 @@ function App() {
     []
   );
 
-  const [selectedCode, setSelectedCode] = useState<string | null>(y13.active?.picks[1] ?? null);
-  const [view, setView] = useState<View>("lines13");
+  const readHashState = (): { view: View; code: string | null } => {
+    const params = new URLSearchParams(window.location.hash.slice(1));
+    const viewParam = params.get("view");
+    const view: View =
+      viewParam === "lines12" || viewParam === "browse" || viewParam === "lines13"
+        ? viewParam
+        : "lines13";
+    return { view, code: params.get("course") };
+  };
+
+  const initialHashState = readHashState();
+  const [selectedCode, setSelectedCodeState] = useState<string | null>(
+    initialHashState.code ?? y13.active?.picks[1] ?? null
+  );
+  const [view, setViewState] = useState<View>(initialHashState.view);
+
+  const pushHashState = (nextView: View, nextCode: string | null) => {
+    const params = new URLSearchParams();
+    params.set("view", nextView);
+    if (nextCode) params.set("course", nextCode);
+    const hash = "#" + params.toString();
+    if (hash !== window.location.hash) {
+      window.history.pushState({ view: nextView, code: nextCode }, "", hash);
+    }
+  };
+
+  const setSelectedCode = (code: string | null) => {
+    setSelectedCodeState(code);
+    pushHashState(view, code);
+  };
+
+  const setView = (nextView: View) => {
+    setViewState(nextView);
+    pushHashState(nextView, selectedCode);
+  };
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const state = readHashState();
+      setViewState(state.view);
+      setSelectedCodeState(state.code);
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   const courseByCode = useMemo(() => {
     const map = new Map<string, Course>();
@@ -161,11 +204,11 @@ function App() {
     const map = new Map<string, ReturnType<typeof checkPrerequisite>>();
     for (const c of courses) {
       if (c.level === "L3" || c.level === "L3+") {
-        map.set(c.code, checkPrerequisite(c, y12PickSet, courseByCode));
+        map.set(c.code, checkPrerequisite(c, y12PickSet, courseByCode, y13PickSet));
       }
     }
     return map;
-  }, [y12PickSet, courseByCode]);
+  }, [y12PickSet, y13PickSet, courseByCode]);
 
   const toggleBookmark = (code: string) => {
     setBookmarks((prev) =>

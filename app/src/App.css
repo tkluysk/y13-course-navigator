@@ -229,6 +229,10 @@
   color: #d9a441;
 }
 
+.chip-warning-locked-out {
+  color: #6d7480;
+}
+
 .course-chip:has(.chip-warning) .chip-code {
   margin-left: 15px;
 }
@@ -350,6 +354,25 @@
 
 .course-chip.picked-elsewhere .chip-title {
   color: var(--text);
+}
+
+/* A course that only ever appears on this one line, whose line-slot has
+   just been taken by picking a different single-line-only course — it
+   has no other line where it could ever be picked, so this is a genuine
+   dead end rather than a "move the pick" situation like picked-elsewhere.
+   Solid grey-blue tint (not the picked-elsewhere hatch, not the red/amber
+   prereq-warning tint) keeps it visually distinct from both. */
+.course-chip.locked-out {
+  background: rgba(109, 116, 128, 0.08);
+  border-color: rgba(109, 116, 128, 0.35);
+}
+
+.course-chip.locked-out:hover {
+  background: rgba(109, 116, 128, 0.14);
+}
+
+.course-chip.locked-out::before {
+  opacity: 0.35;
 }
 
 /* faculty accent stripes — thinner and lower-contrast than the state

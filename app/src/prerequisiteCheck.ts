@@ -7,21 +7,29 @@ export interface PrerequisiteCheck {
   reason: string;
 }
 
-/** Whether a Y13 course's entry requirement is met by the given set of Y12
- * pick codes, based on the same signals the pathway graph uses:
+const isY13Level = (level: string) => level === "L3" || level === "L3+";
+
+/** Whether a Y13 course's entry requirement is met by the given picks, based
+ * on the same signals the pathway graph uses:
  *  - "unmet": the course names specific prerequisite code(s) or accepts a
- *    general subject category, and none of the Y12 picks satisfy either.
+ *    general subject category, and none of the picks satisfy either.
  *  - "unclear": the prospectus doesn't explicitly require anything (no
  *    named code, no category) but a same-subject Y12 course exists and
  *    wasn't picked — the "implied prerequisite gap" the detail panel
  *    already flags. Softer than "unmet": the course may still be enterable.
  *  - "ok": either no prerequisite signal applies (e.g. "Open" entry), or
- *    at least one Y12 pick satisfies it.
+ *    at least one pick satisfies it.
+ *
+ * A named prerequisite that is itself a Y13 (L3/L3+) course is a
+ * co-enrolment requirement (e.g. DTE355 "Successful completion of or
+ * co-enrolment in CSC335"), not a Y12 lead-in — those are checked against
+ * the current Y13 picks instead.
  */
 export function checkPrerequisite(
   course: Course,
   y12Picks: Set<string>,
-  courseByCode: Map<string, Course>
+  courseByCode: Map<string, Course>,
+  y13Picks: Set<string> = new Set()
 ): PrerequisiteCheck {
   if (course.level !== "L3" && course.level !== "L3+") {
     return { status: "ok", reason: "" };
@@ -31,7 +39,11 @@ export function checkPrerequisite(
   const hasCategory = !!course.alternative_faculty;
 
   if (hasExplicit || hasCategory) {
-    const explicitMet = course.explicit_prerequisites.some((code) => y12Picks.has(code));
+    const explicitMet = course.explicit_prerequisites.some((code) => {
+      const prereqCourse = courseByCode.get(code);
+      const picks = prereqCourse && isY13Level(prereqCourse.level) ? y13Picks : y12Picks;
+      return picks.has(code);
+    });
     const categoryMet =
       hasCategory &&
       Array.from(y12Picks).some(
@@ -41,8 +53,12 @@ export function checkPrerequisite(
       return { status: "ok", reason: "" };
     }
     const named = course.explicit_prerequisites.join(", ");
+    const anyCoEnrolment = course.explicit_prerequisites.some((code) =>
+      isY13Level(courseByCode.get(code)?.level ?? "")
+    );
+    const yearWord = anyCoEnrolment ? "co-enrolled Y13" : "Y12";
     const reason = hasExplicit
-      ? `Requires ${named}${hasCategory ? ` (or another ${course.alternative_category})` : ""} — not in the current Y12 picks.`
+      ? `Requires ${named}${hasCategory ? ` (or another ${course.alternative_category})` : ""} — not in the current ${yearWord} picks.`
       : `Requires a Level 2 ${course.alternative_category} course — not in the current Y12 picks.`;
     return { status: "unmet", reason };
   }
