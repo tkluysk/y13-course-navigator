@@ -169,7 +169,8 @@
 }
 
 .course-chip.current-pick {
-  background: var(--accent-bg);
+  background: var(--pick-bg);
+  border-color: var(--accent-border);
 }
 
 .chip-main {

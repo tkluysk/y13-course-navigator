@@ -268,7 +268,7 @@ export default function PathwayGraph({
             let nodeFill = isText ? "var(--bg-alt)" : "var(--bg)";
             if (n.endpoint.type === "course") {
               if (isPicked) {
-                nodeFill = "var(--accent-bg)";
+                nodeFill = "var(--pick-bg)";
               } else if (isNotInterested) {
                 nodeFill = "var(--bg-alt)";
               } else if (hasWarning && prereq?.status === "unmet") {
@@ -387,7 +387,7 @@ export default function PathwayGraph({
                           // not-interested > warning tint > plain.
                           let memberFill = "transparent";
                           if (memberPicked) {
-                            memberFill = "var(--accent-bg)";
+                            memberFill = "var(--pick-bg)";
                           } else if (memberNotInterested) {
                             memberFill = "var(--bg-alt)";
                           } else if (memberWarning && memberPrereq?.status === "unmet") {

@@ -8,6 +8,7 @@
   --accent: #6d5bd0;
   --accent-bg: rgba(109, 91, 208, 0.1);
   --accent-border: rgba(109, 91, 208, 0.5);
+  --pick-bg: rgba(109, 91, 208, 0.28);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -35,6 +36,7 @@
     --accent: #a596f0;
     --accent-bg: rgba(165, 150, 240, 0.15);
     --accent-border: rgba(165, 150, 240, 0.5);
+    --pick-bg: rgba(165, 150, 240, 0.35);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
