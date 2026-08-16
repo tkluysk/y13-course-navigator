@@ -17,6 +17,7 @@ import CourseBrowser from "./components/CourseBrowser";
 import CourseDetail from "./components/CourseDetail";
 import ScenarioBar from "./components/ScenarioBar";
 import BookmarksBar from "./components/BookmarksBar";
+import DataTransferBar from "./components/DataTransferBar";
 import PathwayGraphPanel from "./components/PathwayGraphPanel";
 import "./App.css";
 
@@ -268,6 +269,7 @@ function App() {
             Browse all courses
           </button>
         </nav>
+        <DataTransferBar />
       </header>
 
       <BookmarksBar

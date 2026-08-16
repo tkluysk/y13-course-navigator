@@ -51,6 +51,37 @@
   box-shadow: var(--shadow);
 }
 
+.data-transfer-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.data-transfer-btn {
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+  color: var(--text);
+  padding: 7px 12px;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.data-transfer-btn:hover {
+  border-color: var(--accent-border);
+  color: var(--text-h);
+}
+
+.data-transfer-file-input {
+  display: none;
+}
+
+.data-transfer-error {
+  font-size: 12px;
+  color: #c0392b;
+  max-width: 220px;
+}
+
 .app-main {
   flex: 1;
   display: grid;
